@@ -1,0 +1,695 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Scheme Romana</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="f16045a4-19a6-49aa-939c-3097ee8d1632" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/list_yellow.svg"/></div><h1 class="page-title">Scheme Romana</h1><p class="page-description"></p></header><div class="page-body"><p id="ad190905-aabc-4410-bfc5-75e08ae8cca9" class=""><strong><strong><strong><strong><strong><strong><strong>Proza</strong></strong></strong></strong></strong></strong></strong></p><figure id="e2c45ec8-ea56-4716-beb4-06f9ee7d24eb" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Alexandru%20Lapusneanul%20-%20Constatin%20Negruzzi%20e2c45ec8ea564716beb406f9ee7d24eb.html"><span class="icon">👑</span>Alexandru Lapusneanul - Constatin Negruzzi</a></figure><p id="131dfca8-a77e-44da-ba23-89f86342d4e1" class="">
+</p><figure id="688c4ae6-3f59-4576-bbe3-2f62e66a8419" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Povestea%20lui%20Harap-Alb%20-%20Ion%20Creanga%20688c4ae63f594576bbe32f62e66a8419.html"><span class="icon">🤴</span>Povestea lui Harap-Alb - Ion Creanga</a></figure><p id="1f859154-843f-4862-a738-7a93c9faebb3" class="">
+</p><figure id="980c2c96-4189-426f-816a-744141ba2333" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Moara%20cu%20noroc%20-%20Ioan%20Slavici%20980c2c964189426f816a744141ba2333.html"><span class="icon">🐷</span>Moara cu noroc - Ioan Slavici</a></figure><p id="bb6498b8-69d7-4be3-b011-7eae37c3c7f3" class="">
+</p><figure id="b77eb897-cdb4-4052-ab6a-abdfa3fd0c0f" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Ion%20-%20Liviu%20Rebreanu%20b77eb897cdb44052ab6aabdfa3fd0c0f.html"><span class="icon">🧑‍🌾</span>Ion - Liviu Rebreanu</a></figure><figure id="287acaf3-2d18-4066-be5d-e8a747f9ba08" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Ion%20(caracterizare)%20-%20Liviu%20Rebreanu%20287acaf32d184066be5de8a747f9ba08.html"><span class="icon">🧑‍🌾</span>Ion (caracterizare) - Liviu Rebreanu</a></figure><p id="98a60067-2968-40dc-92f1-481966952116" class="">
+</p><figure id="325d9d30-7daf-4518-9f89-08c11d64e10c" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Ultima%20noapte%20-%20Camil%20Petrescu%20325d9d307daf45189f8908c11d64e10c.html"><span class="icon">🤓</span>Ultima noapte - Camil Petrescu</a></figure><figure id="eea4a87d-484a-462c-9577-7b846c511acd" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Ultima%20noapte%20(carac%20Stefan)%20-%20Camil%20Petrescu%20eea4a87d484a462c95777b846c511acd.html"><span class="icon">🤓</span>Ultima noapte (carac Stefan) - Camil Petrescu</a></figure><p id="47df54a6-0956-4292-9785-dc48b3d87dcd" class="">
+</p><figure id="c71563bb-4446-4482-bdf2-6f7b836ca3c2" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Enigma%20Otiliei%20-%20George%20Calinescu%20c71563bb44464482bdf26f7b836ca3c2.html"><span class="icon">❓</span>Enigma Otiliei - George Calinescu</a></figure><figure id="83cb7b0e-0f3e-4dee-b922-ae2614ad7b73" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Enigma%20Otiliei%20(caracterizare)%20-%20George%20Calinescu%2083cb7b0e0f3e4deeb922ae2614ad7b73.html"><span class="icon">❓</span>Enigma Otiliei (caracterizare) - George Calinescu</a></figure><p id="1757f182-e89c-4e12-b8b4-bba90796772e" class="">
+</p><figure id="62b436ab-47be-4d6d-bff3-0e5daa0e6cca" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Morometii%20-%20Marin%20Preda%2062b436ab47be4d6dbff30e5daa0e6cca.html"><span class="icon">🚬</span>Morometii - Marin Preda</a></figure><figure id="cd45d9c9-a10c-49d5-ae31-724d2c4174da" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Morometii%20(Caracterizare%20Ilie)%20-%20Marin%20Preda%20cd45d9c9a10c49d5ae31724d2c4174da.html"><span class="icon">🚬</span>Morometii (Caracterizare Ilie) - Marin Preda</a></figure><p id="ece73400-d8f7-4f23-92d1-6f2cdec94394" class="">
+</p><p id="a37fca52-3d60-4fde-b83e-65fa120f22e0" class=""><strong>Poezie</strong></p><figure id="683093c9-25cb-47f8-af09-1d6dd83143e8" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Luceafarul%20-%20Mihai%20Eminescu%20683093c925cb47f8af091d6dd83143e8.html"><span class="icon">🌟</span>Luceafarul - Mihai Eminescu</a></figure><figure id="ccb1f5c1-364f-4a14-ab2e-bab7e3ae85e0" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Plumb%20-%20George%20Bacovia%20ccb1f5c1364f4a14ab2ebab7e3ae85e0.html"><span class="icon">🪨</span>Plumb - George Bacovia</a></figure><figure id="0dacb3da-f2c9-4b45-8aa1-3db5b18f74de" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Flori%20de%20mucigai%20-%20Tudor%20Arghezi%200dacb3daf2c94b458aa13db5b18f74de.html"><span class="icon">🤮</span>Flori de mucigai - Tudor Arghezi</a></figure><figure id="821841f9-13b7-4736-b7e4-1cec389d41d7" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Eu%20nu%20strivesc%20corola%20de%20minuni%20a%20lumii%20-%20Lucian%20B%20821841f913b74736b7e41cec389d41d7.html"><span class="icon">🏵️</span>Eu nu strivesc corola de minuni a lumii - Lucian Blaga</a></figure><figure id="cf0ea91b-2548-4f2c-a5de-e684b674d71c" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Riga%20Crypto%20si%20Lapona%20Enigel%20-%20Ion%20Barbu%20cf0ea91b25484f2ca5dee684b674d71c.html"><span class="icon">🍄</span>Riga Crypto si Lapona Enigel - Ion Barbu</a></figure><figure id="241d9e16-dabf-4cc9-8bb6-89523ba52a7c" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Leoaica%20tanara,%20iubirea%20-%20Nichita%20Stanescu%20241d9e16dabf4cc98bb689523ba52a7c.html"><span class="icon">🦁</span>Leoaica tanara, iubirea - Nichita Stanescu</a></figure><figure id="ca4cbbcd-02e9-4161-bd39-ec9435d4c8b3" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Aci%20sosi%20pe%20vremuri%20-%20Ion%20Pillat%20ca4cbbcd02e94161bd39ec9435d4c8b3.html"><span class="icon">⏪</span>Aci sosi pe vremuri - Ion Pillat</a></figure><p id="265ad764-e90b-4709-a465-7657887043da" class="">
+</p><p id="c4423241-b06c-45f7-bdab-82e1a4c99821" class=""><strong><strong><strong><strong><strong><strong><strong>Teatru</strong></strong></strong></strong></strong></strong></strong></p><figure id="b8f95427-27ed-4a17-8998-f665de848cc2" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Chirita%20in%20provincie%20-%20Vasile%20Alecsandri%20b8f9542727ed4a178998f665de848cc2.html"><span class="icon">🍞</span>Chirita in provincie - Vasile Alecsandri</a></figure><p id="331aa3d6-50f5-4ceb-80b0-b5fc64d9e35f" class="">
+</p><figure id="95120272-9ee2-47b3-bb4d-f48d37bfe151" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/O%20scrisoare%20pierduta%20-%20Ion%20Luca%20Caragiale%20951202729ee247b3bb4df48d37bfe151.html"><span class="icon">💌</span>O scrisoare pierduta - Ion Luca Caragiale</a></figure><figure id="69512eb0-3884-457d-8823-dc95917af0dc" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/O%20scrisoare%20Pierduta%20(Nae%20carac)%20-%20Ion%20Luca%20Caragi%2069512eb03884457d8823dc95917af0dc.html"><span class="icon">💌</span>O scrisoare Pierduta (Nae carac) - Ion Luca Caragiale</a></figure><p id="78cff597-9200-41f2-9277-1680c381f733" class="">
+</p><figure id="c1cfd851-b41d-4fa7-b18d-8309b6643606" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Iona%20-%20Marin%20Sorescu%20c1cfd851b41d4fa7b18d8309b6643606.html"><span class="icon">🐳</span>Iona - Marin Sorescu</a></figure><figure id="95a24b7e-0183-431b-9447-f53afeff5af8" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Iona%20(caracterizare)%20-%20Marin%20Sorescu%2095a24b7e0183431b9447f53afeff5af8.html"><span class="icon">🐳</span>Iona (caracterizare) - Marin Sorescu</a></figure><p id="a0333efb-e470-4d3e-8f0e-9880f329d9d5" class="">
+</p><p id="0193376f-86d0-4cd6-93ae-857fbf03b7d2" class=""><strong>Altele</strong></p><figure id="3ed3098e-4f42-42d0-b43d-54e22459123e" class="link-to-page"><a href="Scheme%20Romana%20f16045a419a649aa939c3097ee8d1632/Junimea%203ed3098e4f4242d0b43d54e22459123e.html"><span class="icon">🎠</span>Junimea</a></figure><h1 id="e33588ff-1940-41fc-a769-09696c856e06" class="">Lista opere</h1><p id="4e0566cb-e3e0-4287-bcad-82dc309748e5" class=""><strong>Opere in bac:</strong></p><ul id="099d6d7c-5e52-4138-95bb-1848bf79e013" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong>Poezie</strong></strong></strong><ol type="1" id="975d058f-09c4-4318-8d71-9fa8a7a47ef2" class="numbered-list" start="1"><li>Luceafarul</li></ol><ol type="1" id="071f325b-22f8-4ee0-9a96-35497a026294" class="numbered-list" start="2"><li>Plumb</li></ol><ol type="1" id="4012e461-2d1c-4e60-9901-92d4bea7fd11" class="numbered-list" start="3"><li>Flori de mucigai</li></ol><ol type="1" id="83cf3908-630a-4cda-a0f0-79e44baa42b4" class="numbered-list" start="4"><li>Eu nu strivesc</li></ol><ol type="1" id="a050432f-0710-4c0f-9b69-c4dc5cef1336" class="numbered-list" start="5"><li>Riga Crypto</li></ol><ol type="1" id="e5c76fab-6892-4773-bc3c-63c4fa48e2b1" class="numbered-list" start="6"><li>Aci sosi pe vremuri</li></ol><ol type="1" id="f5c658be-8a8a-4efa-9948-2407636576d8" class="numbered-list" start="7"><li>Leoaica tanara</li></ol></li></ul><ul id="079e6591-5dbc-456d-8867-78391c60c8ac" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong>Teatru</strong></strong></strong></strong></strong></strong><ol type="1" id="3aa03e99-2854-4411-9283-c35c69d47632" class="numbered-list" start="1"><li>O scrisoare pierduta</li></ol><ol type="1" id="28bf1f89-5200-45eb-b3dd-a17350995189" class="numbered-list" start="2"><li>Iona</li></ol></li></ul><ul id="eb1d2a7d-18c7-4abf-9023-c78aeb4b3e8d" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong>Proza</strong></strong></strong></strong></strong><ol type="1" id="b2ab7a69-5945-44df-ba64-372d8145b2b2" class="numbered-list" start="1"><li>Harap Alb</li></ol><ol type="1" id="76d3b09e-5cee-4600-832f-c41e707ad180" class="numbered-list" start="2"><li>Moara cu Noroc</li></ol><ol type="1" id="314c44c5-9572-4d39-a3ef-44ec56cb7772" class="numbered-list" start="3"><li>(Lapusneanu)</li></ol><ol type="1" id="112c0050-d371-4222-93ec-b380201b07da" class="numbered-list" start="4"><li>(Baltagul)</li></ol><ol type="1" id="78b77084-e49b-47b5-a424-83bdea409d47" class="numbered-list" start="5"><li>Ion</li></ol><ol type="1" id="019ff431-642c-4443-818f-b32f523bd7bd" class="numbered-list" start="6"><li>Enigma Otiliei</li></ol><ol type="1" id="b16b9daf-b27d-47e3-9ae1-5e29ccae5715" class="numbered-list" start="7"><li>Ultima noapte</li></ol><ol type="1" id="ab9092d0-3ea7-41f1-9cdb-e364a5bdeac4" class="numbered-list" start="8"><li>Morometii</li></ol></li></ul><p id="74cfa818-f888-4043-8a7e-b9b31d1cf404" class="">
+</p><p id="ab73c0f1-556f-4aa0-aa2c-1b28b2041935" class="">
+</p><h1 id="9a4b1aba-25d7-4148-aad4-58c1c76eab9c" class="">Curente</h1><p id="3191a88e-7249-4cda-a65b-d90168afb0a7" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Marii clasici:</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><ul id="27c73db7-8aa1-49c0-866b-e9f6f1cca34e" class="bulleted-list"><li style="list-style-type:disc">Slavici</li></ul><ul id="c55ca116-5304-4764-8933-178b5f7b4216" class="bulleted-list"><li style="list-style-type:disc">Eminescu</li></ul><ul id="c620f0b4-64e5-4d5e-983f-9d7ae4d5afcb" class="bulleted-list"><li style="list-style-type:disc">Creanga</li></ul><ul id="239d0ff7-ff7c-4978-8922-db448b83953b" class="bulleted-list"><li style="list-style-type:disc">Caragiale</li></ul><p id="bb81c706-5a56-450d-b3a6-462a6050b10b" class="">
+</p><p id="9eb71444-48c2-42d5-9cf2-7b21b4ea73ed" class=""><strong>Poeti moderni:</strong></p><ul id="7c8865de-10b9-4e7c-bfeb-4961618f76e2" class="bulleted-list"><li style="list-style-type:disc">Arghezi</li></ul><ul id="c3c9586d-b776-44d1-b2ac-ee264b000273" class="bulleted-list"><li style="list-style-type:disc">Bacovia</li></ul><ul id="10a98791-91ec-48cb-813d-35b20bf139d4" class="bulleted-list"><li style="list-style-type:disc">Barbu</li></ul><ul id="97404723-19c0-4b42-9abd-a29af46a41f9" class="bulleted-list"><li style="list-style-type:disc">Blaga</li></ul><p id="f3004834-be9a-421d-9b09-2738ec03f702" class="">
+</p><p id="2c47cd88-f0e1-4db6-aaf0-249b6786a0bb" class=""><strong>Traditionalist</strong>: Ion Pillat</p><p id="9133b78e-18a9-4639-a828-805fef75f53f" class=""><strong>Postmodern</strong>: Nichita Stanescu</p><p id="ddf0f660-2bdb-4f9b-8124-106901128afa" class="">
+</p><h1 id="4190e97a-1411-46ac-97dc-995efd4c0f7a" class="">Timeline:</h1><p id="19345ee4-e201-4f4a-a0fe-adf38f96f21f" class=""><mark class="highlight-pink">proza</mark>, <mark class="highlight-yellow">poezie</mark>, <mark class="highlight-blue">teatru</mark></p><ul id="c2cd64dc-748f-4d64-8f42-9404b75749e3" class="bulleted-list"><li style="list-style-type:disc"><strong>1840</strong>: <mark class="highlight-pink">Alexandru Lapusneanul</mark>, Costache Negruzzi</li></ul><ul id="a71a76d9-926f-482b-b055-2f8b89b83b16" class="bulleted-list"><li style="list-style-type:disc"><strong>1877</strong>: <mark class="highlight-pink">Povestea lui Harap-Alb</mark>, Ion Creanga</li></ul><ul id="2b17e3b9-6427-406d-b7ea-cb91f08f61ef" class="bulleted-list"><li style="list-style-type:disc"><strong>1881</strong>: <mark class="highlight-pink">Moara cu noroc</mark>, Ioan Slavici</li></ul><ul id="510eee6a-2351-4e0c-a442-ae52894899f1" class="bulleted-list"><li style="list-style-type:disc"><strong>1883</strong>: <mark class="highlight-yellow">Luceafarul</mark>, Mihai Eminescu</li></ul><ul id="a71988e6-d131-43d9-a3e6-17402a6e649a" class="bulleted-list"><li style="list-style-type:disc"><strong>1883</strong>:<mark class="highlight-blue"> O scrisoare pierduta</mark>, I.L. Caragiale</li></ul><ul id="0bbeb610-877f-463f-8a3e-f694e22bae51" class="bulleted-list"><li style="list-style-type:disc"><strong>1916</strong>: <mark class="highlight-yellow">Plumb</mark>, George Bacovia</li></ul><ul id="e38d17ca-d9ed-4285-bc3d-bda9ef0ddf05" class="bulleted-list"><li style="list-style-type:disc"><strong>1919</strong>: <mark class="highlight-yellow">Eu nu strivesc corola de minuni a limii</mark>, Lucian Blaga</li></ul><ul id="69223e2d-b3c2-4c5a-aa4e-17c304ab0658" class="bulleted-list"><li style="list-style-type:disc"><strong>1920</strong>: <mark class="highlight-pink">Ion</mark>, Liviu Rebreanu</li></ul><ul id="ba0a22ef-272c-40d1-bded-454459c6b892" class="bulleted-list"><li style="list-style-type:disc"><strong>1923</strong>: <mark class="highlight-yellow">Aci sosi pe vremuri</mark>, Ion Pillat</li></ul><ul id="190bd2ab-d5ce-4b87-8911-54b9a0cd627a" class="bulleted-list"><li style="list-style-type:disc"><strong>1927</strong>: <mark class="highlight-yellow">Flori de mucigai</mark>, Tudor Arghezi</li></ul><ul id="42cc6712-d6c6-4620-8bc3-b68f7afd5e8b" class="bulleted-list"><li style="list-style-type:disc"><strong>1930</strong>: <mark class="highlight-yellow">Riga Crypto si lapona Enigel</mark>, Ion Barbu</li></ul><ul id="5bfcd959-7d3a-4743-aa2a-2a6c4cf81d15" class="bulleted-list"><li style="list-style-type:disc"><strong>1930</strong>: <mark class="highlight-pink">Ultima noapte de dragoste, intaia noapte de razboi</mark>, Camil Petrescu</li></ul><ul id="5cc40090-fe69-4901-9f8f-cd725a912c8d" class="bulleted-list"><li style="list-style-type:disc"><strong>1930</strong>: <mark class="highlight-pink">Baltagul</mark>, Mihail Sadoveanu</li></ul><ul id="2be7a42e-0864-48b0-95cb-477dbe4ba31b" class="bulleted-list"><li style="list-style-type:disc"><strong>1938</strong>: <mark class="highlight-pink">Enigma Otiliei</mark>, George Calinescu</li></ul><ul id="a81bcef2-8f3c-4b08-aa83-6992db976264" class="bulleted-list"><li style="list-style-type:disc"><strong>1955</strong>: <mark class="highlight-pink">Morometii</mark>, Marin Preda</li></ul><ul id="afa7b20c-e6d2-4ba2-a7fd-08dfead1a028" class="bulleted-list"><li style="list-style-type:disc"><strong>1964</strong>: <mark class="highlight-yellow">Leoaica tanara, iubirea</mark>, Nichita Stanescu</li></ul><ul id="be311a55-dcf1-481b-b456-647eb9e8e125" class="bulleted-list"><li style="list-style-type:disc"><strong>1968</strong>: <mark class="highlight-blue">Iona</mark>, Marin Sorescu</li></ul><p id="e4795e23-574e-46fb-8812-ab7ac90866bf" class="">
+</p><p id="d5a10d88-8f1a-4798-8c2d-5bdd622a8b6c" class="">
+</p><p id="33f93bfa-8f9e-4f29-b434-72a68454b080" class="">
+</p></div></article></body></html>
