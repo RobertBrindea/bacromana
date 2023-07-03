@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Morometii (Caracterizare Ilie) - Marin Preda</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="cd45d9c9-a10c-49d5-ae31-724d2c4174da" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🚬</span></div><h1 class="page-title">Morometii (Caracterizare Ilie) - Marin Preda</h1><p class="page-description"></p></header><div class="page-body"><p id="0974c139-4f5a-45b6-ba43-94349540d444" class="">
+</p><nav id="7ccfa738-910c-4422-961c-5c2846401fee" class="block-color-orange table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#acbc656f-f949-40e4-85e4-35fe560ad8ff">1a Statut economic si social (taran mijlocas, mij ierarhiei sociale, sit materiala relativ  buna)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c57f0753-6525-4a64-8a47-c340c9a768c8">1b Statut moral, psihologic (evolutie)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a6a23151-3962-4b97-8ee0-417bfd36314e">3a Rel cu alte personaje, spectacol, rel cu statul</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#09d0bab7-1910-42df-9c94-47e7b63ac10c">3b Particularitate moderna - monologul interior (car ind) + antiteza Balosu</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#551cd1a5-8284-4839-b957-88c03ed9d106">2a Cina</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7441eb9f-f2ae-46d9-831b-6c11fe0d2cbf">2b Taierea salcamului</a></div></nav><p id="19af0c64-67f2-41f8-b353-afde3edc265e" class="">
+</p><p id="bb0fb625-5cc8-4613-b34c-5a6554ea5d2b" class=""><strong>I</strong></p><ul id="50189ca2-5a0c-4488-af73-3b3c8ea425d3" class="bulleted-list"><li style="list-style-type:disc">perioada postbelica: romanul → schimbari ideologice (”obsedantul deceniu) = nota propagandista + comandamente extraestetice ⇒ lipsa de val in lit.</li></ul><ul id="56b45460-7c7f-4193-84a3-1db1f261c7b9" class="bulleted-list"><li style="list-style-type:disc">1955 (vol 1) = val artistica:<ul id="b73e6ba6-f5f1-4eac-bb08-d17feadd9d1c" class="bulleted-list"><li style="list-style-type:circle">perspectiva moderna asupra tematicii rurale</li></ul><ul id="85479b3f-8d9c-42fc-a0ee-edf2f7237693" class="bulleted-list"><li style="list-style-type:circle">iesit din linia propagandistica</li></ul><ul id="cab8eccd-b043-481a-b1b3-e0577307884f" class="bulleted-list"><li style="list-style-type:circle"><strong>roman obiectiv, realism postbelic (neorealism)</strong></li></ul><ul id="08718378-d80b-4129-babe-100785aef681" class="bulleted-list"><li style="list-style-type:circle"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>valoros prin: un nou tip uman, nu dominat de instinct (Rebreanu) - ci “taranul filozof”, construit in maniera realista</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul></li></ul><p id="37a64d66-c4aa-4874-b4ef-d7931bf3d14d" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1a Statut economic si social (taran mijlocas, mij ierarhiei sociale, sit materiala relativ  buna)</summary><div class="indented"><ul id="c3928407-32d4-44fb-88ff-b9570e94d430" class="bulleted-list"><li style="list-style-type:disc">relativ instaritit, dar depedenenti de capriciile vremii (recolta, vanzare)</li></ul><ul id="66511c4a-7e59-43d1-8182-80fc96671ad1" class="bulleted-list"><li style="list-style-type:disc"><strong>probleme materiale:</strong> cresterea copiilor (fete - zestre, baietii - neimpliniti in sat, Niculae - scoala) + fonciirea ratele la banca</li></ul><ul id="0d69422a-2e56-41b3-88c6-5bf36369127f" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>starea materiala = strict legata de pamant</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> </li></ul><ul id="47a476da-d7c1-40ec-b4ad-99e65dd70ef8" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong>pamant</strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong>=</strong></strong></strong></strong></strong></strong><ul id="4e7f81c2-2e43-439b-bb2d-f52d08ef4187" class="bulleted-list"><li style="list-style-type:circle">mijloc de a asigura traiul, <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>de a pastra coeziunea</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="9882e1ff-5d09-4e9b-aef9-035730e3c10e" class="bulleted-list"><li style="list-style-type:circle">garantia ca poate gandi liber</li></ul><ul id="0d6ad65b-669a-4a1a-a6de-38ee636a9f04" class="bulleted-list"><li style="list-style-type:circle">nu e un scop in sine</li></ul></li></ul><ul id="01442146-5a09-4072-ba79-0a9af568933f" class="bulleted-list"><li style="list-style-type:disc"><strong>→ nu va intelege decizia fiilor de a trai la oras, inghesuiti in maghernite muncitoresti</strong></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1b Statut moral, psihologic (evolutie)</summary><div class="indented"><ul id="8cd4eed6-83c6-4817-b13e-de934068c199" class="bulleted-list"><li style="list-style-type:disc"><strong>fire statornica, traieste o drama care il darama</strong> (fuga copiilor → ii rastoarna intregul mod de a se raporta la lume)</li></ul><ul id="7c3a80fd-76fd-4cd4-9fbd-3dbdaeab4bbe" class="bulleted-list"><li style="list-style-type:disc">Traieste un <strong>zbucium interior</strong>, se reflecta in:<ul id="8e216501-aa23-4e67-bae4-e7ceece8219a" class="bulleted-list"><li style="list-style-type:circle"><strong>fizionomie </strong>(<mark class="highlight-purple">”fata i se ascutise si i se innegrise, iar in cele cateva minute parca se subtiase”</mark>)</li></ul><ul id="1b122e41-9db5-44dd-a639-81d365c4f46e" class="bulleted-list"><li style="list-style-type:circle"><strong>glas </strong>(<mark class="highlight-purple">”tulbure si insingurat”</mark>)</li></ul></li></ul><ul id="f95eef76-6bb1-43f3-ab5e-f48d5f5fbd08" class="bulleted-list"><li style="list-style-type:disc"><strong>rezilienta de caracter</strong><ul id="a07e5747-b23d-442a-bc99-0a51f5894435" class="bulleted-list"><li style="list-style-type:circle">pana la moarte, are credinta ca <mark class="highlight-purple">“omul trebuie sa tina la rostul sau”</mark> indiferent ce se alege de acesta</li></ul><ul id="27ead237-967b-44fd-8752-b290d43346ea" class="bulleted-list"><li style="list-style-type:circle"><strong>convins ca modul sau de a gandi e cel corect</strong></li></ul><ul id="f2e32245-cda8-4b93-bc23-75da79ffcfcb" class="bulleted-list"><li style="list-style-type:circle">replica finala <mark class="highlight-purple">“Domnule, eu intotdeauna am dus o viata independenta”</mark> →<strong> orgoliul persj in ciuda neputintei; libertate de gandire</strong></li></ul></li></ul></div></details><p id="b60d1b49-fb02-443d-9178-538024a8d4c0" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3a Rel cu alte personaje, spectacol, rel cu statul</summary><div class="indented"><ul id="49d93617-7ec2-434f-946a-bf04ebaacb10" class="bulleted-list"><li style="list-style-type:disc">treptat, acumulari succesive de episoade<strong> </strong><mark class="highlight-orange"><strong>il raporteaza pe Ilie la dif figuri tipice ale satului</strong></mark><strong>, dezvaluindu-i conceptia despre:</strong><ul id="3bb66943-a6b7-43f7-9ffa-a01ab3a52688" class="bulleted-list"><li style="list-style-type:circle"><strong>viata si rostul taranului </strong></li></ul><ul id="49a6bd90-4f76-4b98-bb82-e11467b46177" class="bulleted-list"><li style="list-style-type:circle">placerea de a <strong>contempla lumea</strong></li></ul><ul id="f4e31ae0-9410-4bfb-8adc-7f7c640648a1" class="bulleted-list"><li style="list-style-type:circle"><strong>spiritul ludic, sociabilitatea</strong></li></ul><ul id="f76b503a-adaf-4cb4-952d-7e9e69aa9e4b" class="bulleted-list"><li style="list-style-type:circle"><strong>inteligenta ascutita, replicile ironice, simtul umorului</strong></li></ul></li></ul><ul id="32382e6c-a98c-40f4-aa85-58023ca7046e" class="bulleted-list"><li style="list-style-type:disc">traieste admirand <mark class="highlight-orange"><strong>spectacolul vietii</strong></mark>, fie stand pe podisca, fiind doar <strong>martor</strong>, fie fiind <strong>actor</strong>, alteori <strong>regizor </strong><mark class="highlight-purple"><strong>(scena cu fasolea fierbintea)</strong></mark></li></ul><ul id="43af6cd4-06ee-417d-afc6-764548a709c1" class="bulleted-list"><li style="list-style-type:disc"><strong>pozitie privilegiata in sat -</strong> asteptat ca un artist sa <strong>citeasca ziarul</strong>; constient de acest rol, il disimuleaza cu umor (<mark class="highlight-purple">”ce v-ati adunat, ba aicea?”</mark>)</li></ul><ul id="1be4f7c6-88a1-4674-9f11-c84b559ae34a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>relatia cu statul/autoritatile</strong></mark><strong>:</strong> confruntarea verbala cu Jupuitu (agent fonciire)<ul id="c7b991fe-8bc1-43a9-9f29-34513ab4bbfc" class="bulleted-list"><li style="list-style-type:circle">Ilie joaca o comedie a inocentei: desi stie ca nu are cum sa plateasca, il lasa sa taie chitanta → <strong>scena = spirit ludic</strong></li></ul><ul id="ffb141c3-639d-4c98-b7cf-af9662bc202d" class="bulleted-list"><li style="list-style-type:circle"><strong>mimeaza nevinovatia </strong>(<mark class="highlight-purple">”nu ti-am spus ca n-am?”</mark>) - <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>talent actoricesc, </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>iluzia ca datoria va fi stearsa din nou ⇒ <mark class="highlight-orange"><strong>autoiluzionare (tras fundamentala pt persj) </strong></mark> ⇒<strong> crede ca timpul e rabdator, ca familia il intelege, ca baietii au aceleasi val</strong></li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3b Particularitate moderna - monologul interior (car ind) + antiteza Balosu</summary><div class="indented"><ul id="300c27ea-01d9-4cbe-b245-1944c77c14fc" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong><strong><strong><strong><strong>persj reflexiv, gandeste asupra existentei, viata interioara profunda </strong></strong></strong></strong></strong></mark><ul id="523f206a-1130-48e3-87cc-b82d468c4839" class="bulleted-list"><li style="list-style-type:circle"><strong>conceptie de viata</strong>:  <mark class="highlight-purple">“insul care este doar activ nu intelege nimic din viata”</mark></li></ul><ul id="e1125df7-ef64-4d69-8abc-0593266a7607" class="bulleted-list"><li style="list-style-type:circle"><strong>acuzat de pasivitate</strong>: Catrina:<mark class="highlight-purple"> “lovi-o-ar moartea de vorba, Ilie” </mark>+ <strong>repros</strong>:<mark class="highlight-purple"> “stai toata ziua si beai tutun”</mark></li></ul><ul id="566fb30c-45e8-406b-a981-363ef3e1295b" class="bulleted-list"><li style="list-style-type:circle"><strong><strong>constiinta superioritatii</strong></strong> - se retrage in gradina, refuzul de a vorbi cu cineva (<mark class="highlight-purple">”nimeni nu merita sa-i asculte gandurile”</mark>)</li></ul></li></ul><ul id="44e05297-b68e-42a8-a1a2-f5c4b0378066" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-orange">secv importanta</mark></strong><mark class="highlight-orange">: </mark>secv in care mediteaza pe marginea lotului, dupa fuga fiilor, revelatoare pentru starile interioare:<mark class="highlight-purple"> “timpul pe care il crezuse rabdator si lumea, pe care o crezuse prietena … ascunsesera de fapt o capcana… ii salbaticise copiii si ii asmutise impotriva lui”</mark></li></ul><ul id="d91f9ebf-74e6-4065-a234-2b25dc80e15d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong><strong>conturat prin antiteza: ep vanzarii granelor, </strong></strong></mark><strong><strong>2 filozofii de viata diferite</strong></strong><ul id="ebc9d727-d26c-439d-93e5-ae763e2b5fb0" class="bulleted-list"><li style="list-style-type:circle"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Balosu:</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> <mark class="highlight-purple">“castiga bani frumosi” </mark>(negot), chiabur obsedat de imbogatire, admirat de fii, <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>strict comert profitabil, fara inima, nu vinde muntencei, pret cat mai mare</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="285fcded-bf47-4ad1-84d7-47e36419c191" class="bulleted-list"><li style="list-style-type:circle"><strong><strong><strong><strong><strong>Ilie:</strong></strong></strong></strong></strong> drumul in munti = o experienta de viata fascinanta; impresionat de indarjirea si spectacolul muntencei, asa ca ii vinde granele, desi pret mai mic</li></ul></li></ul><p id="50eb37ff-4866-424d-9898-c6b579cbdb25" class="">
+</p><p id="4f507d27-60e2-4c73-841d-7487a9fecfba" class="">
+</p></div></details><p id="a56aa2cc-a028-4bda-96a2-75cbb33b12ef" class="">
+</p><div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2a Cina</summary><div class="indented"><ul id="62dbdba9-d090-4ba3-b8a4-8c81a9cf0fa5" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>carac repetitiv, ritualic</strong></mark> = mod trad de a fi</li></ul><ul id="08f98270-63dc-4eb8-9c1d-39893fc4306a" class="bulleted-list"><li style="list-style-type:disc">se deruleaza lent, <strong>multe detalii</strong> <ul id="cfb3acd0-9e72-4d32-bb22-0acbb2d4dc02" class="bulleted-list"><li style="list-style-type:circle">schimbul de <strong>priviri</strong> intre <strong>baietii cei mari</strong></li></ul><ul id="b0c57c33-851e-4b41-9f48-46d279e9b1fc" class="bulleted-list"><li style="list-style-type:circle"><strong>tonul</strong> ironic-amenintator al <strong>tatalui</strong></li></ul><ul id="c177b596-b952-4ede-a3a9-23f7233662a5" class="bulleted-list"><li style="list-style-type:circle">dispretul <strong>fetelor</strong> fata de dorinta <strong>Niculae scoala</strong></li></ul><ul id="7e719174-1f9f-420e-ba3c-0dd4bcb2c8ce" class="bulleted-list"><li style="list-style-type:circle">mahnirea <strong>mamei</strong></li></ul><ul id="b84b6741-eb25-4696-a0a2-47efe6770433" class="bulleted-list"><li style="list-style-type:circle">→ <mark class="highlight-orange"><strong>prefigureaza conflicte</strong></mark><strong>, dezvaluie relatiile dintre persj, profil psihologic si moral al Morometilor</strong></li></ul></li></ul><ul id="9f94cece-c863-4a6f-99f4-4e23aa80649f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong><strong><strong><strong>asezarea </strong></strong></strong></strong></mark><strong><strong><strong><strong>= simbolica, anticipativa</strong></strong></strong></strong><ul id="2fbfb340-1100-45fa-bff7-1545a2059e41" class="bulleted-list"><li style="list-style-type:circle">cei 3 baieti - spre usa, <mark class="highlight-purple">“gata in orice moment sa se scoale de la masa si sa plece afara”</mark></li></ul><ul id="73f72a1e-7231-4404-8148-c4136a01657e" class="bulleted-list"><li style="list-style-type:circle">tatal - pe pragul dintre cele 2 odai, “deasuprea tuturor”, “parea ca-i stapaneste cu privirea pe ceilalti” → = <strong>centrul tuturor tensiunilor, ipostaza </strong><mark class="highlight-orange"><strong>pater familias</strong></mark><strong>, autoritate inca neclintita, pare a domina familia cat si pornirile divergente ale fiilor</strong></li></ul></li></ul><ul id="287e38e5-d331-49c9-9063-3d3b8beef53a" class="bulleted-list"><li style="list-style-type:disc"><strong>cina - locul confruntarii unor mentalitati divergente care vor duce la frag fam; se prefigureaza 3 conflicte: </strong><ul id="b336937f-879a-49de-ad64-19bc6833a327" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange"><strong>Moromete </strong></mark><strong>(pamant = reper fundamental)</strong> vs <mark class="highlight-orange"><strong>cei 3 fii</strong></mark><mark class="highlight-orange"> </mark>(viitor diferit, departe de sat, banul = val, numiti de Ilie “bolnavi de avere”) → conflict incheiat prin plecare celor 2 baieti</li></ul><ul id="8ecfe428-3caa-4176-9a84-0c3f9f89b71c" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange"><strong>Moromete </strong></mark><strong>vs </strong><mark class="highlight-orange"><strong>Catrina </strong></mark>(casa pe numele ei = asigurarea batranetii)</li></ul><ul id="e6daa9df-a016-4d38-8d72-346b92d07dd4" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange"><strong>Moromete</strong></mark> (scoala = moft, niciun beneficiu) vs <strong><mark class="highlight-orange">Niculae </mark></strong>→ <strong>ruptura ireversibila</strong> (vol 2, Niculae refuza dialogul) → sugereaza conflictul om-istorie</li></ul></li></ul></div></details></div><div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2b Taierea salcamului</summary><div class="indented"><ul id="a73d9466-0788-4e3f-99e6-d8a8cf210627" class="bulleted-list"><li style="list-style-type:disc"><strong>motiv</strong>: pt al vinde lui balosu, achitarea unei parti din datorii fara a vinde oile (<mark class="highlight-orange"><strong>totul pentru baieti</strong></mark>, desi nila nu intelege situatia si gravitatea acesteia)</li></ul><ul id="d2856268-9dc3-405a-a8ae-464d75537fe3" class="bulleted-list"><li style="list-style-type:disc">duminica dimineata, pe fondul bocetelor din cimitir → <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>valentele unui ritual sacrificial</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="aa405c55-d021-4ad3-b254-158bbd3f8b73" class="bulleted-list"><li style="list-style-type:disc">croncanit de ciori → <strong>caracter funest, sinistru</strong></li></ul><ul id="62b830bd-ca62-494f-9016-855beeb3c006" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>salcamul</strong></mark><ul id="d1c11ea8-57b8-473a-8f6d-78d0bd70d0c5" class="bulleted-list"><li style="list-style-type:circle">simbol al <strong>gospodariei trad</strong></li></ul><ul id="b282c88a-bd52-44f8-bae7-f3fb8d30ed7d" class="bulleted-list"><li style="list-style-type:circle">parea a proteja cu coroana sa intreg satul →<mark class="highlight-orange"> </mark><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>axis mundi, martor</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong> </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>mut </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>al intregii istorii a satului</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="add844e3-a98c-48be-b615-c568004c1b83" class="bulleted-list"><li style="list-style-type:circle">doborarea lui → <strong>anticipeaza declinul lui Moromete</strong> (<mark class="highlight-purple">Eugen Simion: salcamul = “dublul vegetal”</mark> al eroului)</li></ul></li></ul><ul id="ea5960aa-5ce8-4870-acb0-8bd2c2661962" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-purple">“campia parea sa navaleasca in sat”</mark> → istoria distructiva care navaleste; eroul si satul sunt modificati fundamental</li></ul><ul id="83292513-cbfc-436a-a999-5484a1f4b71a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>prabusirea </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>=  marcheaza simbolic distrugerea familiei dar si a lumii satului</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="a967d922-87d7-4699-827b-64d151e80f0a" class="bulleted-list"><li style="list-style-type:disc"><strong>declinul lui Moromete, imag unui om infrant de istorie</strong>, pierzandu-si autoritatea, fiul observand : <mark class="highlight-purple">“ii ia altul vorba din gura fara niciun respect, si el lasa fruntea in jos si nu mai zice nimic” </mark>→ <strong>simbolic pt declinul unei intregi categorii (taranul)</strong></li></ul></div></details></div><p id="032ac9e2-de1d-430f-8694-133d6592ceba" class="">
+</p><p id="985f4d0d-943d-47a1-979b-2e48bd4c264c" class=""><strong>Concluzie</strong>: deruralizarea satului, disparitia taranului; viziune realista asupra dramei colectivitatii; lumea satului surprinsa in destramare prin pierderea valorilor; </p><p id="d2328c8e-325a-4c49-be29-5703c3d12377" class=""><strong>destinul lui moromete </strong></p><ul id="6ad7dc4c-6195-473f-bf1c-697fb4fc7972" class="bulleted-list"><li style="list-style-type:disc">identic cu al categoriei din care face parte</li></ul><ul id="326c0e4e-5ae7-436e-8573-1f4eb080a443" class="bulleted-list"><li style="list-style-type:disc">drama individuala se subscrie dramei colective</li></ul><ul id="1627be80-4eb0-4459-8ad3-a6d522807ec3" class="bulleted-list"><li style="list-style-type:disc">traita de un ins inteligent, capabil sa analizeze</li></ul><p id="98c07c6d-c6d1-4b98-8f67-39e4edee43ac" class=""><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Moromete = cel mai tulburator persj al romanului rural romanesc, tragic prin impotrivirea in fata destinului</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark></p></div></article></body></html>

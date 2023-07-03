@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Ion - Liviu Rebreanu</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b77eb897-cdb4-4052-ab6a-abdfa3fd0c0f" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🧑‍🌾</span></div><h1 class="page-title">Ion - Liviu Rebreanu</h1><p class="page-description"></p></header><div class="page-body"><nav id="dfc9c5f9-c04a-4b3c-946a-ef57628f623d" class="block-color-orange table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#08a74682-ab1e-47b2-8dd3-a3cab6376cf5">1a Realist = Verosimilitate, sursa biografica a personajelor</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2d645d99-6264-4b06-9d30-12ce046cb4bf"><strong><strong><strong><strong><strong>1b Obiectiv = Perspectiva nar obiectiva + titluri cap</strong></strong></strong></strong></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8abdaaa2-22ed-4acc-8bb6-91075159c560">3a Rel incipit-fin (drum, titluri cap, 2 parti)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4b37aa39-2d25-482e-8309-695dc92f9266">3b Conflict + planuri (personaje tip, Ion = liant)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#240de2cb-8ec2-4c40-aa37-337c8836c8b4">2a Scena horei (iubire + monografie)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e97a05b3-09b3-4f13-bf7a-6fdbb3bb6a3a">2b Scena sarutului (obsesie pt pamant)</a></div></nav><p id="2221292d-9c78-438b-9d3a-686d084d770d" class="">
+</p><p id="481c5b5d-d40a-4f35-b17f-6ca2c5a31804" class="">Intro</p><ul id="ad75b66e-fa7c-48d0-9f11-c7b2eb97cb1b" class="bulleted-list"><li style="list-style-type:disc">prin Ion <strong>(1920)</strong> este consacrat <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>romanul realist obiectiv</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> romanesc, text de referinta in proza romaneasca prin<ul id="ed655a33-4e0a-40c6-82ec-10b342bddff7" class="bulleted-list"><li style="list-style-type:circle">reprezentare veridica a realitatii</li></ul><ul id="c2563b8d-ace9-46a2-896d-80eda30a8824" class="bulleted-list"><li style="list-style-type:circle">absenta idealizarii persj</li></ul><ul id="b526d534-6b49-4079-a93b-ba44b0cef3bb" class="bulleted-list"><li style="list-style-type:circle">om = produs al mediului</li></ul></li></ul><p id="1edfdfc7-6b9d-4425-a442-eaf28eb24f26" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1a Realist = Verosimilitate, sursa biografica a personajelor</summary><div class="indented"><ul id="3dae8479-f351-4723-a83a-d509ffe25b33" class="toggle"><li><details open=""><summary>surse de inspriatie / geneza persj din biografie (<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>inv, Titu H, Ion Pop, Ana, scena sarutului)</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></summary><ul id="dff6a52c-708e-4331-8244-605bc34800a9" class="bulleted-list"><li style="list-style-type:disc">Rebreanu = n. in Ardeal (asuprire austro-ungara) → <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>intelege cond intelectualului transilvanean, privatiuni materiale si morale → </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>se reflecta in<mark class="highlight-orange"> inv Herdelea</mark></li></ul><ul id="80f691a3-1353-4d0a-848d-75453b557042" class="bulleted-list"><li style="list-style-type:disc">elanuri patriotice (<mark class="highlight-orange">Titu Herdelea</mark>) = ipostaza a scriitorului</li></ul><ul id="1b71c76d-14ce-420a-a1b6-7c12da80e407" class="bulleted-list"><li style="list-style-type:disc">persj central: bazat pe un tanar taran, <mark class="highlight-orange">Ion Pop, </mark>scriitorul uimit de patima flacaului pt pamant</li></ul><ul id="a3fac83e-1460-4bf1-b2cb-1d7cf9144027" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong><strong><strong>Ana</strong></strong></strong></mark><strong><strong><strong> = </strong></strong></strong>construita in jurul unei povestiri auzita despre o fata bogata insarcinata cu un flacau sarac</li></ul><ul id="e4dde4a1-2c2a-4b8b-b8df-2baf70596437" class="bulleted-list"><li style="list-style-type:disc">a marturisit la <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>scena sarutarii</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> cand iesise la vanatoare</li></ul></details></li></ul><ul id="13db842b-9b70-44ac-bf41-42798019d762" class="bulleted-list"><li style="list-style-type:disc">→ <mark class="highlight-orange"><strong>autenticitate</strong></mark>, construirea unei lumi <mark class="highlight-orange"><strong>verosimile</strong></mark></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><strong><strong><strong><strong><strong>1b Obiectiv = Perspectiva nar obiectiva + titluri cap</strong></strong></strong></strong></strong></summary><div class="indented"><ul id="740e3c6a-dbfe-4762-97d0-3584c14453d5" class="bulleted-list"><li style="list-style-type:disc">persp nar nonfocalizata = <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>narator obiectiv, omniprezent, omniscient</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="de88c063-5af2-4fb8-809f-22e35440ad91" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>omniscient</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>: observator, atent: </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>detaliaza datele lumii exterioare in amanunt + sufletul persj, reda ganduri, trairi (ex Ion: cu gandul la Florica, constient ca fara averea Anei destinul sau este ratat)</li></ul><ul id="eed2fae6-61f5-43f9-b23a-3d987263aed6" class="bulleted-list"><li style="list-style-type:disc">titluri cap (”Nunta”, “Copilul”, “Streangul”) - semne anticipative → fixeaza un destin si evolutie previzibile, logice = <mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>raport cauza efect</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark></li></ul></div></details><p id="c0995f03-7626-45d5-b10a-0ff30208cdb8" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3a Rel incipit-fin (drum, titluri cap, 2 parti)</summary><div class="indented"><ul id="765c131e-0bd2-4ae0-a76d-0bbbaeed2aaa" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>opera = “corp sferoid” - </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>simetrie, rel incipit-fin</li></ul><ul id="58ac0685-a246-4538-9071-a50c2d47ba33" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong>incipit/expozitiunea</strong></strong></strong></strong></strong></strong></strong></mark> = drumul care intra si iese din Pripas<ul id="71eb5bd5-c4bd-4880-bd2d-5a265be57893" class="bulleted-list"><li style="list-style-type:circle">drumul <mark class="highlight-purple">“trece podul, (…) spinteca satul, (…)alearga spre Bistrita si (…) da buzna in Pripas” </mark>- f() metatextuala - conexiune univers lector-opera</li></ul><ul id="7e9f3875-d95c-4f3a-9edf-44c78701b7f7" class="bulleted-list"><li style="list-style-type:circle">fixare in spatiu (toponimia: Somes, Jidovita, Bistrita - repere reale)</li></ul><ul id="c4c303d0-5462-4392-8743-777f645a7357" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-purple">“un Hristos de tinichea ruginita” </mark>- semn anticipativ</li></ul></li></ul><ul id="e06cfe23-c09e-44d1-9e8d-bccfa045dabb" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong>finalul inchis</strong></strong></strong></strong></strong></strong></strong></mark> = intreg sat adunat pt sfintirea noii biserici, tinerii jucand Somesana, intelectualii la banchetul in scoala<ul id="7ecdc849-9b63-464a-8a0f-7cebde2b8877" class="bulleted-list"><li style="list-style-type:circle">Img drumului: simetrica cu cea din incipit, devine simbol al destinului: <mark class="highlight-purple">“Peste zvarcolirile vietii vremea vine nepasatoare, stergand toate urmele” </mark></li></ul><ul id="504fbc8f-3d4f-4ef0-9877-b507d437ede5" class="bulleted-list"><li style="list-style-type:circle">impresia de univers inchis: titlurile cap “Inceputul”, “Sfarsitul”</li></ul></li></ul><ul id="cf821a1b-0c90-4da9-b2df-157d0e51b19b" class="bulleted-list"><li style="list-style-type:disc">echilibrul celor 2 parti - Glasul pamantului (6 cap) + Glasul iubirii (7 cap) → <strong>pondere egala ale dorintelor lui Ion</strong></li></ul><ul id="0f5550a6-3f8d-4eee-9e62-18a4c8f1d120" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>⇒ constructie riguroasa, principiul circularitatii si al simetriei, incipit = simetric cu finalul</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3b Conflict + planuri (personaje tip, Ion = liant)</summary><div class="indented"><ul id="fe56f08b-1125-4642-a86c-8e9dc699754c" class="bulleted-list"><li style="list-style-type:disc"><strong>2 planuri ale actiunii pe care se distribuie conflictele majore = o lume macinata de conflicte si stari tensionate</strong></li></ul><ul id="8824d53b-af9c-4ca5-a564-e7f98d3ce556" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>plan 1</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong> = conflict principal, social (drama vietii taranesti) = nevoie de pamant</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><ul id="b36c41ee-89e8-4666-b7dd-c5fb7d364efb" class="bulleted-list"><li style="list-style-type:circle">= lupta lui Ion al Glanetasului pentru pamanturile lui Vasile Baciu</li></ul></li></ul><ul id="aa7f11e8-171a-4eee-9ef3-f64a5c8e2ad9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>plan 2</strong></mark> = <strong>dimensiune nationala, destinul intelectualitatii rurale</strong><ul id="835943fe-fdd2-42c1-827b-c6fbf5274245" class="bulleted-list"><li style="list-style-type:circle">= dramele de constiinta ale inv Herdelea, obligat la compromis moral in fata autoritatilor austro-ungare</li></ul></li></ul><ul id="9f78298e-593a-4e72-b787-7d7abe6a246c" class="bulleted-list"><li style="list-style-type:disc">conflicte secundare: Ion - George; Ion - Simion Lungu; Herdelea - Belciug</li></ul><ul id="995fe554-71b9-4246-8071-1924d8a80d61" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>personaje tip, complexe, veridice:</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><ul id="ef41953a-00c1-4f36-9496-38b793033ab5" class="bulleted-list"><li style="list-style-type:circle">preotul <strong>Belciug </strong>= autritate morala a satului, orgolios</li></ul><ul id="8892c804-8cf0-4e77-ba3e-a3272ec243ae" class="bulleted-list"><li style="list-style-type:circle"><strong>Florica </strong>= fata saraca obligata sa se marite pe criteriu economic</li></ul><ul id="07a72140-d79f-4b5c-af91-3372e583600d" class="bulleted-list"><li style="list-style-type:circle"><strong>Zenobia </strong>si <strong>Alexandru </strong>Glanetasu = tarani saraci</li></ul><ul id="14db1a8d-f5f2-439f-b295-eb5bc66437d8" class="bulleted-list"><li style="list-style-type:circle"><strong>Ana </strong>= femeie trad, munca, copii si zestre</li></ul><ul id="39b922eb-a9ae-4586-9158-1d0ead3b8627" class="bulleted-list"><li style="list-style-type:circle"><strong>Vasile Baciu </strong>= bocotanul satului, dorinta de a-si pastra averea</li></ul></li></ul><ul id="ba3c7df9-e539-4174-b044-7cc59394e5d1" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>elementul liant intre cele 2 planuri: Ion = tipul arivistului in univers rural, sarac; </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>a fi = a avea pamant</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark></mark></mark></mark></mark></li></ul><p id="10c5b4e0-1c5b-4307-93b2-7f5edd2fba6f" class="">
+</p></div></details><p id="8b80b4bd-15a4-41f9-898b-7cd21788a438" class="">
+</p><p id="2daae436-47c0-490d-b1ab-c2a5386989c4" class="">Tematic: roman social + monografie a sat transilvanean → <strong>cele 2 teme principale: pamantul si iubirea</strong></p><div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2a Scena horei (iubire + monografie)</summary><div class="indented"><ul id="b3486de3-69d7-4ff1-a2cc-92e35c628d7a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>hora trad = ritual premarital</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><ul id="b819f85d-dc1d-4f05-82f9-f79e431e5862" class="bulleted-list"><li style="list-style-type:circle"><strong>Ion </strong>- o admira pe <strong>Florica</strong>, dar joaca cu <strong>Ana </strong>(pt pamant, fiica lui Vasile Baciu)</li></ul><ul id="68fff449-ef96-44d5-b804-0df29cac1d74" class="bulleted-list"><li style="list-style-type:circle"><strong>conflict de interese</strong> intre<strong> Ion + Vasile</strong> → infruntare verbala: <mark class="highlight-purple">“talharule”</mark></li></ul><ul id="de23b639-0f4a-4fb0-b611-74e079ad7564" class="bulleted-list"><li style="list-style-type:circle"><strong>bataia de la carciuma </strong>intre Ion si George:<ul id="6782cba0-4b13-47f8-b3e7-d4e07360af92" class="bulleted-list"><li style="list-style-type:square">lupta intre rivali, cine are intaietate in sat</li></ul><ul id="0125be9a-9747-429b-8f8d-56a705a92b99" class="bulleted-list"><li style="list-style-type:square">infruntare pt Ana, pe care George o iubeste </li></ul></li></ul><ul id="697708a9-fc31-4683-972a-5929da671c79" class="bulleted-list"><li style="list-style-type:circle"><strong>Ion triumfa</strong>, lovindu-l pe George cu <strong>parul </strong>→ <strong>anticipeaza finalul </strong>(G il loveste fatal pe Ion cu sapa)</li></ul></li></ul><ul id="beb5b43f-8d2b-4d61-a06b-f0e937ae4a28" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>monografie</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>: redare fidela a lumii, a mentalitatii trad + ierarhie sociala, structura sociala rigida</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><ul id="60ac5e8f-3a90-43c2-b6ee-119037eb1846" class="bulleted-list"><li style="list-style-type:circle"><strong>descriere in detaliu a ritualului: </strong><ul id="ba25ab4f-2d9b-41a7-9a0e-9dd442c58870" class="bulleted-list"><li style="list-style-type:square">dum in centrul satului</li></ul><ul id="f10b2ce3-29a0-4a80-a82e-42f331f13d9f" class="bulleted-list"><li style="list-style-type:square">fete - buchete de flori, neveste - basmale</li></ul><ul id="e16a8d20-557d-445d-af7d-42240827262e" class="bulleted-list"><li style="list-style-type:square">jocuri specifice: Invartita, Somesana</li></ul><ul id="e69f6887-8acf-4501-a670-d5ffa998b7f0" class="bulleted-list"><li style="list-style-type:square">dispunerea oamenilor:<ul id="637cf798-5649-4ef4-96c6-613cd31d9765" class="bulleted-list"><li style="list-style-type:disc">intelectualii: respectati, nu intra in joc</li></ul><ul id="55ea841e-da4d-4ef0-b2c4-0de9bd0a05f5" class="bulleted-list"><li style="list-style-type:disc">fruntasii: discutii despre pamant si treburile obstii</li></ul><ul id="8323f0a9-0d10-498d-85d4-9360274a0a80" class="bulleted-list"><li style="list-style-type:disc">sarantocii (Alexandru Glanetasu):<mark class="highlight-purple"> “un ciine la usa bucatariei”</mark></li></ul></li></ul></li></ul></li></ul></div></details></div><div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2b Scena sarutului (obsesie pt pamant)</summary><div class="indented"><ul id="ae4d62ad-8422-4c18-be57-92e2912617ce" class="bulleted-list"><li style="list-style-type:disc">odata ce devine stapanul pamanturilor (cas cu Ana) se simte invingator</li></ul><ul id="0c1b8297-e412-4467-b26d-04857b590f4d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>perceptie cvasierotica</strong></mark><mark class="highlight-orange">:</mark> pamanturile dezvaluite de sub zapada = <mark class="highlight-purple">“ibovnica ispititoare”</mark></li></ul><ul id="ddbe14fd-354d-436b-8660-ef328f0b5fcc" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>conotatie religioasa: </strong></mark>gestul ingenunchierii = devotare</li></ul><ul id="e6a3c921-ceb4-406a-9f22-cc179496c664" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>conotatie erotica:</strong></mark><ul id="f5b86395-de31-4c7e-8cad-850e55915f92" class="bulleted-list"><li style="list-style-type:circle">sarutarea taranii <mark class="highlight-purple">“cu voluptate”</mark></li></ul><ul id="3ec579f7-765a-49b3-838a-051ccd140912" class="bulleted-list"><li style="list-style-type:circle">cuprins de <mark class="highlight-purple">“o sudoare calma de patima”</mark></li></ul><ul id="2c0578a8-4d1f-4e92-8f22-70b297fe63f4" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-purple">“pofta uriasa sa imbratiseze huma, sa o crampoteasca in saruturi”</mark></li></ul></li></ul><ul id="bef84b14-9fde-4f88-93bb-ae3768c8defb" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>⇒ gestul + detaliile fiziologice + atitudinea = obsesia pamantului</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="29dddc26-584e-4b47-b342-8e5925937005" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong>scena = imagine emblematica a importantei pamantului pt taran</strong></strong></strong></strong></strong></strong></li></ul><ul id="c964b8c5-1ab1-4a10-99a5-d6ab3838b880" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>in momentul sarutarii, Ion simte</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong> fiorul rece al mortii;</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong> scena</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong> = 2 forte opuse, Eros + Thanatos, = </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>ceea ce inseamna pamantul pt erou, elocventa pt patima sa si modul in care gandeste</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul></div></details></div><p id="96eb04b6-afa1-4b58-b569-ee21edc19f9c" class="">
+</p><p id="4baf54df-5512-4d78-92dc-2eb29e06c89d" class="">CZ</p><ul id="ee9b3e54-608e-4709-87db-eff68093959b" class="bulleted-list"><li style="list-style-type:disc">verosimilitate, tipologii complexe, obiectivitatea perspectivei narative</li></ul><ul id="057fe6a1-9292-48b6-be9a-3f3a7f7b45a9" class="bulleted-list"><li style="list-style-type:disc">romanul = reper al creatiilor realiste</li></ul><p id="e3b09e07-8fda-4f14-a8ce-b5a01ba3af2d" class="">
+</p></div></article></body></html>

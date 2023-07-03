@@ -1,0 +1,683 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Iona - Marin Sorescu</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c1cfd851-b41d-4fa7-b18d-8309b6643606" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🐳</span></div><h1 class="page-title">Iona - Marin Sorescu</h1><p class="page-description"></p></header><div class="page-body"><nav id="2add5c12-f8c5-49b6-b578-f551c742eed3" class="block-color-yellow table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c01b09b9-ae73-4af1-86f7-229ad5f6f7ab"><strong><strong><strong><strong><strong><strong><strong><strong>Tematica</strong></strong></strong></strong></strong></strong></strong></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7df25a3d-7221-4f46-beec-8b339231f9ed">1a Problematica serioasa, structura, monolog</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#883dbce5-4bb1-4250-93d3-d7b069845037">1b Absurd, detalii scenice, ferestre</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#dd500d37-f89c-4c5e-b5af-68e1b24139bc">3a Titlu + sursa de inspiratie, strigarea numelui</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4dd93851-dd31-4108-849a-7c31a75816e3">3b Conflict, actiune, indicatii scnice, spatio-temp</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e33a7139-f940-40e0-a2fe-742d4bdaa6a7">2a Prima secventa</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6ee25501-753a-4ef5-9ce3-f3f8eb0f675c">2b Secventa finala</a></div></nav><p id="b207eeb8-fc9e-40dc-bb1b-d7975e92a119" class="">
+</p><p id="9c99d582-7601-4982-a617-43b10285d651" class=""><strong>=DRAMATURGIE NEOMODERNISTA (POSTBELICA)</strong></p><p id="e79cdf62-247e-49bd-92ce-2b75ea7611b6" class="">
+</p><p id="9f8ee1d1-7540-4318-b62b-6101c1151d42" class=""><strong>I</strong></p><ul id="2ac29028-73c9-47c8-ab2b-b0fff0f1d94e" class="bulleted-list"><li style="list-style-type:disc">trilogia “Setea muntelui de sare” - piese cu suport mitic si biblic (”Iona”, “Paracliserul”, “Matca”)  = “teatru metaforic”, metafore ale omului in fata existentei, in situatii limita</li></ul><ul id="ac5a4496-e4f3-4ead-802f-419b61efc183" class="bulleted-list"><li style="list-style-type:disc">compusa 1965, pusa in scena 1968</li></ul><p id="5035faf9-01f5-4be4-b98e-bfc9cfc24166" class="">
+</p><h3 id="c01b09b9-ae73-4af1-86f7-229ad5f6f7ab" class=""><strong><strong><strong><strong><strong><strong><strong><strong>Tematica</strong></strong></strong></strong></strong></strong></strong></strong></h3><ul id="a0924528-f1b6-4265-9c8f-fd09c75e4710" class="bulleted-list"><li style="list-style-type:disc">parabola dramatica → singuratate absoluta om modern, tragism + inedpartare de divin → sensul existentei, comunicarea, instrainarea, libertatea</li></ul><p id="da488c3e-dfe4-4e2c-8837-a35b1d56d404" class="">
+</p><p id="70fc1994-8a2a-484b-a1ae-46bca7cab1cd" class="">statut → personajul textului + sursa de insipratie</p><p id="cc74d407-a687-4d94-8884-ac76e8d3d56d" class="">statut → revoltat, don quijote, cauta sensul vietii</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1a Problematica serioasa, structura, monolog</summary><div class="indented"><ul id="a7ad540d-1c3c-42d1-8913-e5589fb90ebb" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">“tragedie in patru tablouri” </mark>(<strong>depaseste tragedia clasica = vina tragica,</strong> de regula o virtute, o calitate in exces → invidia zeilor)</li></ul><ul id="2c72bd61-40ad-4d79-a63b-0c5a2e7735da" class="bulleted-list"><li style="list-style-type:disc">pt Iona,<mark class="highlight-yellow"><strong> vina tragica = ignorarea propriei conditii</strong></mark><mark class="highlight-yellow"> </mark>(acaparat de rutina zilnica, ignorand amenintarea (gura de peste))</li></ul><ul id="c208c1fd-5616-44f7-8e50-b8f28f5089bd" class="bulleted-list"><li style="list-style-type:disc">desi problematica serioasa, <mark class="highlight-yellow">accente ludice si inflexiuni comice</mark> (⇒ <strong>rasul = obligatoriu la moderni, singura si ultima scapare</strong>)</li></ul><ul id="aa3e066c-e572-4edc-85a9-9fc6c031fd1e" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>renuntare la struct trad (acte si scene)</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><ul id="bcc569cf-c512-4019-b70a-f3f877a88c4d" class="bulleted-list"><li style="list-style-type:circle">tablou = subunitate a actului, secv fara amploare (tragedia = 4 tablouri ⇒ <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>esentializare, renuntare la dimensiunea epica si actiune,</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><mark class="highlight-yellow"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong> deplasarea accentului pe constiinta eroului</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark></li></ul><ul id="fe42d99e-88c0-4cad-b3d5-a6f4e9cec7b0" class="bulleted-list"><li style="list-style-type:circle">prezenta liricului + <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>reluarea parodica a elementelor teatrului anterior (corul)</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul></li></ul><ul id="59c557a7-73f4-4a05-b9b2-13414090f91d" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong>mod de expunere =</strong></strong></strong></strong></strong></strong></strong><mark class="highlight-yellow"><strong><strong><strong><strong><strong><strong><strong> lung monolog </strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong>(</strong></strong></strong></strong></strong></strong></strong>modernism)<ul id="0535f0d8-b76f-4396-a3a3-591091f37c11" class="bulleted-list"><li style="list-style-type:circle"><strong>lipsa conflictului si intrigii in sens trad</strong></li></ul><ul id="668096f2-e0d6-42f9-9bc5-86e64bc6e3f7" class="bulleted-list"><li style="list-style-type:circle">⇒ <strong>esecul comunicarii </strong>in lumea moderna</li></ul><ul id="915b8611-a219-4cf1-9c11-f5708520894a" class="bulleted-list"><li style="list-style-type:circle">aspect de dialog → <strong><strong><strong><strong><strong><strong><strong><strong>fragmentarea in mai multe voci ⇒ </strong></strong></strong></strong></strong></strong></strong></strong><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><strong><strong><strong><strong><strong><strong><strong><strong>exprima o multitudine de personaje, Iona = personaj-suma al lumii</strong></strong></strong></strong></strong></strong></strong></strong></mark></mark></mark></mark></mark></mark></li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1b Absurd, detalii scenice, ferestre</summary><div class="indented"><ul id="9e5247e7-39a6-4b9c-af6b-e00a143049c3" class="bulleted-list"><li style="list-style-type:disc">spatiu (burta unui peste) = simbolic, <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>univers limitat, in opozitie cu marea (infinit)</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="8fc09bea-f4b6-4bd1-b5f3-120e2f4e5eb1" class="bulleted-list"><li style="list-style-type:disc">tablou 1 si 4 afara, 2 si 3 in peste → <strong>notiuni relative, perspectiva persj = suntem captivi de la nastere, prizonieri ai propriilor limite si conditii</strong></li></ul><ul id="e43ca7b0-0a21-4760-8bc2-7053a8e5318c" class="bulleted-list"><li style="list-style-type:disc">modernism → <mark class="highlight-yellow"><strong>detalii scenice esentializate</strong></mark><strong> = </strong>elem simbolice<ol type="1" id="107c23c0-bafc-4dac-80eb-5a6f54c89edc" class="numbered-list" start="1"><li><mark class="highlight-yellow"><strong><strong><strong><strong><strong>moara</strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong> = </strong></strong></strong></strong></strong>scurgere timp; Don Quijote; <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>incercari repetate de evadare = lupta inutile, absurda</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><ul id="2089d5e1-9a37-47ef-b3d5-16beebcd8525" class="bulleted-list"><li style="list-style-type:disc">precum Quijote, lume a iluziei, a sperantei, a libertatii</li></ul><ul id="5b905afb-57b2-4bc0-b4b6-ff329fc3ec80" class="bulleted-list"><li style="list-style-type:disc"><strong>lipsa decor → vid existential</strong></li></ul></li></ol><ol type="1" id="70de3693-f429-44b1-95b6-b46e3cb86b2e" class="numbered-list" start="2"><li><mark class="highlight-yellow"><strong><strong><strong><strong><strong><strong><strong>acvariu </strong></strong></strong></strong></strong></strong></strong></mark>= fara logica; = unviversul lui Iona, limite precuse<ul id="7871d1e4-fa04-4900-bff1-8a627d5f94f0" class="bulleted-list"><li style="list-style-type:disc">precum pestii din acvariu (<mark class="highlight-teal">”dau veseli din coada”</mark>) = prada sigura; Iona ignora gura chitului</li></ul><ul id="5dc3166a-a7e5-4436-a832-49319e98dd7a" class="bulleted-list"><li style="list-style-type:disc">= avertisment in leg cu <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>inconstienta individului </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>(pesti nepasatori in acvariu-inchisoare = Iona inainte de inghitire)</li></ul><ul id="5433cc45-8528-4388-a825-97592f12f5e1" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow">autoiluzionare</mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></li></ul></li></ol></li></ul><ul id="25b68c32-4b1e-4f20-8a3e-ef0fd52918a9" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong>situatie lim → revoltat in fata absurdului, un luptator = spintecarea succesive a burtilor (Sisif) </strong></strong></strong></strong></strong><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><strong><strong><strong><strong><strong>(o modalitate de a da sens absurdului)</strong></strong></strong></strong></strong></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark><ul id="7e201878-7722-4fb4-9912-d14d3f350f74" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong>ferestre = </strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>incercare</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> de comunicare, de evadare <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>(cauaz iluzorie)</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul></li></ul></div></details><p id="fc1c54a8-2179-4f4f-b7da-3d2eaaeba74f" class="">
+</p><div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3a Titlu + sursa de inspiratie, strigarea numelui</summary><div class="indented"><ul id="d5f11173-5b7b-4274-9919-a41b88b00c30" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>ofera un </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><mark class="highlight-yellow"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>cod de lectura</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>, </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><ul id="3ca01f98-1488-4276-b810-9dee9d492ea7" class="bulleted-list"><li style="list-style-type:circle"><strong>inspo:</strong> Iona pedepsit de divinitate pt ca a incercat sa-si refuze scopul (3 zile de pocainta intr-un chit) → <mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow">pretext pt a comenta conditia omului modern</mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark> (dimensiunea moralizatoare biblica → <strong><mark class="highlight-yellow">devine dimensiune tragica (comic + absurd))</mark></strong></li></ul><ul id="33659c86-5d77-4137-ba12-d29abcb3c996" class="bulleted-list"><li style="list-style-type:circle"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>comparatie cu biblia</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> (prooroc - captiv pt vina sa; Iona - captiv de la inceput</li></ul><ul id="8ae0e69a-d0dd-4321-b2d9-fc898d71d6af" class="bulleted-list"><li style="list-style-type:circle">diferit de prooroc: <mark class="highlight-yellow">imposibila comunicarea cu Dzeu →</mark> solitudine tragica</li></ul></li></ul><ul id="f755e6c0-edc1-488a-b67c-942944bed16e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>strigarea numelui </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>(</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>incipit + final) → simetrie.<ul id="2d19a91b-876a-4548-a135-fae3bbda65ac" class="bulleted-list"><li style="list-style-type:circle">inc: striga numele in pustiu, <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>nici ecoul nu-i raspunde ⇒ singuratate</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="17197baf-8b06-4fdc-ba42-a7dcf366d90e" class="bulleted-list"><li style="list-style-type:circle">fin: rostirea numelui = <mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow">iesirea din amnezie, recapatarea constiintei de sine</mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></li></ul></li></ul></div></details></div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3b Conflict, actiune, indicatii scnice, spatio-temp</summary><div class="indented"><ul id="acc58e10-d44a-4d7b-bc55-c22e49dc8cdd" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow">conflict</mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong> = </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>teatru parabolic = <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>conflict interior</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><ul id="e9148934-f887-4592-a640-eaf964ef9989" class="bulleted-list"><li style="list-style-type:circle">vag, tensiune generata de confruntarea <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>cu un rau fara nume</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul></li></ul><ul id="2f1597ff-8e5c-4bdf-b153-d89e7dbf4017" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow">actiune</mark></mark></mark></mark></mark></mark></mark></mark></mark></strong><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"> </mark></mark></mark></mark></mark></mark></mark></mark></mark><strong><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow">=</mark></mark></mark></mark></mark></mark></mark></mark></mark></strong> dispare, substituita de <mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow">retea de acte si gesturi repetitive </mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark>(<strong><strong><strong>laitmotive simbolice </strong></strong></strong>ex spintecarea burtilor)</li></ul><ul id="6dc26e50-17b1-463f-b2ea-32d826bd32ea" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong>Ind scenice</strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark><ul id="3dd19fc2-3736-4687-b68a-24efe7a3789c" class="bulleted-list"><li style="list-style-type:circle">clasic: f() precisa de fixare intr-un cadru sau carac a persj (reactii, gesturi, mimica)</li></ul><ul id="d0241009-9ea7-44cc-a26b-bd2968e12dfc" class="bulleted-list"><li style="list-style-type:circle">Sorescu: alta f(), <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>a epxlica semnficatii, a comenta simboluri (</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>ex: prima didascalie → seteaza tipologia lui Iona ⇒ problematica)</li></ul></li></ul><ul id="13c64dc0-08f8-410f-b049-d6712e536890" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong>spatio-temp</strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark><ul id="54c0bb76-727c-4680-bc04-6bc438fbf8bd" class="bulleted-list"><li style="list-style-type:circle">isi modifica f() → <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>simbolice, dispare rolul trad de ancorare in datele realului</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="5b9a77f1-0d97-4d88-aa52-0c36e61a3c71" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow"><mark class="highlight-yellow">timpul:</mark></mark></mark></mark></mark></mark></mark> tbl 1 - probabil zi, restul tablourilor = estompat; in final, printr-un detaliu fizic (barba lunga) → <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>aventura = intreaga viata</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="c4888e13-e53e-4fd3-92d3-0a024678e9a5" class="bulleted-list"><li style="list-style-type:circle">numele → spatiu mitic, imemorial</li></ul></li></ul></div></details><p id="ed55caaf-714c-479d-bcba-7a16d679f122" class="">
+</p><div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2a Prima secventa</summary><div class="indented"><ul id="8ed90225-b106-48f6-8513-042f2f9449b9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>tema singuratatii:</strong></mark> indicatii scenice: <mark class="highlight-teal">“Ca orice om foarte singur, Iona vorbeste tare cu sine insusi, isi pune intrebari si raspunde, ca si cand in scena ar fi 2 personaje”</mark></li></ul><ul id="77cce53b-f7a9-4ff9-b4ec-bea7bc0c7653" class="bulleted-list"><li style="list-style-type:disc"><strong>acvariu</strong></li></ul><ul id="d402ef11-5bca-4e5b-999b-64341a28635f" class="bulleted-list"><li style="list-style-type:disc">gura pestelui plasata simbolic in spatele lui Iona<ul id="dd0222ce-f55d-4605-868f-33306d0e9865" class="bulleted-list"><li style="list-style-type:circle">captiv intreaga viata</li></ul><ul id="6091a2a7-0239-416e-af17-e60479697c05" class="bulleted-list"><li style="list-style-type:circle"><strong>inconstienta asupra conditiei sale (→ atitudine = vorbeste pentru a alunga plictiseala, surprinde prima etapa de evol)</strong></li></ul></li></ul><ul id="4493cf9e-5332-432b-95e1-cbac4da0c14a" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>singuratate enuntata (</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>se considera un pescar fara noroc, ii lipseste ecoul)</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2b Secventa finala</summary><div class="indented"><ul id="92f4e682-61e8-4971-b7d7-47baef0de1df" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong>simbolic: </strong></strong></strong></strong></strong></strong></strong></strong>barba lunga</li></ul><ul id="7dbbe507-726d-440a-8ef4-7c91526b999c" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>iluzia libertatii</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> (aflat pe uscat, orizontul = sir infinit de burti de balena)</li></ul><ul id="edf695fb-dfe5-4488-b632-e5aebcd76c17" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong><strong><strong><strong><strong><strong><strong>amnezia </strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong>- </strong></strong></strong></strong></strong></strong></strong>lupta pt esenta lui = pierderea identitatii, de sine → recuperarea numelui (<mark class="highlight-teal">”Mi-am adus aminte. Eu sunt Iona!”</mark>)</li></ul><ul id="36292bfc-046e-4aad-8f19-ef4ef82a52de" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>libertate a spiritului = sinucidere (</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>bariere interioare trebuie doborate, nu exterioare);<mark class="highlight-yellow"> </mark><mark class="highlight-yellow"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>intoarcerea gestului simbolic </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>(spintecarea burtilor) din interior spre interior</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul></div></details></div><p id="b116b706-2a01-4a14-8f01-f54a918c6ad7" class="">
+</p></div></article></body></html>

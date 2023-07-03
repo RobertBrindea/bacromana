@@ -1,0 +1,681 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>O scrisoare Pierduta (Nae carac) - Ion Luca Caragiale</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="69512eb0-3884-457d-8823-dc95917af0dc" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">💌</span></div><h1 class="page-title">O scrisoare Pierduta (Nae carac) - Ion Luca Caragiale</h1><p class="page-description"></p></header><div class="page-body"><p id="e7af7230-3796-47f1-9bcc-971133ba8b40" class="">
+</p><nav id="768161aa-f1eb-493f-b35a-5eb814c4552f" class="block-color-yellow table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d2189b80-f406-41d2-b2bc-a08f3131204d">1a Statut social</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#595ef285-631a-4820-8fa2-95d35560a56a">1b Statut moral</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c44e1946-da19-471c-86f9-0eda6c4c64f6">3a Conflict</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#29072c3a-523f-490d-bed8-f5ab0733084a">3b Titlu</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6f8fc0c1-f1c8-4332-9412-b7afa397c24d">2 s IX act II - intalnirea Tipatescu + Catavencu</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c9df59af-0d2a-4dc9-a8c9-ba5a70f9c9e2">2 act III - discurs Catavencu</a></div></nav><p id="3569695b-f3b1-4b46-bd31-a852666b1e06" class="">
+</p><div><p id="dabc12e1-cc26-41b2-ae50-977a6224b257" class="">I</p><ul id="2d101c89-38ae-409c-a049-e1a09ac5738d" class="bulleted-list"><li style="list-style-type:disc">epoca marilor clasici (ap in 1884) (ECCS)  = <strong><strong><strong><strong>spirit critic</strong></strong></strong></strong> (junimist)</li></ul><ul id="94458c91-933c-40bc-8ffa-3023590c7556" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong>Caragiale: sarcasm</strong></strong></strong></strong></strong></strong> = imagine in dimensiuni caricaturale a unei lumi <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>degradate moral</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="d3ffd1cf-c3a0-4afa-bb23-b1babc33360d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong><strong><strong><strong><strong><strong><strong>comedia</strong></strong></strong></strong></strong></strong></strong></mark> = <ul id="45d65771-fb17-4b44-bf7d-b5dbeddef0c3" class="bulleted-list"><li style="list-style-type:circle">specie a dramaticului</li></ul><ul id="e6478b0f-ac32-4039-b59c-2c0dffa02dfd" class="bulleted-list"><li style="list-style-type:circle"><strong>satirizeaza</strong> moravuri si defecte omenesti</li></ul><ul id="bbb65592-0eb5-46db-9c87-922b62573030" class="bulleted-list"><li style="list-style-type:circle">conflict derizoriu si final vesel</li></ul><ul id="c319807c-98f9-4b83-a238-ab67e194ca7d" class="bulleted-list"><li style="list-style-type:circle">categoria estetica dominanta = <strong>comicul</strong></li></ul></li></ul><ul id="ddc620f0-a55b-4c16-a7bc-e289a9362d9a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>specific lui Caragiale:</strong></mark><ul id="88dfb26c-79d5-47d8-b352-19a451c7060d" class="bulleted-list"><li style="list-style-type:circle"><strong>diminueaza intentia moralizatoare </strong>(plan secund)</li></ul><ul id="224ac160-3087-44eb-b411-947f609be449" class="bulleted-list"><li style="list-style-type:circle">situatii + personaje tipice<strong> (maniera realista)</strong></li></ul><ul id="32d942e9-46a2-4f89-ba21-2be09ec0ca8c" class="bulleted-list"><li style="list-style-type:circle"><strong><strong><strong><strong><strong><strong><strong><strong><strong>clasicism</strong></strong></strong></strong></strong></strong></strong></strong></strong>: tehnici dramatice: (incurcatura, coincidenta, echivocul, qui-pro-qou-ul, gradarea actiunii → climax neasteptat)</li></ul></li></ul></div><ul id="a34da85e-ada8-4f46-8d53-a3b12aa97f6f" class="bulleted-list"><li style="list-style-type:disc">“tipizare extrema” - generalitate prin defecte omenesti</li></ul><p id="cd5101ab-7834-47e7-96ab-155c09750d87" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1a Statut social</summary><div class="indented"><ul id="1a4ed856-c632-4317-b868-66fdf88df229" class="bulleted-list"><li style="list-style-type:disc">avocat, director si proprietar ziar (+ nume pompos)“Racnetul Carpatilor” → demagogie</li></ul><ul id="54468cc1-cf6b-4324-b1de-134e48a32e36" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><em>“prezident fondator al Societatii Enciclopedice Cooperative Aurora Economica Romania”</em></mark> (SECAER) → asoc a unor termeni fara sens = <mark class="highlight-yellow"><strong><strong><strong><strong><strong><strong><strong>forma fara fond, pretentii nejustificate de cultura</strong></strong></strong></strong></strong></strong></strong></mark></li></ul><ul id="0a1d41be-4f8b-4147-b068-86b07f7e86cf" class="bulleted-list"><li style="list-style-type:disc">intrare in scena = <mark class="highlight-yellow"><strong>carac dir </strong></mark><strong>= replici</strong><ul id="64d437ae-19e8-4818-b7a2-a3701e8da2af" class="bulleted-list"><li style="list-style-type:circle"><strong>Trahanache </strong>(cu ironie): <mark class="highlight-teal"><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em>onorabilul, stimabile</em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></mark><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em>; </em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em>in discutie cu prefectul: <mark class="highlight-teal"><em><em><em><em><em><em><em>miselul</em></em></em></em></em></em></em></mark></li></ul><ul id="bc283467-cbc3-4115-91ed-aa31bb4480d6" class="bulleted-list"><li style="list-style-type:circle"><strong>Tipatescu</strong>: <mark class="highlight-teal"><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em>mizerabilul, infamul, canalia</em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></mark></li></ul><ul id="49f1c56e-c9fe-4884-9b63-dd8f5bbebb33" class="bulleted-list"><li style="list-style-type:circle"><strong>Zoe</strong>: <mark class="highlight-teal"><em>Nae catavencu poate fi tot asa de bun deputat ca oricare altul</em></mark></li></ul><ul id="f18a93b7-49b9-470e-ad84-f0d4f4f8339c" class="bulleted-list"><li style="list-style-type:circle"><strong>Ghita Pristanda</strong>: <mark class="highlight-teal"><em>Mare pisicher! Strasnic prefect ar fi asta!</em></mark></li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1b Statut moral</summary><div class="indented"><ul id="ba8433eb-eb64-48a3-ab94-8681148ca6ea" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>politician fara scrupule, arivist capabil de orice (→scop), santajist</strong></mark></li></ul><ul id="16875ca7-c096-4e75-8c17-4ec8c3b5f985" class="bulleted-list"><li style="list-style-type:disc">nu se da inapoi de la santaj, isi declara solemn (involuntar comic) scopul: <mark class="highlight-teal"><em>“Vreau ce mi se cuvine dupa o lupta de atata vreme, vreau ce merit in orasul asta de gogomani unde eu sunt cel dintai… intre fruntasii politici. Vreau mandatul de deputat!”</em></mark></li></ul><ul id="876071a8-2789-4d44-8d03-cf8527e92fd1" class="bulleted-list"><li style="list-style-type:disc">societate (pe dos, masca = accesoriu indispesabil) → unicul <strong>reper stabil </strong>= <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>interesul imediat (</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><mark class="highlight-yellow"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>⇒ abdicarea de la orice principii morale</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong>)</strong></li></ul><ul id="a56ef80b-544d-47b7-9ac6-17e3b7c6cd1d" class="bulleted-list"><li style="list-style-type:disc"><strong>persj </strong>= <strong>situatie carusel</strong>, traseu previzibil, care nu permite abatere; la fel si Catavencu, joc mecanic, circular: <mark class="highlight-yellow"><strong><strong><strong><strong><strong><strong><strong>om politic din opozitie, isi doreste prim-planul, incearca “arderea etapelor” prin santaj</strong></strong></strong></strong></strong></strong></strong></mark></li></ul><ul id="4e3c0f39-d66f-40c5-90cc-7175199fe593" class="bulleted-list"><li style="list-style-type:disc">Zoe: <em><mark class="highlight-teal">“Lasa Nae, mai sunt Camere”</mark></em> → <strong>psihologie de serie, standardizata,</strong><mark class="highlight-yellow"> </mark><mark class="highlight-yellow"><strong>categorie generica a omului politic</strong></mark> (esenta careia si in restul persj, fiecare cu dif lor → Catavencu = mobilitate a spiritului, adaptare; tupeu aroganta care il salveaza)</li></ul><ul id="5c1ac296-d652-4f57-ba2d-a328e4943932" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>carac ind </strong></mark><ul id="0eab689f-fc60-46ef-8706-90a608985dda" class="bulleted-list"><li style="list-style-type:circle"><strong>fapte → </strong>lipsa de moralitate</li></ul><ul id="52ea5cc7-6d91-4450-a782-e1fc6e8572ab" class="bulleted-list"><li style="list-style-type:circle"><strong>nume (formula rezumativa a persj) → apelativ fam (Nae) =</strong> (<em>caţă</em> - femeie barfitoare; <em>caţaveică </em>-  haina cu 2 fete) = fire duplicitara, scandare, barfa, cameleonic</li></ul></li></ul><ul id="0b1445eb-e7ed-4ca6-9cfd-77487a68e7c5" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong><strong>ipocrizie</strong></strong></mark>, <strong>teatral, plin de sine, tupeu</strong>. <ul id="6d12688a-0819-4ebb-9fdc-a2c63357f1cb" class="bulleted-list"><li style="list-style-type:circle">cand e stapan pe situatie → <strong>orgolios, agresiv, refuzand orice propunere</strong> (a lui Tipatescu)</li></ul><ul id="f7e9ab0e-2c55-4289-a11b-9d1a11781150" class="bulleted-list"><li style="list-style-type:circle">sit nefavorabila →<strong> umil, accepta toate conditiile impuse de Zoe</strong> (inclusiv sa conduca manifestatia in cinstea rivalului)</li></ul></li></ul><p id="6fbced2e-5cb7-407f-aad0-d10890e5bf6f" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3a Conflict</summary><div class="indented"><ul id="6993a786-fa41-46c5-b973-679db44e5bf7" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>principal:</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><ul id="eaa227b2-b5da-4b49-9458-52c2781ffa04" class="bulleted-list"><li style="list-style-type:circle">ext, intre reprezentantii 2 tabere pol → mandatul de deputat</li></ul><ul id="39ac4866-df59-46f7-8a8b-a0af765e4884" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow"><strong><strong><strong><strong><strong><strong><strong><strong>imoralitatea clasei politice</strong></strong></strong></strong></strong></strong></strong></strong></mark><ul id="43a10417-af23-49d4-a865-421c33f735b8" class="bulleted-list"><li style="list-style-type:square"><strong>Catavencu </strong>- capabil de santaj</li></ul><ul id="dc437b28-8e4f-4985-9b3f-225c242fedfa" class="bulleted-list"><li style="list-style-type:square"><strong>Dandanache </strong>- sucess santaj</li></ul><ul id="e54b614d-ac0c-47e5-b271-1e1966e5b58b" class="bulleted-list"><li style="list-style-type:square"><strong><strong><strong><strong><strong><strong><strong><strong><strong>Tipatescu</strong></strong></strong></strong></strong></strong></strong></strong></strong> - fals prieten</li></ul><ul id="c17a585e-fe65-4224-816d-ecf9e2341ed6" class="bulleted-list"><li style="list-style-type:square"><strong><strong><strong><strong><strong><strong>Zoe - </strong></strong></strong></strong></strong></strong>sotie model in aparenta</li></ul><ul id="beb48596-9cbc-4895-8ff1-d7e84e30eac3" class="bulleted-list"><li style="list-style-type:square"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Farfuridi, Branzovenescu</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> - lasi</li></ul><ul id="c0c26fef-5e2b-4894-8993-0c9e4e3a1e5d" class="bulleted-list"><li style="list-style-type:square"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Trahanache</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> - falsifica voturile (Agamemnon = castigator)</li></ul></li></ul><ul id="fb0f6ad2-45bc-4ee2-bdb3-5576ede78375" class="bulleted-list"><li style="list-style-type:circle"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>alegeri = </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>farsa, Pristanda metaf ironica: <mark class="highlight-teal">“curat constitutional”</mark></li></ul></li></ul><ul id="58da7c89-5407-4605-9c4c-ba72f23985ce" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong>Nae Catavencu (↔conflict)</strong></strong></strong>: tipul pacalitorului pacalit surprins in sit comice (rasturnari bruste, neasteptate)</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3b Titlu</summary><div class="indented"><ul id="b3853380-66e2-4346-8a38-4b2c5d6e9354" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>relevant pt Nae = obiectul santajului</strong></mark></li></ul><ul id="78861e5a-2f72-49f9-939d-ce00c9f9d0be" class="bulleted-list"><li style="list-style-type:disc"><strong>obiect banal </strong>(art nehot) <strong>= pretextul intrigii, </strong>demascarii lumii inferioare (intelectual, moral)</li></ul><ul id="b7724bf3-7649-4f35-85b8-565d0350bf1a" class="bulleted-list"><li style="list-style-type:disc">= <mark class="highlight-yellow"><strong>santaj pol</strong></mark><strong>, viata privata inferioara</strong></li></ul><ul id="3df6abc3-5997-437a-b90e-e478495da1d3" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong>posesor</strong></strong></strong></strong></strong></strong></strong> = put politica; <strong><strong><strong><strong><strong><strong><strong><strong><strong>pierderea</strong></strong></strong></strong></strong></strong></strong></strong></strong> = iesirea din prim-planul vietii pol ⇒ <mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong>hotaraste rezultatul alegerilor</strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></li></ul><ul id="c56ce5fa-13c7-4462-b14a-dd92e318a226" class="bulleted-list"><li style="list-style-type:disc">art nehot = generalizare → Dandanache obtine mandatul in acelasi mod</li></ul><ul id="fd51ccb7-28d8-4c29-82a7-98d05370f221" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong>metaf unei lumi (aparenta-esenta)</strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></li></ul></div></details><div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2 s IX act II - intalnirea Tipatescu + Catavencu</summary><div class="indented"><ul id="42870ee1-ac4f-486c-bc99-54b3889b533a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>Tipatescu si Catavencu</strong></mark><mark class="highlight-yellow"> - prefectul jud negociaza cu opozantul scrisoarea de amor </mark>(= rezultatul alegerilor)</li></ul><ul id="d37250cc-e90e-4f74-9d0b-5213a73fe715" class="bulleted-list"><li style="list-style-type:disc"><strong>jun-prim</strong> (salvarea femeii iubite) vs<strong> santajist ordinar</strong> (ascensiune politica)</li></ul><ul id="9cfab629-58b2-4986-9d3b-b0394d6ab97f" class="bulleted-list"><li style="list-style-type:disc"><strong>miscare scenica, replici, didascalii → comic</strong></li></ul><ul id="76f32067-7387-401a-9677-5e4f6a87ae78" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>Tipatescu </strong></mark>(incordat): <mark class="highlight-teal"><em><em><em><em><em><em>aerul incruntat, pumnii inclestati, bate din calcai cu impacienta, coboara incet cu dintii stransi</em></em></em></em></em></em></mark><ul id="690023dd-ff3c-4e00-bf33-72a17fce4a0f" class="bulleted-list"><li style="list-style-type:circle">in <strong>antiteza </strong>cu starile interioare: limbajul, incercarea de a ramane amabil: <mark class="highlight-teal"><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em>Iubite si stimabil domnule Catavencu</em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></mark></li></ul><ul id="fb1aba63-52cc-4263-8908-30d3a7ffb18a" class="bulleted-list"><li style="list-style-type:circle">initial pare stapan pe sit</li></ul></li></ul><ul id="4d06f056-3fdd-4c23-9a67-8fa6228f1ca0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>Nae</strong></mark>: jenat, mimeaza naivitate (crede ca a fost chemat de Zoe)<ul id="c20fe35f-3644-4bed-ac80-2d6690c18fcc" class="bulleted-list"><li style="list-style-type:circle">initial, dominat: <mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em>Tipatescu sade aproape de el, Catavencu se cam retrage. Tipatescu se indeasa spre el. Catavencu acelasi joc iar si iar</em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></li></ul></li></ul><ul id="47a89c37-be6e-44e1-adc5-83264aa13368" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow">raportul de put se schimba </mark>→ <strong>negociere </strong>(= lipsa de scrupule), Tipatescu isi pierde cumpatul, Nae acelasi scop: <mark class="highlight-teal"><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em>sustine cu insinuare calda si crescanda: Alege-ma!</em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></mark></li></ul><ul id="6e4a8642-be73-4bcd-8dd0-8b922abc333f" class="bulleted-list"><li style="list-style-type:disc"><strong>fin</strong>: Tipatescu izbucneste necontrolat (<mark class="highlight-teal"><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em>Mizerabil!, Canalie nerusinata!</em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></mark>), Catavencu striga, tremurand:<mark class="highlight-teal"> </mark><mark class="highlight-teal"><em><em><em><em>Ma omoara vampirul! Perfectul asasin!</em></em></em></em></mark></li></ul></div></details></div><div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2 act III - discurs Catavencu</summary><div class="indented"><ul id="427a151d-792d-4b57-abba-aa2cdd254046" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>defineste statul moral, intelectual inferior = pol arivist</strong></mark></li></ul><ul id="fa8040a1-9f88-48e6-af28-13761e5c4c16" class="bulleted-list"><li style="list-style-type:disc"><strong>fraze lungi, sforaitoare </strong>→ <mark class="highlight-yellow"><strong><strong><strong><strong><strong>actor</strong></strong></strong></strong></strong></mark><mark class="highlight-yellow"> </mark>(incearca sa impresioneze plangand, oprindu-se, plangand iar in hohote)</li></ul><ul id="b59d24ee-de9e-4f16-8c0b-2d0a924dd4f3" class="bulleted-list"><li style="list-style-type:disc"><strong>vorbe mari </strong>(<mark class="highlight-teal"><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em>tarisoara mea, Romania mea, fericirea ei si progresul ei</em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></mark>), <strong>fiind interesat de sine</strong></li></ul><ul id="ab689e3d-56fe-416e-a4b7-58b163f7f763" class="bulleted-list"><li style="list-style-type:disc"><strong>constructii lipsite de sens</strong>:<em><em><em> </em></em></em><mark class="highlight-teal"><mark class="highlight-teal"><mark class="highlight-teal"><mark class="highlight-teal"><mark class="highlight-teal"><mark class="highlight-teal"><mark class="highlight-teal"><mark class="highlight-teal"><mark class="highlight-teal"><em><em><em>“Industria romana e admirabila, e sublima, dar lipseste cu desavarsire</em></em></em></mark></mark></mark></mark></mark></mark></mark></mark></mark><em><em><em>;</em></em></em><strong><em><em><em> </em></em></em></strong><strong>intrebari retorice</strong>: <em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal">Pana cand sa nu avem si noi falitii nostri?</mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></li></ul><ul id="2824f1a6-bea8-4def-bd71-11bad97591f5" class="bulleted-list"><li style="list-style-type:disc">se <mark class="highlight-yellow"><strong>autocaracterizeaza</strong></mark>, fara sa cunoasca termenii: <em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal">candidatul grupului tanar, inteligent si independent … ultra-progresist, liber-schimbist”</mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></li></ul><ul id="65bdd406-9084-4c40-882e-e9c6701231f7" class="bulleted-list"><li style="list-style-type:disc">loc capitalei = <mark class="highlight-teal"><em>capitalisti</em></mark></li></ul><ul id="bfba3856-07e7-4a9b-8490-d8127cdefeeb" class="bulleted-list"><li style="list-style-type:disc"><strong>sentiment national mimat: </strong><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal">Scopul sotietatii este ca Romania sa fie bine si tot romanul sa prospere</mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></mark></em></li></ul><ul id="411a3935-5c3d-46e8-acad-b0722621f419" class="bulleted-list"><li style="list-style-type:disc">desi se autodefineste (ca avand <em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal"><em><mark class="highlight-teal">taria opiniunilor sale</mark></em></mark></em></mark></em></mark></em></mark></em><em><em><em><em><em>, </em></em></em></em></em>trece in final de partea dusmanilor pol)</li></ul></div></details></div><p id="ee33fbe6-0224-4efa-9bba-0e06f99caec4" class="">
+</p><p id="97e753c4-6f23-4bfa-a72f-ef2c02d95d42" class=""><strong>Cz</strong></p><ul id="78892dab-f1cf-46c0-8627-c082243e88da" class="bulleted-list"><li style="list-style-type:disc">atitudini extreme, fin = Catavencu umilit, dar nu invins, sperand la urm alegeri</li></ul><ul id="4688ad2c-75c0-4f3a-b500-936df61f98d2" class="bulleted-list"><li style="list-style-type:disc">esec al actiunilor trait cu mai putin dramatism decat asteptat; ≠ capitulare definitiva, doar o amanare a unei noi tentative de a parveni</li></ul></div></article></body></html>

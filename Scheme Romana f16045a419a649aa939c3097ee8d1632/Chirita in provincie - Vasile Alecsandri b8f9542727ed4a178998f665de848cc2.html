@@ -1,0 +1,678 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Chirita in provincie - Vasile Alecsandri</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b8f95427-27ed-4a17-8998-f665de848cc2" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🍞</span></div><h1 class="page-title">Chirita in provincie - Vasile Alecsandri</h1><p class="page-description"></p></header><div class="page-body"><p id="80d79968-a8a6-4002-949f-896eb0ee97d2" class="">
+</p><nav id="c9da7bb1-5a8d-4093-914f-ff744c298cc1" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9d62627e-b58f-49c9-a0f9-fa75ead0a2c5">Caracterizare Chirita</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#fed4ed23-89e2-4136-b916-c2feab8b870d">Problematica operei</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#63be3beb-d43a-4fc8-be6d-2c65b02c667c">Compuneri model:</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#09160503-4416-4aa9-a257-3d9765720555">Caracterizare Chirita (600 cuv)</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3d3099e8-6c11-41da-8bef-3afeae05392c">Problematica operei (607 cuv)</a></div></nav><h1 id="9d62627e-b58f-49c9-a0f9-fa75ead0a2c5" class="">Caracterizare Chirita</h1><p id="15660696-2f7b-4028-b95a-1a3bf19df8ed" class=""><strong>R:</strong></p><ol type="1" id="338551fe-b1b5-4b02-9fae-714b17a6d0f9" class="numbered-list" start="1"><li>mentalitatea epocii (pretentii de cultura, opozitie, scena servet)</li></ol><ol type="1" id="d1741458-a36c-4aa8-b84c-67a3d8878bcf" class="numbered-list" start="2"><li>Parvenita snoaba (titlu, amestec, antiteza cu leonas)</li></ol><ol type="1" id="62f0c2e6-a654-421d-bede-d34012c12621" class="numbered-list" start="3"><li>NU aparitie groteasca… exista calitati...</li></ol><p id="5b9bfcec-d059-4d1e-a6c9-22edcf7527d4" class=""><strong>Introducere:</strong></p><ul id="dc8779d6-03fa-4986-ba3b-4f104cd94bf1" class="bulleted-list"><li style="list-style-type:disc">Personajul literar: instanta narativa -&gt; emotii, idei si conceptii ale autorului.</li></ul><ul id="65c7b0b5-1072-41b7-a756-f3e6dfffa7f0" class="bulleted-list"><li style="list-style-type:disc">Principal+eponim: caracterizata<ul id="3b911767-1a1b-4942-b935-244c9ae86eac" class="bulleted-list"><li style="list-style-type:circle">Mai putin direct</li></ul><ul id="83a28da9-5c61-4043-b6a1-192e8c09599b" class="bulleted-list"><li style="list-style-type:circle">In preponderenta in mod indirect:<ul id="4e04fa4c-bf8d-45e9-a767-88897051b9d4" class="bulleted-list"><li style="list-style-type:square">fapte</li></ul><ul id="83f48a42-b3eb-4542-bc77-59ec723a4f03" class="bulleted-list"><li style="list-style-type:square">gesturile si mimica -&gt; didascalii</li></ul></li></ul><ul id="bf646d76-80eb-42d8-9935-cf704fbbe2ef" class="bulleted-list"><li style="list-style-type:circle">=&gt; persj complex</li></ul></li></ul><p id="e44b6616-e603-4ffd-a3db-0bf9e56752bd" class=""><strong>Arg 1:</strong></p><ul id="79dfc1b1-bb39-4ada-80ce-8043718e88e9" class="bulleted-list"><li style="list-style-type:disc">Prin ea -&gt; satirizarea mentalitatii epocii<ul id="f756a916-fdb4-4640-9be2-d6a0e79cadb1" class="bulleted-list"><li style="list-style-type:circle">Pretentii de cultura, mimetism al modei occ: (&quot;Am hotarat sa introduc in provinție obiceiurile din Iesi, doar ne-om mai roade puțintel si noi&quot;)<ul id="41dd1df3-60e9-4b5c-9635-be0b8b451a64" class="bulleted-list"><li style="list-style-type:square">echitatie</li></ul><ul id="c583a66a-7da1-4f90-a810-3768ca364c18" class="bulleted-list"><li style="list-style-type:square">Angajeaza pe charles</li></ul><ul id="0925d40f-25a1-425c-a980-11a9fd9f89c9" class="bulleted-list"><li style="list-style-type:square">Pt al invata fr pe gulita</li></ul><ul id="1154bf7a-1475-42d4-a7dc-6da564a7834a" class="bulleted-list"><li style="list-style-type:square">Vestimentatie moderna -&gt; impusa lui barzoi</li></ul></li></ul><ul id="1b1760fd-b6fc-442e-9102-d63be3740a23" class="bulleted-list"><li style="list-style-type:circle">Evidentiat prin opozitie:<ul id="181d9836-ac19-457b-9a0e-03575c8fe894" class="bulleted-list"><li style="list-style-type:square">Lumea traditionala(Ion, Safta)/modern -&gt; scena ravasului -&gt; incompatibilitatea celor 2 universuri (EXPLICATA)</li></ul><ul id="da3b3f95-cdd4-429b-965e-e507cd2d4d36" class="bulleted-list"><li style="list-style-type:square">In goana dupa imitare, desconsidera traditii</li></ul></li></ul><ul id="27051474-6e1c-4f24-b248-45a88d2def44" class="bulleted-list"><li style="list-style-type:circle">Inconstienta in fata ridicolului</li></ul></li></ul><p id="34939338-4be5-44bf-8bed-affd6ff2faf5" class=""><strong>Arg 2:</strong></p><ul id="f81db515-e62f-4652-81e4-4d2eb03504fe" class="bulleted-list"><li style="list-style-type:disc">Emblematic pt tipologia parvenitei snoabe - G.Calinescu “o burgheza cu dor de parvenire, o bonjourista”<ul id="17a4d826-3e5b-4150-b61e-68ae80d1159b" class="bulleted-list"><li style="list-style-type:circle">Parvenitism:<ul id="4701bc3c-6153-4db2-8ed1-fc03757f54ac" class="bulleted-list"><li style="list-style-type:square">Preia titlul soțului</li></ul><ul id="c4e7c89c-5e1f-44c8-a783-43b03c974145" class="bulleted-list"><li style="list-style-type:square">Spune ca merita pozitia actuala deoarece s-a implicat emotional in 1848</li></ul><ul id="5d108646-1357-47d1-9cbb-4f740a6751bc" class="bulleted-list"><li style="list-style-type:square">Amestec de limbaj (“furculision”, “fripturision”)<ul id="cbc9edef-440d-4930-a930-0c63062e3eec" class="bulleted-list"><li style="list-style-type:disc">Angajarea lui sarl ca oportunitate sa isi demonstreze fr</li></ul><ul id="82a36452-6e60-44c8-ae20-39bb5b03e8c7" class="bulleted-list"><li style="list-style-type:disc">=&gt; comic care critica moravuri</li></ul><ul id="ec3f0eb9-a538-4ed6-8283-5ced85d931cf" class="bulleted-list"><li style="list-style-type:disc">Va fi intalnit la caragiale</li></ul></li></ul></li></ul><ul id="40fa4822-facd-4fcb-ad2f-a051fff9f12c" class="bulleted-list"><li style="list-style-type:circle">in antiteza cu Leonas: conservatorism (Barzoi + Chirita) vs Progres (Leo):<ul id="dcd9eaba-6ddf-49f4-898a-a77577731047" class="bulleted-list"><li style="list-style-type:square">Coruptia fam. =&gt; scena curcanului (EXPLICATA) =&gt; snobism</li></ul></li></ul></li></ul><p id="36bafc03-8d19-49a2-b5e3-a776ccb651b0" class=""><strong>Arg 3:</strong></p><ul id="bfbec500-804d-49a8-85a0-52e2720e636f" class="bulleted-list"><li style="list-style-type:disc">Aparitie <strong>NU </strong> grotesca, ci bonoma, caricaturala, privita intelegator, nu e dezumanizata</li></ul><ul id="9fa6bf37-6968-493d-860d-1b442058fa71" class="bulleted-list"><li style="list-style-type:disc">Nu e lipsita de calitati (carac indirect prin fapte + direct prin didascalii)<ul id="c2b8ba89-a29e-43c8-83e1-1b6abb7ddfb0" class="bulleted-list"><li style="list-style-type:circle">Dragoste adevarata pt gulita: o intereseaza sa fie culturalizat, sa aiba o viata buna (desi prin modalitati nesincere)</li></ul><ul id="5214fca2-18ff-4c22-914f-06fe4b111201" class="bulleted-list"><li style="list-style-type:circle">Dorinta de a se moderniza</li></ul></li></ul><ul id="c52aab4e-a3fe-4bd9-a9d9-334959d0c37a" class="bulleted-list"><li style="list-style-type:disc">La sfarsit: toate persj -&gt; mesajul operei: “Asta e lumea, o comedie”</li></ul><p id="78a9136f-2e95-4b1d-b7fe-950b58349715" class=""><strong>Cz:</strong></p><ul id="b61eab42-6aae-4b6a-995d-ec53ef4640ef" class="bulleted-list"><li style="list-style-type:disc">… e construita prin antiteza cu mai multe…</li></ul><ul id="649e5e6c-d433-4409-a56c-693b9d9e0ef0" class="bulleted-list"><li style="list-style-type:disc">Pe langa alte tipuri, comicul de moravuri =&gt; anticipeaza pe Caragiale</li></ul><p id="62f8f858-d4d3-46bb-aee8-75d51bae9819" class="">
+</p><h1 id="fed4ed23-89e2-4136-b916-c2feab8b870d" class="">Problematica operei</h1><p id="cc6f82af-490c-411b-bcd6-ec9185243722" class=""><strong>R:</strong></p><ol type="1" id="5735ad96-c64b-411d-a873-d8ddb3c54190" class="numbered-list" start="1"><li>Parvenitism+snobism (titlu, amestec)</li></ol><ol type="1" id="5d9ba8f3-b257-463b-a174-e87320791914" class="numbered-list" start="2"><li>Coruptie + Conflict: social(curcan, antiteza leonas), sentimental (plan); rasturnare de situatie, reinstaurarea valorilor morale</li></ol><ol type="1" id="a8bdd625-4495-41a2-a7d5-9e002771991b" class="numbered-list" start="3"><li>Satirizeaza epoca (pretentii, mimetism, opozitie (ravas); cu toate astea bonom caricatural nu grotesc</li></ol><p id="441cb0c6-1d47-4757-b955-8cb0b3288224" class=""><strong>Introducere:</strong></p><ul id="29956e91-3d28-482b-b19e-068890a9ff20" class="bulleted-list"><li style="list-style-type:disc">“Comedie cu cantice, in 2 acte”</li></ul><ul id="f72f6406-1217-4442-900b-32423fa94d44" class="bulleted-list"><li style="list-style-type:disc">Caracter realist =&gt; viziunea critica a realitatii, verosimiliate, dar cu aspecte romantice (Leo + lulu)</li></ul><ul id="e6bd26ca-a640-4eba-8e8d-c931f84e715a" class="bulleted-list"><li style="list-style-type:disc">Structurata: parvenitism + snobism + coruptie: Barzoi + Chirita</li></ul><p id="19ae53c5-c472-415a-8df7-c66dcd2381c8" class=""><strong>A1: </strong>(parvenitism + snobism)</p><ul id="2426b8dd-fb72-414b-8e6e-3f2c2fec8c66" class="bulleted-list"><li style="list-style-type:disc">Titlul: spatiu -&gt; reliefarea problematicii.</li></ul><ul id="b91dc186-2618-47e0-9fa7-db4fb652747d" class="bulleted-list"><li style="list-style-type:disc">Personaj feminin, emblematic pentru tipul parvenitei snoabe<ul id="045eccc4-c779-40d8-a2f6-d9af609388ab" class="bulleted-list"><li style="list-style-type:circle">Preia titlul soțului</li></ul><ul id="2a0dfaec-316f-48b1-a361-9b7e12581be1" class="bulleted-list"><li style="list-style-type:circle">Spune ca merita pozitia actuala deoarece s-a implicat emotional in 1848</li></ul><ul id="a0ab9b9a-a5e1-4bbd-a4a3-3bcae109a311" class="bulleted-list"><li style="list-style-type:circle">Amestec de limbaj (“furculision”, “fripturision”): Angajarea lui sarl ca oportunitate sa isi demonstreze fr</li></ul></li></ul><p id="e9f45e2d-ca6a-48ca-8ebd-b226664a32db" class=""><strong>A2: </strong>(coruptie + conflict)</p><ul id="ddabfdef-c7fa-4cf2-a342-cfab3f5e756a" class="bulleted-list"><li style="list-style-type:disc">Exterior (Chirita+Barzoi vs Leonas, antreneaza si celelalte persj, construite schematic)</li></ul><ul id="80e48c23-09f8-4f1a-a0b9-349c09d1a9f9" class="bulleted-list"><li style="list-style-type:disc">Social : coruptia si abuzurile lui barzoi ca ispravnic<ul id="467c57cf-505d-4bb4-9698-5d73b87f7c7f" class="bulleted-list"><li style="list-style-type:circle">in antiteza cu Leonas: conservatorism (Barzoi + Chirita) vs Progres (Leo):<ul id="72db0f49-bb63-4556-bba8-1d99950985d9" class="bulleted-list"><li style="list-style-type:square">Coruptia fam. =&gt; scena curcanului (EXPLICATA) =&gt; snobism</li></ul></li></ul></li></ul><ul id="c05ec949-10f5-4916-b2a4-cd29f725b754" class="bulleted-list"><li style="list-style-type:disc">Sentimental : planul chiritei: averea lulutei</li></ul><ul id="dcd31f72-5fd2-458e-95d0-17dc05912ef8" class="bulleted-list"><li style="list-style-type:disc">Rasturnare de situatie, travestii =&gt; tensiune =&gt; punct culminant: leo isi dezvaluie identitate =&gt; strica planurile chiritei =&gt; instaurarea valorilor morale:<ul id="c7f47c95-1dff-4ff1-842d-77ab5c02fa25" class="bulleted-list"><li style="list-style-type:circle">Dragoste adevarata</li></ul><ul id="1cc3dfe4-05f4-4e86-8408-5d53acb0d8d5" class="bulleted-list"><li style="list-style-type:circle">Leonas ispravnic in locul lui barzoi</li></ul><ul id="72845e94-59b1-4f66-8fd9-35894a035582" class="bulleted-list"><li style="list-style-type:circle">La sfarsit: toate persj -&gt; mesajul operei: “Asta e lumea, o comedie”</li></ul></li></ul><p id="e387ce4c-ddfd-438a-8474-a3dc32c67ce2" class=""><strong>A3:</strong></p><ul id="3b7513b0-28a7-44e9-90c6-e1e1bcbd34b5" class="bulleted-list"><li style="list-style-type:disc">Satirizarea mentalitatii epocii de mimetism si pretentii culturale -&gt; prin chirita<ul id="f6ec51b4-fc15-4957-89bf-2d65b33e431a" class="bulleted-list"><li style="list-style-type:circle">Pretentii de cultura, mimetism al modei occ: (&quot;Am hotarat sa introduc in provinție obiceiurile din Iesi, doar ne-om mai roade puțintel si noi&quot;)<ul id="74873865-31fc-4dca-abfa-8ac709c5e167" class="bulleted-list"><li style="list-style-type:square">echitatie</li></ul><ul id="f320ab5d-8cf1-4589-b648-bb54e72afaa8" class="bulleted-list"><li style="list-style-type:square">Angajeaza pe charles</li></ul><ul id="5f6106aa-4fbc-44f2-b9b3-c947efc0c941" class="bulleted-list"><li style="list-style-type:square">Pt al invata fr pe gulita</li></ul><ul id="23dd3452-6d03-4540-b585-d91bdb241e7e" class="bulleted-list"><li style="list-style-type:square">Vestimentatie moderna -&gt; impusa lui barzoi</li></ul></li></ul><ul id="ab5f9571-7d37-4e5e-91c7-7b099d242d9a" class="bulleted-list"><li style="list-style-type:circle">Evidentiat prin opozitie:<ul id="5bafe51d-6313-43af-b4f5-e52a129ef09a" class="bulleted-list"><li style="list-style-type:square">Lumea traditionala(Ion, Safta)/modern -&gt; scena ravasului -&gt; incompatibilitatea celor 2 universuri (EXPLICATA)</li></ul><ul id="2b0c2d1f-5153-47f3-892d-a79b0d6682ec" class="bulleted-list"><li style="list-style-type:square">In goana dupa imitare, desconsidera traditii</li></ul></li></ul><ul id="a0803a25-2503-4907-b439-1d968190dc23" class="bulleted-list"><li style="list-style-type:circle">Inconstienta in fata ridicolului</li></ul><ul id="91277c60-74a0-45b8-a7b7-37f15f3c704d" class="bulleted-list"><li style="list-style-type:circle">Critica: comic de moravuri (va fi intalnit la Caragiale)</li></ul><ul id="efb4a1e9-0c42-437b-916e-4ff042869374" class="bulleted-list"><li style="list-style-type:circle">G.Calinescu: “o burgheza cu dor de parvenire, o bonjourista”</li></ul></li></ul><ul id="71b1d503-2923-4eab-be74-35b10ba289b0" class="bulleted-list"><li style="list-style-type:disc">Cu toate acestea … bonom caricatural intelegator nu groteasca nu dezumanizanta</li></ul><p id="457dbe75-a100-4b6e-a864-afc5c0289abd" class=""><strong>Cz:</strong></p><ul id="5f818033-1b13-4702-9e58-f8ee5d2a0c28" class="bulleted-list"><li style="list-style-type:disc">Satirizare a:<ul id="425c085d-3fbe-4266-96e7-aeab1b7856c4" class="bulleted-list"><li style="list-style-type:circle">Mentalitatii epocii</li></ul><ul id="8fea97c2-cf20-47f7-9bdf-72f72bb858fd" class="bulleted-list"><li style="list-style-type:circle">Elitei sociale (nu intelectuale)</li></ul></li></ul><h1 id="63be3beb-d43a-4fc8-be6d-2c65b02c667c" class="">Compuneri model:</h1><h2 id="09160503-4416-4aa9-a257-3d9765720555" class="">Caracterizare Chirita (600 cuv)</h2><p id="91f3e2e8-6549-40ab-844e-2561865fd1a5" class="">Personajul literar reprezinta o instanta narativa prin care autorul isi transmite propriile emotii, idei si conceptii. Personajul principal si eponim al operei “Chirita in Porvincie” De Vasile Alecsandri, Chirita Barziu este caracterizata atat in mod direct, insa mai putin, cat si in mod indirect, aceasta fiind metoda principala de caracterizare a eroinei, prin faptele ei, gesturile si mimica conferite de didascalii, astfel reliefandu-se un personaj complex.</p><p id="22ab3570-bd7f-4c13-9815-9a5d47bc5da9" class="">Chirita este o adepta a modei franceze, incercand din rasputeri sa imite tot ce tine de cultura franceza, de la interesul in echitatie, angajarea unui profesor francez sa isi invete fiul limba, vestimentaia moderne pe care i-o impune si sotului ei, obiceiurile culinare, fiind inconstienta in fata ridicolului. Aceste pretentii de cultura si mimitismul fara minte al modei occidentale prezente in eroina, sunt satirizate, in acest mod autorul criticand mentalitatea intregii epoci. Aceste trasaturi sunt evidentiate in Chirita prin opozitia intre lumea traditionala cu legile ei rigide, reprezentata prin Ion si Safta, servitorii acesteia, si lumea moderna la care ea incearca sa adere, considerand traditia si obiceiurile ca fiind inferioare modei. Acest lucru este evidentiat in scena ravasului, cand Chirita incearca sa il invete pe Ion sa aduca o scrisoare de la sotul ei pe un servet, asezat pe un talger, precum este moda, urmand o situatie comica cand Ion incurca complet aceste instructiuni, astfel fiind evidenta incompatibilitatea celor 2 universe.</p><p id="ea7fdbfe-99ec-469c-aa22-c070ca0af004" class="">Pe langa faptul ca intruchipeaza mentalitatea comuna elitelor sociale ale epocii, aceasta este un personaj emblematic si pentru tipologia parvenitei snoabe, G. Calinescu numind-o “o burgheza cu dor de parvenire, o bonjourista”. Parvenitismul este subliniat prin faptul ca preia titlul sotului, fara a avea vreun merit propriu, numindu-se “ispravniceasa” odata cu ridicarea sotului in rang, cat si prin amestecul de jargon romanesc cu cel francez, utilizand limba franceze intr-un mod eronat (“furculision”, “fripturision”), lucru care va urma sa fie regasit si in operele lui Caragiale. Chirita il angajeaza pe Sarl si cu scopul de a avea oportunitatea sa demonstreze cat de bine stapaneste limba franceza, acesta fiind un mod comic de a critica moravurile tipologiei. Chirita, cat si Barzoi, reprezentau conservatorismul, acestia fiind pusi in antiteza cu Leonas, emblema progresului adevarat, lucru ce se reliefeaza in scena curcanului, cand Leonas incearca sa il viziteze pe Barzoi, insa fiind intors din drum deoarece nu avea un dar. Ca solutie ii este prezentata cumpararea curcanului care avea sa ajunga inapoi la Barzoi dupa ce acesta il primeste ca dar, acest lucru intamplandu-se de cateva zeci de ori, spunand supusul lui Barzoi, lucru ce aduce la suprafata snobismul cat si coruptia familiei.</p><p id="b6fef135-5085-4fc1-89bb-7b4260928b1c" class="">Cu toate acestea, Chirita nu este o aparitie groteasca sau respingatoare, ba chiar autorul o prezinta intr-un mod bonom, caricatural, privind-o intr-un mod intelegator. Aceasta nu este lipsita de calitati, lucru ce reiese indirect din faptele ei cat si direct prin didascalii, acestea fiind dragostea adevarata pentru Gulita (o intereseaza sa fie culturalizat, sa aiba o viata buna, desi vrea sa il duca in acel punct prin modalitati nesincere, prin casatoria cu Luluta pentru zestrea ei) si dorinta de a se moderniza, deci de a progresa, lucru contradictoriu cu pozitia sotului sau. Nu intamplator, piesa se incheie cu toate personajele reunindu-se pentru a prezenta mesajul operei, lumea ca o scena pe care toti oamenii joaca un rol (“Asta e lumea, o comedie”).</p><p id="8d38ec52-d77e-4503-9233-56f587150560" class="">Astfel, Chirita Barzoi este un personaj complex, construit prin antiteza cu mai multe personaje si idei, prin care autorul critica nu numai mentalitatea epocii cat si tipologia umana in care Chirita se inscrie, cea a parvenitilor, insa prezentand-o intr-un mod care nu o degradeaza moral complet, nu este o aparitie dezumanizata complet. Pe langa alte tipuri de comic, comicul de moravuri este predominant in aceasta opera, anticipand scrierile lui Caragiale.</p><h2 id="3d3099e8-6c11-41da-8bef-3afeae05392c" class="">Problematica operei (607 cuv)</h2><p id="fb6a13c9-2e04-4014-ae65-989c3777ab1c" class="">Autorul descriind-o ca fiind o “Comedie cu cantice, in 2 acte”, “Chirita in provincie” de vasile alecsandri este o opera atat cu caracter realist, reliefat prin viziunea critica a realitatii cat si a verosimilitatii spatiului si a actiunilor, cat si cu cateva aspecte romantice, mai exact povestea de dragoste dintre Leonas si Luluta. Aceasta este structurata in jurul satirizarii a trei mari idei: parvenitismul, snobismul si coruptia, trasaturi ce sunt intruchipate in opera de coana Chirita si de sotul ei, Barzoi.</p><p id="ebf1dda6-8bb7-4c2f-b81e-95c80111e4c0" class="">Problematica este setata inca din titlu, acesta subliniand spatiul desfasurarii actiunii, deci, problematica. Personajul feminin al operei, emblematic pentru tipologia parvenitei snoabe, lucru evidentiat prin faptul ca, odata cu crestearea lui Barzoi in rang, aceasta ii preia titlul de “ispravniceasa” fara vreun merit personal, cat si prin amestecul jargonul frantuzesc cu cel moldovenesc (“furculision”, “fripturision”) si angajarea profesorului de franceza ca oportunitate sa isi demonstreze capabilitatea de a vorbi limba franceza, aceasta de fapt demonstrandu-si incultura. Aceste aspecte sunt prezentate intr-un mod comic, criticand moravurile personajelor si tipologiei, lucru care va fi ulterior intalnit si la Caragiale.</p><p id="ce2a8576-1c48-43ef-946e-239c258db621" class="">Conflictl operei este unul preponderent exterior, avandu-i in prim plan pe Chirita, pe Barzoi si pe Leonas, antrenand insa si celelalte personaje ale operei (Gulita, Luluta, Ion etc.), acestea fiind construite doar schematic. Acesta se intinde pe dimensiunea sociala prin coruptia si abuzurile lui barzoi ca ispravnic, acesta fiind consturit in antiteza cu Leonas, ce reprezenta progresul adevarat, pe cand Barzoi era o emblema a conservatorismului. Coruptia inradacinata in familie cat este evidentiat prin scena curcanului, cand Leonas incearca sa il viziteze pe Barzoi, insa acesta este intors din drum din cauza lipsei darului. Slujitorul insa ii propune o solutie, sa ii cumpere curcanul, acesta ajungand inapoi la Barzoi, lucru ce s-a intamplat de cateva zeci de ori, astfel demonstrandu-se snobismul. Conflicrul exista si pe planul sentimental prin planul Chiritei de a-l marita pe Gulita cu Luluta pentru a-i acapara averea. Rasturnarile de situatiile si travestiile confera tensiunea piese de teatru, ajungand la punctul culminant cand Leoans isi dezvaluie adevarata identitate, astfel stricand planurile Chiritei prin santaj. Finalul operei reprezinta reinstaurarea valorilor morale, dragostea adevarata castigand, iar Leonas fiind numit ispvranic in locul lui Barzoi a carui coruptie a fost dovdeita. Nu intamplator, opera se termina cu toate personajele adunandu-se pentru a enunta mesajul operei, lumea ca scena pe care toti oamenii joaca un rol (“Asta e lumea, o comedie”).</p><p id="df642ecd-294a-41a6-ae68-6859ff9ed08c" class="">Autorul are in vedere si satirizarea mentalitatii epocii in vederea mimitismul modei pariziene si pretentiilor culturale, prin Chirita, aceasta demonstrand trasaturile mentionate prin interesul pentru echitate, angajarea lui Sarl pentru a-l invata pe fiul acesteia franceza, deoarece este la moda, vestimentatia moderna care ii este impusa lui barzoi si preluarea obiceiurilor culinare. Eroina, reprezentata a lumii moderne, occidentale, este construita in antiteza cu lumea tradiitilor si a obiceiurilor (Ion si Safta), o scena reprezentativa acestei opozitii fiind scena ravasului, cand Chirita incearca sa il invete pe Ion sa ii aduca ravasul pe un servet asezat pe un talger, acesta incurcand instructiunile, gest generator de comic de situatie care demonstreaza incompatibilitatea celor 2 universe. In goana dupa imitare, aceasta desconsidera traditii si este inconstienta in fata ridicolului, G. Calinescu numind-o o “burgheza cu dor de parvenire, o bonjourista”. Cu toate acestea, personajul nu este o aparitie groteasca, ci este prezentata intr-un mod bonom, caricatural, fiind privita de autor intr-un mod intelegator prin faptul ca nu ii lipsesc calitatile (dragostea adevarata pentru Gulita, pe care vrea sa il culturalizeze si sa ii ofere o viata buna, desi prin modalitati nesincere, dorinta de a se moderniza, deci de a progresa, lucru ce o pune in opozitie cu sotul sau), aceasta nefiind dezumanizata.</p><p id="fb064ea5-fd44-4895-9d86-ea3a4cd1a38a" class="">In concluzie, opera vizeaza critica prin satirizare si ironie atat a mentalitatii epocii, a tipului uman al parvenitului cat si a elitei sociale, aceasta diferentiandu-se de elita intelectuala.</p></div></article></body></html>

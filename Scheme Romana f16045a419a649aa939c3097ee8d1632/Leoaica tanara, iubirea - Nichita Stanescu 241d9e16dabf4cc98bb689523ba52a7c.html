@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Leoaica tanara, iubirea - Nichita Stanescu</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="241d9e16-dabf-4cc9-8bb6-89523ba52a7c" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🦁</span></div><h1 class="page-title">Leoaica tanara, iubirea - Nichita Stanescu</h1><p class="page-description"></p></header><div class="page-body"><p id="1d2bda7b-9a81-4eb1-8d91-676c894d75e1" class="">
+</p><nav id="c02103ea-6ea6-48b6-b8f1-6a055bb494c9" class="block-color-yellow table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5ad182f4-777c-4999-880c-1e9a445acd96">1a Ambiguizare</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4a25abd5-28bf-4fb4-a8dc-55fecf6997fe">1b Viziune insolita asupra sentimentului</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#446c2aa9-4c49-4894-9311-0f5d274b482e"><mark class="highlight-yellow">Tematic…</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ae740ac6-60b5-44b7-af33-7d671adb934a">3a Titlul</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#bd468945-5209-4e62-9e96-6df9dde1b747">3b Simetrie prima-ultima img leoaica</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9edf193a-5d57-47ce-aa1b-99279c71b09a">2a Momentul indragostirii</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#524b49e2-2afb-4508-b0f2-dbbe36023109">2b Dubla transfigurare</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0cfc6ed3-da91-47d4-a914-2f82f0909393">2c Fiinta metamorfozata, decorporalizata</a></div></nav><p id="09a99435-079a-46c8-913c-f912e86c9744" class="">= NEOMODERNISM 1964</p><p id="43eefdc7-2ae5-48a1-89e1-1343dc171663" class="">
+</p><p id="c78cc79a-f344-4021-a04b-06b143cda070" class="">I:</p><ul id="bb9bb3ed-9be4-4ed0-919f-760321bbcdfa" class="bulleted-list"><li style="list-style-type:disc">obsedantul deceniu, lit = propaganda</li></ul><ul id="d996d03d-cf3b-42b3-b288-63a2031291d9" class="bulleted-list"><li style="list-style-type:disc">revendica autonomia estetica a lit</li></ul><ul id="74d2287d-7452-4e0a-bfc1-73279b21189d" class="bulleted-list"><li style="list-style-type:disc">gen neomodernista → leg cu lit interbelica</li></ul><ul id="962cbcd7-a004-4b23-8624-c2d219069778" class="bulleted-list"><li style="list-style-type:disc">in lirica:<ul id="a7f48de3-2515-4ae4-a8de-69e1a2823755" class="bulleted-list"><li style="list-style-type:circle">redescoperirea sentimentelor</li></ul><ul id="7cb5c76b-80e5-4664-8e2d-af86b9473b48" class="bulleted-list"><li style="list-style-type:circle">redevine lirism pur</li></ul><ul id="1deb4f5c-8596-4f34-aa14-f961550821e4" class="bulleted-list"><li style="list-style-type:circle">metafora</li></ul><ul id="4a531464-e81a-426f-881f-bd6a422e6997" class="bulleted-list"><li style="list-style-type:circle">noutate si orgiinalitate in expresie si limbaj</li></ul><ul id="2b20f166-59b3-400e-8931-d1c750b35239" class="bulleted-list"><li style="list-style-type:circle">ambiguizarea msj artistic → absurd, nonsens</li></ul></li></ul><p id="5f408e83-6873-4ea7-a3da-c975705049b3" class="">
+</p><p id="31d60c21-dfba-4289-994f-f7847043db4e" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1a Ambiguizare</summary><div class="indented"><ul id="681dabb7-1f33-420a-89a6-bf37ffe53d18" class="bulleted-list"><li style="list-style-type:disc"><strong>mai multe niveluri</strong>: intalnirea cu iubirea + reconfig perspectivei:<ul id="b89b0233-5cba-4a68-915e-9e7487c0b899" class="bulleted-list"><li style="list-style-type:circle">cheie frecv in N Stanescu: intalnirea cu <mark class="highlight-yellow"><strong>inspiratia </strong></mark>- forta acaparatoare a creatorului        ⇒ <strong>tranf lumii intr-un univers unic </strong>(<mark class="highlight-yellow"><strong>om → creator prin muza</strong></mark>)</li></ul><ul id="c13ef5f6-e4c4-4e65-be64-fb389f4bd819" class="bulleted-list"><li style="list-style-type:circle">dimensiune <mark class="highlight-yellow"><strong>prozaica</strong></mark>, anulata de<mark class="highlight-yellow"><strong> revelatia iubirii/muzei</strong></mark>: sensuri metaf:<ul id="72bc433d-a4f0-49fd-94ba-225be1c941ca" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-teal"><em>spranceana </em></mark>= contemplatie</li></ul><ul id="2a4a53c4-ef3f-4b2c-85d5-12926903a89f" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-teal"><em>tampla </em></mark>= reflectie</li></ul><ul id="e735622c-dab6-4e85-8347-c2d6146e3e39" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-teal"><em>barbie </em></mark>= rostire poetica</li></ul><ul id="f008149b-b3af-4949-9287-2fffde8bed6c" class="bulleted-list"><li style="list-style-type:square">⇒ atribute ale creatorului</li></ul></li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1b Viziune insolita asupra sentimentului</summary><div class="indented"><ul id="686e7d5b-58c2-4698-8a6c-e60a1f433ff6" class="bulleted-list"><li style="list-style-type:disc">motiv: <mark class="highlight-yellow"><strong>vanatoarea </strong></mark>(reconfigurat de NS) = barbat ca victima unei vanatori, agresor = iubirea, <mark class="highlight-yellow"><strong>asociere unica</strong></mark></li></ul><ul id="9e9a32c7-2f5d-4fa6-8047-df179ffd4f76" class="bulleted-list"><li style="list-style-type:disc"><strong>pasiune devoratoare</strong>, a feminitatii puternice <mark class="highlight-teal">“Coltii albi mi i-a infipt in fata”</mark></li></ul><ul id="6bdbb9ff-f461-4ba7-a2ae-7db741154446" class="bulleted-list"><li style="list-style-type:disc"><strong>rasturnare de roluri</strong>, inedit</li></ul><p id="8a8c6014-88ed-4a19-88f1-86e8a7777995" class="">
+</p></div></details><p id="4a8e3940-a9ae-4c74-8cdf-66d9eda3e3c7" class="">
+</p><p id="991b51f1-4fba-4a8d-af8c-f42c5352beac" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><mark class="highlight-yellow">Tematic…</mark></summary><div class="indented"><ul id="50deb7e1-3486-4d16-b006-d2907ae956c0" class="bulleted-list"><li style="list-style-type:disc">iubirea ca intamplare a fiinteii</li></ul><ul id="e84b040d-e5ce-4a43-80ba-4dba8333da7c" class="bulleted-list"><li style="list-style-type:disc">Aparitia brusca si intruziunea brusca a sentimentului</li></ul><ul id="90644e81-b266-49f8-839f-6f349c20d22f" class="bulleted-list"><li style="list-style-type:disc">transformarea perceptiei lumii si asupra sinelui</li></ul><ul id="208d8158-049d-4f22-9088-b1cee4738a86" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>Iubirea = forta revelatoare</strong></mark><mark class="highlight-yellow"> </mark>a esentelor universale si individuale;<mark class="highlight-yellow"><strong> contopeste lumea + sinele</strong></mark></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3a Titlul</summary><div class="indented"><ul id="03d7b722-9232-43f7-8461-ec99499243e2" class="bulleted-list"><li style="list-style-type:disc">anticipeaza def inedita a erosului</li></ul><ul id="ffb82a85-1dca-440f-b978-d0b18d013b82" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">“leoaica tanara”</mark> antepus <mark class="highlight-teal">“iubirea”</mark>: marcheaza <strong>analogia</strong>:<ul id="be4fac5c-fcde-4bcf-aaa3-664a43c9e3b0" class="bulleted-list"><li style="list-style-type:circle"><strong>realitate int, abstracta - realitate ext </strong></li></ul><ul id="213f081d-76e8-4e7b-88bc-8c189f384cd5" class="bulleted-list"><li style="list-style-type:circle"><strong>semnificatiile nobletii, regalitatii</strong></li></ul></li></ul><ul id="d103cf02-48c8-483e-a844-ec614c3b313e" class="bulleted-list"><li style="list-style-type:disc">atipic, iubire = <strong>ferocitate </strong>(<mark class="highlight-teal">”tanara”</mark> → forta, vitalitate, senzualitate)</li></ul><p id="6e4bf896-9c04-4dfa-a804-b698c5d65421" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3b Simetrie prima-ultima img leoaica</summary><div class="indented"><ul id="5d33b8a9-064c-4b58-968e-92b3a2af72af" class="bulleted-list"><li style="list-style-type:disc"><strong>laitmotiv</strong></li></ul><ul id="822b615e-b9d3-48bb-8d04-d27878b81ccd" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">“leoaica tanara”</mark> vs <mark class="highlight-teal">“leoaica aramie”</mark> →<strong> perceptii dif ale eului asupra lumii</strong></li></ul><ul id="2279f3f1-212c-4792-8d1d-edd0ecc64eec" class="bulleted-list"><li style="list-style-type:disc">sugestia ferocitatii <strong><mark class="highlight-yellow">inlocuita </mark></strong>cu stralucire linistitoare</li></ul><ul id="61835642-2730-477f-b10d-1677303be038" class="bulleted-list"><li style="list-style-type:disc"><strong>fiinta se contopeste cu lumea </strong>→ devine <mark class="highlight-teal">“un desert in stralucire”</mark> → <strong>sentiment fundamental </strong>(iubirea) → <mark class="highlight-yellow"><strong>eternizare </strong></mark>(<mark class="highlight-teal">”inca-o vreme, / si-nca-o vreme…”</mark>)</li></ul><ul id="babfa316-4068-4bdb-ac37-a2c588c81fcf" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>timpuri verbale:</strong></mark><ul id="9b4989ff-2b32-426e-9c67-8832c702d6a1" class="bulleted-list"><li style="list-style-type:circle">prima img: mmcpf (<mark class="highlight-teal">”ma pandise”</mark>) + perfect compus (<mark class="highlight-teal">”m-a muscat”</mark>) → <mark class="highlight-yellow"><strong>actiuni punctuale</strong></mark></li></ul><ul id="aa81f9fc-d8a9-41aa-bb58-73b2b5b175fc" class="bulleted-list"><li style="list-style-type:circle"><strong>a 2a img</strong>: <mark class="highlight-yellow"><strong>prezent etern:</strong></mark> <em><mark class="highlight-teal">trece</mark></em></li></ul></li></ul></div></details><p id="0dfc97e3-bc08-44f0-a953-66093b6c06c1" class="">
+</p><p id="468228d5-de7a-4130-89fa-d393954d3a13" class=""><strong>Reper 2</strong>: 3 secvente lirice inegale</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2a Momentul indragostirii</summary><div class="indented"><ul id="7b6e0b08-c622-436f-941f-24055a6b6296" class="bulleted-list"><li style="list-style-type:disc">manifestarea sentimentului anterior latent (<mark class="highlight-teal">”Ma pandise-n incordare mai demult”</mark>)</li></ul><ul id="6ce154aa-4763-45b6-86ce-858d264f968e" class="bulleted-list"><li style="list-style-type:disc"><strong>prima img</strong>: <mark class="highlight-yellow"><strong>dinamica </strong></mark>(<mark class="highlight-teal">”Leoaica tanara, iubirea/ mi-a sarit in fata”</mark>) → <ul id="2ed49143-f4f2-476b-872d-18069cca9348" class="bulleted-list"><li style="list-style-type:circle"><strong>agresivitate, surpriza naucitoare</strong></li></ul><ul id="f64d788c-1275-4015-a401-ab8d19fdba09" class="bulleted-list"><li style="list-style-type:circle">imag socante prin <mark class="highlight-yellow"><strong>concretetea </strong></mark>(<mark class="highlight-teal">”Coltii albi mi i-a infipt in fata/ m-a muscat, leoaica azi de fata”</mark>)</li></ul></li></ul><ul id="188d683a-0ca7-4b37-b4c8-15296502e01a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">panda, atacul</mark> (metaf) = ipostaze ale sentimentului, pregatit de metamorfoza</li></ul><p id="7fb00d12-7723-4e28-bcdf-1d90fd31daca" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2b Dubla transfigurare</summary><div class="indented"><ol type="1" id="ed6fccb6-8a05-40aa-a7cf-54aeb4ddfe81" class="numbered-list" start="1"><li><strong>a fiintei</strong></li></ol><ol type="1" id="ada9ff47-17be-452b-a0bb-605956492d30" class="numbered-list" start="2"><li><strong>a lumii</strong>: <mark class="highlight-yellow"><strong>geneza </strong></mark>(<mark class="highlight-teal">”in jurul meu natura… ca o strangere de ape”</mark>) = <ol type="a" id="f6acd208-235c-4c5c-a528-083ac1c9de6b" class="numbered-list" start="1"><li>tablou <strong>cosmogonic </strong></li></ol><ol type="a" id="37ce7cc5-5773-4b0b-bfe8-6d5fdbba0735" class="numbered-list" start="2"><li>simb <strong>perfectiunii </strong>(<strong><mark class="highlight-teal">cercul</mark></strong>) - in <strong>centru</strong>: omul creator, contempland o noua geneza</li></ol></li></ol><ul id="411827c2-5da8-46f2-ad8e-481b23a3b31c" class="bulleted-list"><li style="list-style-type:disc">metaf <strong>privirii si a auzului </strong><mark class="highlight-yellow"><strong>ascensionale:</strong></mark><strong> </strong><mark class="highlight-teal"><strong>“</strong></mark><mark class="highlight-teal">Si privirea-n sus tisni,/ curcubeu taiat in doua/ si auzul o-ntalni/ tocmai langa ciocarlii” </mark>= <mark class="highlight-yellow"><strong>iesirea din sine, din limitele umane</strong></mark></li></ul><ul id="859d71a0-936c-4d3d-87a0-652a83ed410c" class="bulleted-list"><li style="list-style-type:disc">privire simultan cu auz → miscare cu punct terminus = loc imaterial, al cantecului (<mark class="highlight-teal">”ciocarlii”</mark>)</li></ul><ul id="21d8b108-0fca-4ff7-bbf4-c7f5a0ff8654" class="bulleted-list"><li style="list-style-type:disc">metaf <mark class="highlight-yellow"><strong>curcubeului</strong></mark>: <strong>pluritate</strong><ul id="421490b6-5eb8-4df3-b08d-f8924f650c32" class="bulleted-list"><li style="list-style-type:circle"><strong>simbol biblic (armonie, impacare)</strong></li></ul><ul id="fc40de66-374d-42c1-ae7e-b7e0c8dc6372" class="bulleted-list"><li style="list-style-type:circle"><strong>multiplicitate</strong></li></ul></li></ul><p id="77c4910e-17bb-4cf0-a81c-56f77a07db72" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2c Fiinta metamorfozata, decorporalizata</summary><div class="indented"><ul id="007f51b0-476b-4403-b4c9-b48084455018" class="bulleted-list"><li style="list-style-type:disc">simturile comune (<mark class="highlight-teal">sprancene, tampla, barbie</mark>) isi pierd rostul, <strong><mark class="highlight-yellow">fiinta nu mai e definita de corporalitate</mark></strong> (<mark class="highlight-teal">”mana nu le mai stie”</mark>)</li></ul><ul id="6b9341ab-5ac7-46d0-8094-e8d23ff3b94f" class="bulleted-list"><li style="list-style-type:disc">receptarea lumii in mod <mark class="highlight-yellow"><strong>afectiv:</strong></mark><ul id="d09f142b-03b6-406e-87ec-1c127977dcba" class="bulleted-list"><li style="list-style-type:circle">perpetua regenerare a sentimentului cu care se identifica: <mark class="highlight-teal">“si aluneca-n nestire/ pe-un desert in stralucire,/ peste care trece-alene/ o leoaica aramie/ cu miscarie viclene,/ inc-o vreme/ si-nc-o vreme…”</mark></li></ul><ul id="1aa507b0-e3eb-457f-b2b8-20d20805aebf" class="bulleted-list"><li style="list-style-type:circle"><strong>repetitie </strong>= <mark class="highlight-yellow"><strong>eternalizare sub sentiment</strong></mark></li></ul></li></ul><ul id="ef2a46c1-c2eb-4778-b0ef-651bcf0ff20e" class="bulleted-list"><li style="list-style-type:disc">secv 1, 2 = <mark class="highlight-yellow">precizie temporala</mark> (<mark class="highlight-teal">”azi”, “deodata”</mark>) → <strong><mark class="highlight-yellow">“…” val simb</mark></strong></li></ul><p id="40983fc4-4f37-420f-991f-3b9e51791f32" class="">
+</p></div></details></div></article></body></html>

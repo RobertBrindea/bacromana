@@ -1,0 +1,682 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Povestea lui Harap-Alb - Ion Creanga</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="688c4ae6-3f59-4576-bbe3-2f62e66a8419" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🤴</span></div><h1 class="page-title">Povestea lui Harap-Alb - Ion Creanga</h1><p class="page-description"></p></header><div class="page-body"><nav id="1beeb95a-56e3-49b4-925e-27625a137e39" class="block-color-yellow table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#dfc60546-8a53-4b0e-918e-03bc56da3a87">1a Fantastic diminuat</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#49cc17f3-8723-46b1-9763-f14eaba5e506">1b Umorul + oralitate</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2bc7d328-ec84-4f35-b457-248c551e6d00">3a Incipit-final (formule)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#821c85c5-411b-4f57-8fe2-b071e53848a1">3b Actiunea - spatii simb</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3c464f3e-f0d6-49e8-9b7c-58e26a5242b4">2a Scena fantanii</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2aa5d20e-8bc1-4de5-adfc-d7e01f143d3c">2b Scena uciderii lui HA (final)</a></div></nav><p id="19381415-e990-424f-a376-1e4c4de0abd0" class="">
+</p><p id="4ac0922d-8f86-4b71-8082-f9dc6ba4b573" class="">= BASM CULT 1877</p><p id="0b6d2fc4-2827-48c7-97c5-2d3f161cc46a" class="">
+</p><p id="8b773e0c-80d5-4970-9f2a-c6d7887aadfc" class="">I:</p><ul id="34c580b0-9f59-411f-a8aa-4f5214bfe13a" class="bulleted-list"><li style="list-style-type:disc">def basm</li></ul><ul id="4719bbdb-5b08-46b3-8245-caf5c94e2a4b" class="bulleted-list"><li style="list-style-type:disc">caracteristicile speciei</li></ul><ul id="427b6ebf-2093-4579-8c0d-592fd0897e12" class="bulleted-list"><li style="list-style-type:disc">fraza despre basmul lui Creanga</li></ul><p id="5a08061a-44ce-4559-acfa-07fd321e89e3" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1a Fantastic diminuat</summary><div class="indented"><ul id="628c6424-f5ad-4400-a502-b95095925310" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>categ fantastica diminuata:</strong></mark><ul id="4a0b33d5-6509-47a9-9e7a-448cbf14d138" class="bulleted-list"><li style="list-style-type:circle">persj principal (+ antagonist) nu are puteri supranaturale</li></ul><ul id="ec07e6b3-1f96-4248-bb80-fba72f27d29f" class="bulleted-list"><li style="list-style-type:circle">fantasticul plasat pe personajele sec</li></ul><ul id="810d5046-9294-4239-9a27-c31c56f25979" class="bulleted-list"><li style="list-style-type:circle">persj sec au trasaturi omenesti (ex Gerila - isteric, certaret, conflictual)</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1b Umorul + oralitate</summary><div class="indented"><ul id="18fe738e-11ff-430c-b228-a167abfc1d61" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong><mark class="highlight-yellow"><strong>comic jovial, bonom:</strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark><ul id="7b5385be-39f6-451b-8ad1-b3b14fd01c9e" class="bulleted-list"><li style="list-style-type:circle">c de sit: <mark class="highlight-teal">cuptorul de arama</mark></li></ul><ul id="0d7125e3-08e1-40f4-8557-4040e0961056" class="bulleted-list"><li style="list-style-type:circle">c de carac: 5 uriasi, grotesti</li></ul><ul id="17bdc0aa-33b6-4dff-bdd1-30ae8d80ae4e" class="bulleted-list"><li style="list-style-type:circle">c de limbaj: expresii poznase: (<mark class="highlight-teal">”sa traiasca 3 zile cu cea de-alaltaieri”</mark>)</li></ul></li></ul><ul id="100a3209-43e0-4d7e-b3ed-0e60e4d5397d" class="bulleted-list"><li style="list-style-type:disc">oralitate:<ol type="1" id="e72be9ec-fc5c-4936-b3ed-100077d8f377" class="numbered-list" start="1"><li>dialog</li></ol><ol type="1" id="b24a2910-4106-432a-b163-f69afc8f57de" class="numbered-list" start="2"><li>exclamatii, interogatii (<mark class="highlight-teal">Alelei, pacoste!</mark>)</li></ol><ol type="1" id="01eaf597-99f5-499a-b2d8-7801367db560" class="numbered-list" start="3"><li>onomatopee (<mark class="highlight-teal">”</mark><mark class="highlight-teal"><em>pornesc ei teleap! Teleap! Teleap!”</em></mark><em>)</em></li></ol><ol type="1" id="f110f246-335b-4c73-9e78-0638fa8d2dd2" class="numbered-list" start="4"><li>interogatii retorice (<mark class="highlight-teal">”</mark><mark class="highlight-teal"><em>Aşa-i că taci?”</em></mark><em>)</em></li></ol><ol type="1" id="198cb739-5c08-41fd-a425-d101390356f5" class="numbered-list" start="5"><li>repetitie (<mark class="highlight-teal"><em>Râzi, tu, râzi, HA..</em></mark><em>)</em></li></ol><ol type="1" id="241bad31-61ba-465b-ba62-2f7c22e563d9" class="numbered-list" start="6"><li>zicatori, proverbe (<mark class="highlight-teal">&quot;Omul sfinteste locul”</mark>)</li></ol><ol type="1" id="6e06b5d8-2a9d-4808-9633-f68e7f7a743e" class="numbered-list" start="7"><li>fraze ritmate</li></ol><ol type="1" id="4d896b79-dc4a-4d48-9fb6-d1f29b8b49fe" class="numbered-list" start="8"><li>inversiune</li></ol><ol type="1" id="46ebffce-2dd4-40e6-a40e-6c051c1a56ec" class="numbered-list" start="9"><li>limbaj regional, popular</li></ol><p id="7ad90046-69db-45cd-9702-149bf56c1991" class="">
+</p></li></ul></div></details><p id="43dddc13-fe65-46e9-8b2a-2ded04f15211" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3a Incipit-final (formule)</summary><div class="indented"><ul id="043904ca-a915-4048-bd4d-e8843c9f11ff" class="bulleted-list"><li style="list-style-type:disc">formule nar: <ul id="9425fa91-ce1c-4db5-a3a0-1b0407acf916" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow">incipit</mark>: <mark class="highlight-teal">“Amu cica era odata”</mark><ul id="5d0b13ef-d15e-4f2b-b832-7106828bcc50" class="bulleted-list"><li style="list-style-type:square"><strong>“Amu”</strong> - oralitate, caracter regional</li></ul><ul id="43a52bf9-e3ac-417d-b748-0fc918c57a92" class="bulleted-list"><li style="list-style-type:square"><strong>“cica”</strong> - limbaj popular</li></ul><ul id="176f60cb-9132-4ebf-bcf6-e196949ecc17" class="bulleted-list"><li style="list-style-type:square"><strong>“era odata”</strong> - imperfect, plasare in timp imemorial, incert, fantastic</li></ul></li></ul><ul id="599fb8d2-9333-4fa7-b5b0-be25b0bba2f4" class="bulleted-list"><li style="list-style-type:circle"><strong>formula scurta </strong>→ fantasticul diminuat</li></ul><ul id="7a95fc44-3d6e-4e3c-ab00-9f3904257e8d" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow">final</mark>: <mark class="highlight-teal">“Un pacat de povestar, fara bani in buzunar… cine se duce acolo, bea si mananca. Iar pe la noi, cine are bani bea si mananca iara cine nu, se uita si rabda”</mark><ul id="0a0af4cd-3d58-4655-a528-4d0887b9cbf5" class="bulleted-list"><li style="list-style-type:square">final fericit</li></ul><ul id="fdb410c5-d459-4bb6-b5b6-1a67603280a5" class="bulleted-list"><li style="list-style-type:square">narator = martor</li></ul><ul id="1b1ee5c5-1025-4c32-8ee3-76bff0189867" class="bulleted-list"><li style="list-style-type:square">fixeaza raportul lume fantastica - reala</li></ul><ul id="1110e9b8-8e0e-4fc1-801e-03246b611751" class="bulleted-list"><li style="list-style-type:square">nuanta realista, sociala (bani)</li></ul></li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3b Actiunea - spatii simb</summary><div class="indented"><ul id="257b8e6f-8eab-4d79-a8a4-cc9cd1d214e5" class="bulleted-list"><li style="list-style-type:disc">univers in haos (cei 2 frati la cele 2 capete, <mark class="highlight-yellow"><strong>motivul </strong></mark><strong>imparatului fara mostenitor</strong>)</li></ul><ul id="5cf6fd2d-8f15-4c13-869c-f4da6f717d25" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow">imparatia Craiului</mark>:<ul id="271e97f3-0af0-49e0-aa96-50455bd1fd47" class="bulleted-list"><li style="list-style-type:circle">spatiu familial, protector</li></ul><ul id="363f4f86-1da4-4c95-9acd-fe250dbb27e0" class="bulleted-list"><li style="list-style-type:circle">simbolic in evolutie (protagonist = motivul <strong>mezinului superior fratilor</strong>)</li></ul></li></ul><ul id="ee30dfee-9a6d-4c36-81f8-735bea0120db" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow">podul </mark>= trecerea de la imaturitate la maturitate</li></ul><ul id="1207b887-98f9-49fd-81dc-209dfb8b373b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow">padurea</mark>:<ul id="61224e9b-ba0d-4bc0-9eda-01ecee992631" class="bulleted-list"><li style="list-style-type:circle">ambivalenta (moarte, regenerare)</li></ul><ul id="52fd3eba-94a4-43a2-ac2a-8d318165c5b8" class="bulleted-list"><li style="list-style-type:circle">labirint mitologic, ratacire simbolica</li></ul><ul id="5f49acab-f57c-498b-8cc8-098adcc5092a" class="bulleted-list"><li style="list-style-type:circle">intalnirea cu spanul (om monstruos, insemnat, crud)</li></ul></li></ul><ul id="e327bfaa-d70a-4fa3-a1dc-b7cf30c5d242" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow">gradina Ursului si padurea Cerbului:</mark><ul id="b90830e2-baa9-48ee-a6e0-b095d9c53b8b" class="bulleted-list"><li style="list-style-type:circle">spatii interzise muritorilor</li></ul><ul id="e1145e5c-dfb2-4cec-8d3f-cfebfe7d341d" class="bulleted-list"><li style="list-style-type:circle">HA le ia in stapanire prin invingerea celor 2 simboluri (urs, cerb)</li></ul><ul id="3ab7177d-3793-409a-9de3-6ae572a74abb" class="bulleted-list"><li style="list-style-type:circle">trofeu <strong>vegetal </strong>(salata), <strong>mineral </strong>si <strong>animal </strong>(pielea batuta cu nestemate) - superioritate HA</li></ul><ul id="2b02728b-cca4-4538-a62d-e28044b97a10" class="bulleted-list"><li style="list-style-type:circle">HA = ales care resatbileste ordinea lumii, elimina Raul in toate formele lui</li></ul></li></ul></div></details><p id="465dda84-91c7-4d0d-9f72-2a8fe7dc7235" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2a Scena fantanii</summary><div class="indented"><ul id="6b0b84d5-21d2-43cd-9997-edc44cf2d8a0" class="bulleted-list"><li style="list-style-type:disc">= prima renastere, degradare in plan social (transformarea lui HA in sluga)</li></ul><ul id="0510cd62-3b1b-45fa-883e-7506e03c43c5" class="bulleted-list"><li style="list-style-type:disc">= initiere</li></ul><ul id="f9f51530-d7db-4baf-ae2b-a7cdd8cea418" class="bulleted-list"><li style="list-style-type:disc">scena relevanta pt evol HA in drumul initiatic, bildungsroman</li></ul><ul id="e54f83b8-ba92-48c4-acb0-487b20ba3b84" class="bulleted-list"><li style="list-style-type:disc">HA - sentimente umane, realiste, cade prada spanului si ii jura ca nu isi va dezvalui identitatea</li></ul><ul id="b17eff0a-fb93-4c4b-a3d0-ca2e1de7c211" class="bulleted-list"><li style="list-style-type:disc">simbolic: infern</li></ul><ul id="0f063b1b-2130-430a-ab99-fce0150a3b4c" class="bulleted-list"><li style="list-style-type:disc">relevant: acum isi primeste numele de Harap Alb (oximoron Harap - piele intunecata, trimitere la ideea de sluga; alb - noblete)</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2b Scena uciderii lui HA (final)</summary><div class="indented"><ul id="1db9c6ea-2bb8-43f7-8d5c-caf804febf26" class="bulleted-list"><li style="list-style-type:disc">moarte simbolica → renastere din sluga in imparat</li></ul><ul id="ca95e7ae-3e8b-48cf-97c4-ba1848e5aa42" class="bulleted-list"><li style="list-style-type:disc">specific basmului:<ul id="94fbd487-8856-4115-9804-534ee017acff" class="bulleted-list"><li style="list-style-type:circle">motivul apei vii si a apei moarte</li></ul><ul id="0e95e995-f679-4d03-ae25-efda1539ba3e" class="bulleted-list"><li style="list-style-type:circle">final nuptial, fericit</li></ul></li></ul><ul id="b2f934bf-9753-4f13-862b-a3be20d6fbe1" class="bulleted-list"><li style="list-style-type:disc">eliminarea pedagogului rau (span) de catre pedagogul bun (calul), prima interventie de acest fel a acestuia</li></ul></div></details></div></article></body></html>

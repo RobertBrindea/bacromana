@@ -1,0 +1,682 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Moara cu noroc - Ioan Slavici</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="980c2c96-4189-426f-816a-744141ba2333" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🐷</span></div><h1 class="page-title">Moara cu noroc - Ioan Slavici</h1><p class="page-description"></p></header><div class="page-body"><p id="3184a30d-bfe7-4a54-b35f-a55172866685" class="">
+</p><nav id="dc017c99-7c96-4eac-8f25-fa53ffe99800" class="block-color-yellow table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#03ab1768-5c2e-4f9c-b408-abc5f0e51159">1a Realism (narator omniscient, verosimiliate)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0e130a49-cbf3-4e39-82c2-04afad64243c">1b Psihologic (personaje, conflict interior, mod de carac)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9074b66a-91fe-49ff-81d1-e7e5099da613">3a rel incipit-fin</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#af1c121a-59dd-4de9-9009-e4bc418a9550">3b Titlu</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4b26c2ea-97a5-4753-a2f7-2faf7c8ef2e9">2a Marturia falsa la judecata lui Lica</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7f789615-7297-48ef-b444-3155fbb27a11">2b Scena mortii persj</a></div></nav><p id="e63d518d-1e0b-40ff-a8bf-a2b62c8e63e9" class="">
+</p><p id="8a70b54e-34ea-4f65-b318-dbbf49b19f06" class="">= NUVELA REALISTA PSIHOLOGICA 1881</p><p id="aed1197d-7a66-49b4-a35e-82066f58aabf" class="">Marii clasici</p><p id="3abf8056-5e99-487b-b768-16834c1940f4" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1a Realism (narator omniscient, verosimiliate)</summary><div class="indented"><ul id="d02def27-6374-414a-8bc0-a34ebb64b06f" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>narator omniscient, obiectiv</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="8f3d8d4b-cf9b-46e0-bc6e-84b165f493e1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>versoimilitate</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>:</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><ul id="3d96ebda-5960-4ec2-b8a2-c24db95b0a15" class="bulleted-list"><li style="list-style-type:circle">spatiu (specific: pusta Aradeana)</li></ul><ul id="4acb150f-6ed9-46d2-b9d2-2cd230f0f80f" class="bulleted-list"><li style="list-style-type:circle">fam trad (dialog batrana soacra-tanar)</li></ul><ul id="7b9ca4e9-3aa7-4f13-9dea-9df72deed8c8" class="bulleted-list"><li style="list-style-type:circle">problematica banului, context istoric</li></ul><ul id="dfcb12b1-585b-4b11-9e4c-4d4183e3ec37" class="bulleted-list"><li style="list-style-type:circle">tipologii<ul id="6e2567b8-7a43-4345-b590-d3cddedb4fbd" class="bulleted-list"><li style="list-style-type:square">Ghita (cizmar sarac, dornic sa munceasca sa isi schimbe destinul): om moral, adaptat la mediu</li></ul><ul id="ed42c79a-dccc-4a99-b820-157777444eb5" class="bulleted-list"><li style="list-style-type:square">Lica: malefic</li></ul></li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1b Psihologic (personaje, conflict interior, mod de carac)</summary><div class="indented"><ul id="06d81f17-cad5-4670-b02d-188ed0b357d4" class="bulleted-list"><li style="list-style-type:disc">persj labil in situatii limita</li></ul><ul id="d7fe2022-5051-46e4-a051-3d3f80d0b9f9" class="bulleted-list"><li style="list-style-type:disc">persj complexe, distructive</li></ul><ul id="43a2e33d-b08c-4a4b-890d-e24eceae8da0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>conflict int:</strong></mark><ul id="c087bbfb-6962-4ec0-aa98-746e9fae0c41" class="bulleted-list"><li style="list-style-type:circle">Lica ii ia locul lui Ghita (in fam)</li></ul><ul id="8a869cb3-019c-48b0-a28b-6f5b71ec374d" class="bulleted-list"><li style="list-style-type:circle">evol lui Ghita (om moral → sluga)</li></ul><ul id="0dfaca18-afe9-4ff8-aa73-b5322b2d8306" class="bulleted-list"><li style="list-style-type:circle">degradarea imag lui Ghita in social, in fata fam</li></ul></li></ul><ul id="515217c9-7ed8-441e-94a9-8afd68906a1a" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-yellow">mod de carac</mark></strong>: monolog interior</li></ul></div></details><p id="73ee4a22-ed58-4a02-8be8-08dd6314c0d9" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3a rel incipit-fin</summary><div class="indented"><ul id="1b041b05-9af9-4b3e-80bc-fefaf1494a19" class="bulleted-list"><li style="list-style-type:disc">prolog: dialog Ghita - soacra: <mark class="highlight-teal">“e vorba nu de bogatie, ci de linistea colibei”</mark><ul id="48bcbfbd-a125-448d-91d8-d62173d412a9" class="bulleted-list"><li style="list-style-type:circle">= intelepciune populara, legile morale ale satului</li></ul><ul id="764f684a-7250-4c95-a285-7d53c487d727" class="bulleted-list"><li style="list-style-type:circle">destinul ar trebui acceptat</li></ul></li></ul><ul id="762d91ab-4e3b-4817-b04f-463857aa9092" class="bulleted-list"><li style="list-style-type:disc">final: simetric: replica batranei: <mark class="highlight-teal">“asa le-a fost datul”</mark><ul id="2f991226-d859-44a5-a5c9-2db56c40b233" class="bulleted-list"><li style="list-style-type:circle">purificare in foc</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3b Titlu</summary><div class="indented"><ul id="35f977ee-710d-42cb-bbc5-2d5a199939e2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong><strong><strong><strong><strong><strong>Moara</strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong>:</strong></strong></strong></strong></strong></strong><ul id="4fef13d1-ac4d-479e-a32c-9e19cc340a79" class="bulleted-list"><li style="list-style-type:circle">spatiu al macinarii (psihologic)</li></ul><ul id="24200fa4-63d0-41a5-a02e-6078193a890e" class="bulleted-list"><li style="list-style-type:circle">indepartat de lumea satului, de legile si moralitatea sa</li></ul><ul id="f6de574b-c414-4074-868a-c12881d87498" class="bulleted-list"><li style="list-style-type:circle">moara → <mark class="highlight-yellow"><strong>carciuma</strong></mark><ul id="04eaa398-f014-4236-b491-6aad51f7b193" class="bulleted-list"><li style="list-style-type:square">= incercare sa isi schimbe destin</li></ul><ul id="1ba95fed-3b3d-4070-b2a7-2805dce4bc2c" class="bulleted-list"><li style="list-style-type:square">destine tragice</li></ul></li></ul><ul id="416fd96e-f166-4d20-afa2-cffe58f13575" class="bulleted-list"><li style="list-style-type:circle">= <mark class="highlight-yellow"><strong>casa </strong></mark>→ destramarea fam trad</li></ul></li></ul><ul id="2b235d6d-44be-409a-8e67-4cc7fc4b9fd2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>cu noroc</strong></mark> → ironic</li></ul></div></details><p id="2c97904a-b6ed-4f0d-ace2-3044ad1a74be" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2a Marturia falsa la judecata lui Lica</summary><div class="indented"><ul id="4a1314c4-c06d-48cb-a869-61c63ea2dd8e" class="bulleted-list"><li style="list-style-type:disc"><strong>culminarea </strong><mark class="highlight-yellow"><strong>conflictului interior</strong></mark><ul id="418f6737-005e-439b-8b12-50920004855b" class="bulleted-list"><li style="list-style-type:circle">ultima etapa a <mark class="highlight-yellow"><strong>degradarii persj</strong></mark></li></ul><ul id="87e1a0b6-db20-452b-8b17-1b3cdfa9bbd5" class="bulleted-list"><li style="list-style-type:circle">devine <strong>complice </strong>la crima</li></ul><ul id="799ca56f-781e-457c-bd39-1de5037ff01d" class="bulleted-list"><li style="list-style-type:circle">irecuperabil <strong>moral</strong></li></ul></li></ul><ul id="c1fea839-72e4-4ba2-9b18-359ab00bec61" class="bulleted-list"><li style="list-style-type:disc">Ana devine neincrezatoare (sursa banilor lui Ghita, realizeaza legatura (bancnota rupta la colt)) - refuza sa plece de la han - ii costa viata</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2b Scena mortii persj</summary><div class="indented"><ul id="c4d737a7-a24f-49b6-96a1-d7cf3295b943" class="bulleted-list"><li style="list-style-type:disc">ajunge la timp cu Pintea pentru a-l printe pe Lica cu banii furati, insa  acesta scapa calare</li></ul><ul id="7f9801d2-a546-46dc-bc75-5c2056ecd9c6" class="bulleted-list"><li style="list-style-type:disc"><strong>crima pasionala a sotului gelos dublata de dorinta vindicativa</strong>: notate toate gesturile,<mark class="highlight-teal"> “Simt ca mi s-a pus ceva de-a curmezisa in cap si ca nu pot trai, iara pe tine nu pot sa te las vie in urma mea”</mark></li></ul><ul id="bd36686e-47e5-4f29-84dc-2557a777f56f" class="bulleted-list"><li style="list-style-type:disc"><strong>dialog = confesiune reciproca, eliberatoare</strong></li></ul><ul id="61ba32e1-92b1-4de3-902e-0ec754a6fed8" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>final</strong></mark>:<ul id="93b12f66-8737-4d41-bdb6-3519222874bd" class="bulleted-list"><li style="list-style-type:circle">impuscarea lui ghita de catre rautz</li></ul><ul id="9805930d-d844-4fa2-a144-32379c7912f8" class="bulleted-list"><li style="list-style-type:circle">incendierea hanului la comanda lui lica (regizor - vrea sa vada hanu arzand dintr-un loc specific)</li></ul><ul id="1c4e840a-9360-4576-9f58-f5a316dd1201" class="bulleted-list"><li style="list-style-type:circle">sinuciderea lui Lica</li></ul></li></ul><p id="2d1b948f-7904-4332-ab0d-ca41dc0416b5" class="">
+</p></div></details></div></article></body></html>

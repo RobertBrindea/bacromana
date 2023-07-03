@@ -1,0 +1,699 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Eu nu strivesc corola de minuni a lumii - Lucian Blaga</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="821841f9-13b7-4736-b7e4-1cec389d41d7" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🏵️</span></div><h1 class="page-title">Eu nu strivesc corola de minuni a lumii - Lucian Blaga</h1><p class="page-description"></p></header><div class="page-body"><p id="62fc55da-949e-4324-91a6-7e7c9aef937c" class="">
+</p><nav id="3ba14ed5-e101-4e94-8774-89cae52d78e3" class="block-color-yellow table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7bfde598-b420-4a6e-abb3-9532c76b3351">1a Expresionism (eu)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9eafba8a-b703-46ce-b33d-3ee41bf0fa3d">1b Structura (monobloc, cauzalitate), Metaforizare, tehnici moderne</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b89ed785-51c7-4157-8562-29b6d71718b9">3a Titlu (eu-lumea), metaf (corola)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#951323f5-9ad5-47d4-ad84-3eacb50ed5c4">3b Opozitie (lumina mea - a altora)(luciferic-paradisiac)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6a1ae75e-6e86-49e3-9c4e-bc4025d3f706">2a Enum tainelor</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#74b4c9e0-b181-448b-afd4-3bff5c013893">2b Comparatie luminea mea - a lunii</a></div></nav><p id="871a59af-4b80-4344-8a9d-60bb53d2b23c" class="">
+</p><p id="c81c96e1-b423-4527-a68b-132b2ffb99cd" class="">= EXPRESIONISM 1919</p><p id="eea65039-b921-4002-9a4d-98ed249d9853" class="">
+</p><p id="97c613cd-3ece-4ed2-a95c-d745671b071e" class=""><strong>I: </strong>creatia blagiana:</p><ul id="7a94178b-1021-421a-b089-28a4dd809de6" class="bulleted-list"><li style="list-style-type:disc">Discurs filozofic (luciditate, densitate logica, raceala)</li></ul><ul id="ee8cc0c4-9351-43d4-bcdc-cca905e74af7" class="bulleted-list"><li style="list-style-type:disc">Discurs liric (cere subtilitate)</li></ul><p id="962711f5-3452-4a73-813c-e6b20e348731" class="">Eu nu strivesc - text programatic, autoportret liric</p><ul id="15e61ab1-f9c4-40a5-943b-15f5f7eba864" class="bulleted-list"><li style="list-style-type:disc">Monolog confesiv</li></ul><ul id="d9c5d358-f97f-42e7-bbc5-f92fb49b09e7" class="bulleted-list"><li style="list-style-type:disc">Rolul eului liric</li></ul><p id="4c4d9f7f-6a74-4593-9ace-4b573b58ac83" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1a Expresionism (eu)</summary><div class="indented"><ul id="63e156fa-5ed9-4a7b-99cf-de9ffccac33e" class="bulleted-list"><li style="list-style-type:disc">Prin: <mark class="highlight-yellow"><strong>valorificarea intuitiei si afectivitatii</strong></mark> (ca instrumente de cunoastere)</li></ul><ul id="56c9360b-7c21-4039-8c17-672e64f058ec" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>Eu poetic exacerbat </strong></mark>-&gt; elan vitalist de dimensiuni cosmice</li></ul><ul id="b00345f6-2fe8-42eb-9c8f-6279fb253032" class="bulleted-list"><li style="list-style-type:disc"><strong>Contopire </strong>cu misterul universal</li></ul><ul id="9c194285-59b8-40a5-b411-887b86a60e6e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>Idei principale:</strong></mark><ul id="3d5d1a2f-3846-4f1c-b024-7cd15109f062" class="bulleted-list"><li style="list-style-type:circle"><strong>Poezie </strong>= forma de cunoastere</li></ul><ul id="c0584d65-e21f-4bbf-928c-8218d0fd570e" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow"><strong>Relatia eului cu misterul</strong></mark></li></ul><ul id="e2f48731-99e8-46a3-ad4c-ea0599f137d0" class="bulleted-list"><li style="list-style-type:circle">Raportul poetului cu lumea (mister) =&gt;<ul id="446c1d91-65c6-47b5-aa3a-0bfaa0239ef6" class="bulleted-list"><li style="list-style-type:square">Eul vrea sa <mark class="highlight-yellow"><strong>amplifice taina</strong></mark>, nu sa expliciteze</li></ul><ul id="3cb4e9a0-5f91-4376-ae76-7eac9123b73a" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-teal">“Eu” </mark>(apare in vers 1, ultim si ½) =&gt; <strong>forta demiurgica de a amplifica misterul prin creatie </strong>(<mark class="highlight-teal">“asa imbogatesc si eu intunecata zare”</mark>)</li></ul></li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1b Structura (monobloc, cauzalitate), Metaforizare, tehnici moderne</summary><div class="indented"><ul id="bfe33f9d-5188-417b-9770-51fe66f663c3" class="bulleted-list"><li style="list-style-type:disc"><strong>Monobloc </strong>+ <strong>Rel de cauzalitate </strong>(1ul vers + ultimul vers =&gt;<mark class="highlight-yellow"><strong> a iubi = a cunoaste</strong></mark>) =&gt; <strong>coeziune</strong></li></ul><ul id="21e452d4-021e-4936-a55d-2fa7c05153cc" class="bulleted-list"><li style="list-style-type:disc">Elem de prozodie (absenta strofelor, versuri inegale(2-13), <strong><mark class="highlight-yellow">vers liber, ingambament</mark></strong><mark class="highlight-yellow">, </mark><mark class="highlight-yellow"><strong>fluidizare </strong></mark>(<mark class="highlight-teal">„și nu ucid /cu mintea tainele, ce le-ntâlnesc/ în calea mea”</mark>) + metaforizare =&gt; modernism</li></ul></div></details><p id="e9bb45e3-8aab-43ae-8882-2ac328c578e9" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3a Titlu (eu-lumea), metaf (corola)</summary><div class="indented"><ul id="cfe8957a-31b4-414b-ab39-70d2db6c17fc" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>Fixeaza 2 poli (eul - lumea)</strong></mark></li></ul><ul id="a893ffe1-71cc-49cf-9dcb-f10b243fcd70" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-yellow">Metafora </mark></strong><mark class="highlight-teal">“corola de minuni a lumii”</mark><ul id="37043f11-5647-453b-bfd2-ca6d4b185646" class="bulleted-list"><li style="list-style-type:circle">raportul special <strong>creator-univers</strong> de inspiratie</li></ul><ul id="7fc2cf4f-af5d-4b1f-8128-93844e3963e9" class="bulleted-list"><li style="list-style-type:circle">Preferinta pt metafora, analizata in <mark class="highlight-teal">“Despre geneza metaforei si sensul culturii”</mark><ul id="1fb677fa-74f6-495b-a8f6-a2d70cd7ab00" class="bulleted-list"><li style="list-style-type:square"><strong>Metaf != fig de stil, metaf = categorie filozofica</strong></li></ul><ul id="1c3a9774-1465-4de6-9127-f3806e8d44b9" class="bulleted-list"><li style="list-style-type:square">Aparitia metaforei legata de universul misterios, imposibil de explicat =&gt; <strong>rolul revelator al metaforei</strong></li></ul><ul id="ea6b881b-063c-4821-b557-5d344bbcb60b" class="bulleted-list"><li style="list-style-type:square">Astfel, metaf:<ul id="5787b136-92c5-4e53-8056-605970be447d" class="bulleted-list"><li style="list-style-type:disc"><strong>Plasticizanta</strong></li></ul><ul id="47f1662a-63d6-4142-9c8b-9ef0ce58934b" class="bulleted-list"><li style="list-style-type:disc"><strong>Revelatorie (adanceste semnificatii) (preferata)</strong></li></ul></li></ul></li></ul><ul id="2f5b1daa-70f3-4589-8fd3-24af72190084" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow"><strong>Corola </strong></mark>= circularitate, armonie, frumusete, univers perfect cu om in centru</li></ul><ul id="f25625fe-c2bc-491f-8d6a-93f023f924a5" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow"><strong>De minuni</strong></mark> -&gt; carac misterios, tainic al frumuseti</li></ul><ul id="44147c83-2698-411e-a783-1d47ad00a1a7" class="bulleted-list"><li style="list-style-type:circle">=&gt; <strong>lume</strong> = frumusete dar si fragilitate</li></ul></li></ul><ul id="bc9bb376-735e-4330-bf87-e9f1c35d46d1" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-yellow">Accentul: pe eu</mark></strong>: plasat in poz cheie in poezie =&gt; unicitatea creatorului, rol esential</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3b Opozitie (lumina mea - a altora)(luciferic-paradisiac)</summary><div class="indented"><ul id="da4a0ebd-7f84-4cf5-b51c-6ba53e5dd93d" class="bulleted-list"><li style="list-style-type:disc">Anticipeaza ideile din “Trilogia Cunoasterii”</li></ul><table id="72f28743-ad40-479e-8cb7-f83893d4a5b6" class="simple-table"><tbody><tr id="49b87cab-4613-4bc0-b167-c6eead022bc8"><td id="LELn" class="">(lumina = cunoastere)
+<mark class="highlight-yellow"><strong>Lumina mea</strong></mark></td><td id="}Yg~" class=""><mark class="highlight-yellow"><strong>“Eu”</strong></mark>: <mark class="highlight-teal">“nu strivesc”,</mark> “nu ucid (cu mintea)”, <mark class="highlight-teal">“sporesc”, “imbogatesc”, </mark><mark class="highlight-teal"><strong>“iubesc”</strong></mark></td><td id="dGkM" class="">= cunoastere intuitiva, sensibila, <mark class="highlight-yellow"><strong>acceptarea misterului universal (cunoastere luciferica</strong></mark><strong>)</strong> =&gt; asumarea misterului, potentarea lui, confundarea eului cu acesta =&gt; <strong>arta</strong></td></tr><tr id="0f5433e1-9f76-4fab-af7b-39cd416445ad"><td id="LELn" class=""><strong><mark class="highlight-yellow">Lumina altora</mark></strong></td><td id="}Yg~" class=""><strong><mark class="highlight-yellow">“Altii”:</mark></strong> <mark class="highlight-teal">“sugruma”, “ucid”</mark></td><td id="dGkM" class="">Cunoastere rationala, logica, <mark class="highlight-yellow"><strong>distrug misterul </strong></mark><mark class="highlight-yellow">fara sa il rezolve (cunoastere </mark><mark class="highlight-yellow"><strong>paradisiaca = stiinta)</strong></mark></td></tr></tbody></table></div></details><p id="61f1663a-e943-47c6-b8da-8c634055ac10" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2a Enum tainelor</summary><div class="indented"><ul id="2f60e936-0f56-4ba9-90c4-73a6de8b34ff" class="bulleted-list"><li style="list-style-type:disc">Enumeratia tainelor -&gt; <strong>explicitarea metaforei din titlu</strong></li></ul><ul id="d21c1136-7304-4a7b-bd9f-453cb8dff114" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>Per ansamblu</strong></mark><mark class="highlight-yellow"> </mark>= diversitatea lumii, a misterului in forme concrete, materiale</li></ul><ul id="e955e08a-1817-481c-94e6-a441897393e9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>Individual</strong></mark>: Enumeratie in crescendo al adancirii semnificatiilor<ul id="c3759a4a-74d7-4d7c-b9ca-68eedabc1194" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow">Flori </mark>= spatiul natural</li></ul><ul id="0bb48c2d-3984-4571-9eb7-ba183bd37291" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow">Ochi </mark>= universul spiritual</li></ul><ul id="4210abaf-a8b2-43c8-8125-180eca246704" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow">Buze </mark>= universul rostirii cuv sau a iubirii</li></ul><ul id="017f3272-766c-4173-a436-c5d251979e9e" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow">Mormite </mark>= experienta mortii =&gt; moartea cel mai mare mister</li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2b Comparatie luminea mea - a lunii</summary><div class="indented"><ul id="0b07b955-a602-4cc3-9215-f07c1d5a6223" class="bulleted-list"><li style="list-style-type:disc">Capacitatea de a <mark class="highlight-yellow"><strong>potenta misterul</strong></mark></li></ul><ul id="5acca9de-2fbb-40a4-a3cf-5216b2027ce0" class="bulleted-list"><li style="list-style-type:disc">Lumina lumii<mark class="highlight-teal"> “nu micsoreaza… taina noptii”</mark></li></ul><ul id="e9111043-da51-4f74-9c03-059b7a99b2de" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">“Imbogatesc… cu largi fiori de sfant mister”</mark><ul id="9313e345-2f89-42b9-a790-ecd05a4d6dca" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-teal">“Sfant”</mark> - <strong>caracter sacru </strong>al misterului lumii</li></ul></li></ul><ul id="6878e793-deb3-46b3-b0cd-622cd37f1593" class="bulleted-list"><li style="list-style-type:disc"><strong>Camp lexical </strong>-&gt; acc fumusetea universului, anulata de c paradisiaca</li></ul><ul id="feacb1b4-0568-46e4-bffb-98cfd1b6f918" class="bulleted-list"><li style="list-style-type:disc"><strong>Precum razele lumii care arata si ascund, cunoasterea luciferica este situata intre fanic si criptic</strong></li></ul></div></details><p id="8fe21e10-6889-4b24-a5ff-d524a7fc0173" class="">
+</p><p id="00f2fca5-e635-4420-9deb-e952a783552b" class="">
+</p><p id="5199fa58-fcb0-4543-a56a-6457be40d8c0" class="">E n s c d m a l
+ş n u
+c m t, c l-i
+î c m
+î f, î o, p b o m.
+L a
+s v n a,
+î a d î,
+d e,
+e c l m s a l t -
+ş-n c c r e a l
+n m, c t
+m ş m t t n
+a i s e i z</p><p id="dd5ed027-6940-4c32-a3ae-0b42ce630f0d" class="">c l f d s m</p><p id="5a2eef75-8838-4931-b6d2-2e495d908422" class="">s t c n</p><p id="34dbd3fc-6586-4baa-9f66-f320e2cc36f8" class="">s s n s m m</p><p id="43df3085-9432-49a8-b7d9-98f300ba2bb6" class="">s o m</p><p id="f4c7dcf3-7e85-46b2-8512-c1472009b4e6" class="">c e i</p><p id="ae3fc848-45cd-4d8f-b0fd-ac3b9fca6656" class="">s f s o s b s m
+</p></div></article></body></html>

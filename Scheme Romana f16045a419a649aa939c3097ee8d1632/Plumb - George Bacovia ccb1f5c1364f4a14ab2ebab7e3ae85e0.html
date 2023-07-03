@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Plumb - George Bacovia</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ccb1f5c1-364f-4a14-ab2e-bab7e3ae85e0" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🪨</span></div><h1 class="page-title">Plumb - George Bacovia</h1><p class="page-description"></p></header><div class="page-body"><p id="a77d3b81-7dee-47e5-b514-e5eeb27e7ad6" class="">
+</p><nav id="91ccbc16-71bf-43b9-bb49-ffc005e543c9" class="block-color-yellow table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#bf5cef00-4c52-47f2-ac63-bdd3aa11034d">1a Tematica, sugestie, motive</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5064e7ac-883e-4708-83c2-c07aafb8624a">1b <strong>Muzicalitate, i</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#adfa55e8-e699-483b-8585-a2c4787b2336">3a <strong>Titlu, simbol</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9ff5ada3-0742-49b3-a787-ba42130eaf07">3b <strong>Simetria int-ext</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#76801e90-d54d-4d4d-bc5c-c26c1d0235dd">2a <strong>“</strong><mark class="highlight-yellow"><strong>Dormeau </strong></mark><strong>adanc sicriele de plumb/ si </strong><mark class="highlight-yellow"><strong>flori </strong></mark><strong>de plumb si funerar vestmint”</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#69091df2-5a41-4898-b604-e8f2281cd343">2b <strong>“Dormea </strong><mark class="highlight-yellow"><strong>intors amorul </strong></mark><strong>meu de plumb/ Pe flori de plumb, si-am inceput sa-l </strong><mark class="highlight-yellow"><strong>strig</strong></mark><strong>”</strong></a></div></nav><p id="94ac65c4-15f5-4ef0-97b3-73015fd3b0ac" class="">=SIMBOLISM 1916</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1a Tematica, sugestie, motive</summary><div class="indented"><ul id="1fe0b287-b598-42b9-8ddb-a871d0df8d44" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>Moartea, cond omului</strong></mark></li></ul><ul id="84f71c64-24b7-4de9-8f14-803c3c8cfad9" class="bulleted-list"><li style="list-style-type:disc"><strong>Stari specifice simb</strong>, fiind <strong>sugerate</strong>, nu numite (Mallarme)<ul id="4b4fa8aa-493d-41fb-9d3c-c4ecc32ea960" class="bulleted-list"><li style="list-style-type:circle"><strong>Suferinta fara scapare</strong></li></ul><ul id="23ded4d2-b272-4eea-8a6d-4728e44650b6" class="bulleted-list"><li style="list-style-type:circle"><strong>Lipsa dinamism</strong>, in lume cat si in eul</li></ul></li></ul><ul id="5a1802c7-0831-46c2-b877-3ac2fd68cbc9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>Motive</strong></mark>: mortuare:<ol type="1" id="80b4f0d2-fe40-4f98-9fd0-2931ab029a06" class="numbered-list" start="1"><li><strong>Singuratate</strong></li></ol><ol type="1" id="923a80b5-4294-401f-a232-065ea0c76585" class="numbered-list" start="2"><li>Funerar <strong>vestmant</strong></li></ol><ol type="1" id="73557ad8-b3e0-42ba-b6b0-f58d2d50b841" class="numbered-list" start="3"><li><strong>Coroanele </strong>(mortuare) de flori</li></ol><ol type="1" id="cfdf4647-dd6a-4a04-8ab2-e0ef37b8c357" class="numbered-list" start="4"><li>Strig fara raspuns -<strong>&gt; lipsa de speranta</strong></li></ol><ol type="1" id="c096a500-fc9c-4977-9866-9e6245ce2e5a" class="numbered-list" start="5"><li>Cavou -&gt; <strong>univers inchis</strong></li></ol></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1b <strong>Muzicalitate, i</strong></summary><div class="indented"><ul id="48cdbdda-2903-4814-945b-c4df9433ce6f" class="bulleted-list"><li style="list-style-type:disc">Sustine tema prin:<ul id="87ff407c-f169-4b85-bd1b-0aa5cee29f65" class="bulleted-list"><li style="list-style-type:circle">Ritm iambic =&gt; elegiaitate</li></ul><ul id="947a00db-a33d-4965-a5ed-5d8770ef1908" class="bulleted-list"><li style="list-style-type:circle">Monotonia sonoritatii -&gt;<strong> maj cons labiale </strong>=&gt;<strong> ton sumbru + vocale ascutite</strong> (i: frig, i: vestmint) -&gt; <strong>sparg monotonia strident, straniu </strong>-&gt; <strong><mark class="highlight-yellow">orice incercare de scapare pedepsita</mark></strong></li></ul></li></ul><ul id="692dbc6d-b838-4323-a8f6-3b47de5ea03e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>sonoritate plumb sumbra</strong></mark>: consoane labiale (p, m, b) sprijinite de o singura vocala: u →<strong> povara, greutate, apasare, stinsa</strong></li></ul></div></details><p id="3dcec59a-70fa-485a-acbf-75e0bbb6894e" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3a <strong>Titlu, simbol</strong></summary><div class="indented"><ul id="df638c1c-934f-4648-a017-338e87b7bb27" class="bulleted-list"><li style="list-style-type:disc">Anticipeaza text prin <strong>simbol inedit →</strong> <strong>simbolism, cauta motive in inedit</strong></li></ul><ul id="11033b44-9f18-4ac4-86f8-4304dd399d05" class="bulleted-list"><li style="list-style-type:disc">conf dictionarului de <strong>simboluri</strong>:<ul id="5286f963-1d28-4935-a06b-525867e5c494" class="bulleted-list"><li style="list-style-type:circle">saturnian, <strong>apasare, obstacol, nesansa, neputinta</strong></li></ul><ul id="a37780cf-2200-48a5-9766-4ef966823830" class="bulleted-list"><li style="list-style-type:circle">moale, greu, gri-argintiu, lucios, densitate mare, toxic</li></ul><ul id="269758c2-ccb4-4b96-ba3b-b34915074165" class="bulleted-list"><li style="list-style-type:circle">topit - <mark class="highlight-yellow"><strong>galbui</strong></mark>: cul deznadejdii, bolii bacoviene</li></ul></li></ul><ul id="b0168379-757c-4930-b838-e5d7c549d3a6" class="bulleted-list"><li style="list-style-type:disc">poezie egala cu sine in orice segment, univers omogen si unitar, suficient<ul id="e7f41f94-6847-4bed-b201-5acf624d2460" class="bulleted-list"><li style="list-style-type:circle">logos poetic exasperant in sens estetic → reflecta lumea</li></ul></li></ul><ul id="ce6e4d37-df20-4d1a-871d-5823f5544421" class="bulleted-list"><li style="list-style-type:disc"><strong>Val de atribut →</strong> <mark class="highlight-yellow"><strong>universalitatea</strong></mark>, proprietate a intreg univers</li></ul><ul id="4883266c-747a-4efe-9ba0-6e79bb135521" class="bulleted-list"><li style="list-style-type:disc">la sfarsitul rimelor ⇒ greutate, cadere surda asemenea metalului</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3b <strong>Simetria int-ext</strong></summary><div class="indented"><ul id="c7abf7b4-25d6-4c91-8183-2d04bb40e6fe" class="bulleted-list"><li style="list-style-type:disc"><strong>Lipsa eului in 1 strofa</strong> + doar obiecte =<mark class="highlight-yellow"> </mark><mark class="highlight-yellow"><strong>lumea ext</strong></mark></li></ul><ul id="f2b876df-2268-47c0-81a0-895218b0b5e3" class="bulleted-list"><li style="list-style-type:disc">a 2a strofa -&gt; <mark class="highlight-yellow"><strong>lumea int</strong></mark> (eu liric, univers intim, sentimental, personal)</li></ul><ul id="0f40affb-f3bd-4ed0-be08-9ee15c72ad36" class="bulleted-list"><li style="list-style-type:disc"><strong>Ambele</strong>:<ul id="9b1337ee-b7fd-4782-b868-0cd9b83b01d9" class="bulleted-list"><li style="list-style-type:circle">Plumb = <strong>Omniprezent</strong>, ambele strofe,<mark class="highlight-yellow"><strong> domina universul int cat si ext</strong></mark></li></ul><ul id="bbd49404-d3d0-4466-baa1-0b987495f25c" class="bulleted-list"><li style="list-style-type:circle">Dominate de aceleasi stari, <mark class="highlight-yellow"><strong>impietrire universala, lipsa de dinamism</strong></mark> (ext: lipsa miscarii, int: lipsa sentimentelor inafara de disperare)</li></ul><ul id="cbf203e9-c558-4cd5-96be-b2b551812243" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-yellow"><strong>Frig</strong></mark><ul id="04ab51c5-c6ca-4075-8580-171ee43184b5" class="bulleted-list"><li style="list-style-type:square">1: <strong>manifestare externa </strong>(vant)</li></ul><ul id="ccad914a-99b8-4b76-a9f4-36ceddf9459b" class="bulleted-list"><li style="list-style-type:square">2: <strong>senzatie </strong>(era frig)</li></ul><p id="10c70a4a-a704-477d-88b2-a8bf4cf79021" class="">
+</p></li></ul></li></ul></div></details><p id="bc1e2371-b72b-425f-888d-6c6b25daf9b6" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2a <strong>“</strong><mark class="highlight-yellow"><strong>Dormeau </strong></mark><strong>adanc sicriele de plumb/ si </strong><mark class="highlight-yellow"><strong>flori </strong></mark><strong>de plumb si funerar vestmint”</strong></summary><div class="indented"><ul id="a1f93123-c1ee-47fc-90ac-a4a7981f96ec" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">“</mark><mark class="highlight-teal"><strong>Dormeau”</strong></mark><ul id="4f32d15b-5d25-4c14-849b-a9ac40ff73ed" class="bulleted-list"><li style="list-style-type:circle">sugereaza moartea</li></ul><ul id="2a402dfc-5976-443a-9e62-004e3b0d27f6" class="bulleted-list"><li style="list-style-type:circle"><strong>Imperfect </strong>→ durata, fara sfarsit si fara inceput</li></ul></li></ul><ul id="15f69cc2-31cf-46f5-b4eb-d2dcd21b5683" class="bulleted-list"><li style="list-style-type:disc">Incipitul stabileste tema: <strong>lipsa dinamismului </strong>(imag viz statica)</li></ul><ul id="8b1b2a14-76c2-4e8c-baf2-ad1aa9b58a28" class="bulleted-list"><li style="list-style-type:disc">Enum a elem lumii concrete ⇒ <mark class="highlight-yellow"><strong>coruperea sensul trad poz al celorlalte motive</strong></mark> (florilor, asociate cu Pb, isi pierd semnificatia poz, devin impoetrite)</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2b <strong>“Dormea </strong><mark class="highlight-yellow"><strong>intors amorul </strong></mark><strong>meu de plumb/ Pe flori de plumb, si-am inceput sa-l </strong><mark class="highlight-yellow"><strong>strig</strong></mark><strong>”</strong></summary><div class="indented"><ul id="1d1f6f69-eff5-464f-98ed-3abe36ccf115" class="bulleted-list"><li style="list-style-type:disc">Marci lg eul -&gt; acc asupra eului, lumea int, opozitie cu 1 srofa</li></ul><ul id="bd2e9752-7f55-4bfe-b5b9-cd21259796bb" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>“Amor” </strong></mark>-&gt; pers sau sentiment, ambiguitate</li></ul><ul id="ddeeffea-7964-4a0d-a952-7adbf5a6bd84" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal"><strong>“Intors”</strong></mark> -&gt; indepartare + somn = moarte</li></ul><ul id="a07d457a-02c8-4a73-99d3-8b60bb0fc7d1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>Strigat</strong></mark><ul id="69fd2ff5-311c-428c-8070-eefce7c4a6b5" class="bulleted-list"><li style="list-style-type:circle">ultima speranta la evadare, depasirea cond</li></ul><ul id="15d047fc-d4bb-4c47-b25e-5a417d895478" class="bulleted-list"><li style="list-style-type:circle">rasuna agonizant</li></ul><ul id="41b44004-2144-417e-bd26-28a8dc0fbeb8" class="bulleted-list"><li style="list-style-type:circle">Stare apasatoare de disperare premergatoare mortii -&gt; frig cuprinzator</li></ul><p id="77f641ed-4381-4492-9031-13eb2a2ca315" class="">
+</p></li></ul></div></details><p id="3edea0fa-41e5-44f6-9e1e-7bd56a377fab" class="">
+</p><p id="ae6b27be-3a76-4ba2-925d-496400c5d1fc" class="">Dasdp</p><p id="da78ca8c-755b-4ba9-9254-8c778cbd4acb" class="">sfdpsfv</p><p id="094c32b8-4627-4d9c-89ea-ae2269871079" class="">ssicsev</p><p id="7e71dd76-39d3-4355-b01e-68a5d57fc431" class="">sscdp</p><p id="b5e0f764-e342-4d0d-b82c-c911161bfe9f" class="">
+</p><p id="2522b3d2-288e-444a-a812-f1b790d2eb12" class="">dîamdp</p><p id="9c0e5adb-d082-4551-9d2a-b1ab864b91f9" class="">pfdp, saîss</p><p id="274dd739-9f6e-4c42-aaff-19d7a8b22252" class="">sslm … sef</p><p id="c62d085d-3b1a-48f9-ae94-b7ead89f2419" class="">saadp<div class="indented"><p id="514e6d78-e358-418c-8e9a-1f97d51e6e09" class="">
+</p><p id="f03bf4ed-20cc-4e07-ac7b-1f7817e27fc7" class="">
+</p><p id="8d772099-a1ec-4391-b88c-b284451055b8" class="">
+</p></div></p></div></article></body></html>

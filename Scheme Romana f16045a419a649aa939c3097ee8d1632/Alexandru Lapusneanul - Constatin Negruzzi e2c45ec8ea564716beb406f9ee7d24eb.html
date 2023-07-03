@@ -1,0 +1,682 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Alexandru Lapusneanul - Constatin Negruzzi</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e2c45ec8-ea56-4716-beb4-06f9ee7d24eb" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">👑</span></div><h1 class="page-title">Alexandru Lapusneanul - Constatin Negruzzi</h1><p class="page-description"></p></header><div class="page-body"><p id="252dee8f-fd48-4332-bad3-bb408f868a29" class="">
+</p><nav id="8639200b-55e1-4625-be92-c71d0662b954" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1589dd97-eb47-4067-a213-c9edfafe1d16">Caracterizare Lapusneanul</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5598b9e8-ac1e-486a-8639-17cfb1ee176b">Apartenenta, tema, viziune</a></div></nav><h1 id="1589dd97-eb47-4067-a213-c9edfafe1d16" class="">Caracterizare Lapusneanul</h1><p id="1d25ec13-8787-4c0a-9ae8-d30a3fff82f8" class=""><strong>R:</strong></p><p id="aa6936e1-f341-49ff-861d-cfa5557fbb30" class=""><strong></strong>Int: aspecte monstruoase, personaje celebre, 2 dimensiuni, tipologia tiranului</p><ol type="1" id="862946f4-b129-4be7-888d-7d3ad495c5f1" class="numbered-list" start="1"><li>Preia selectiv date istorice, exagereaza situatii reale</li></ol><ol type="1" id="b62244e8-a20e-4a8a-88e8-7558048fca11" class="numbered-list" start="2"><li>Tehnici traditionale: directa (narator, mitropolit, auto)</li></ol><ol type="1" id="222b4027-c379-45ff-b338-c14463583df4" class="numbered-list" start="3"><li>Dominanta: indi (tipologia sadistului -&gt; scena(47)),.</li></ol><ol type="1" id="6ed553c9-b721-459a-8cd3-94060c250019" class="numbered-list" start="4"><li>Rapport cu alte personaje: intrarea in tara (declara intentii, catalogheaza, detaliaza motoc, il foloseste), sacrificarea lui motoc (traseul lui motoc)</li></ol><ol type="1" id="a3e1ca30-ed36-4e46-b875-4fff18545540" class="numbered-list" start="5"><li>angelic/demonic (“muiere nesocotita”, “catea”/”bunul meu domn”)</li></ol><p id="43f7bcdb-9fd1-405a-99b0-e40b131fbb79" class=""><strong>Introducere:</strong></p><ul id="d0e33e49-4efc-4af3-9736-3caee20cb690" class="bulleted-list"><li style="list-style-type:disc">Def. personaj literar</li></ul><ul id="93121792-b0f4-49be-83b0-2c7e4f24d235" class="bulleted-list"><li style="list-style-type:disc">Persj principal, eponim -&gt; erou memorabil:<ul id="29603d19-b145-4220-93d2-be2f5d99af40" class="bulleted-list"><li style="list-style-type:circle">Prin aspectele monstruoase</li></ul><ul id="140cb5d9-80ff-417c-9570-6e72f71b87a5" class="bulleted-list"><li style="list-style-type:circle">2 dimensiuni: sociala(extorioara) + psihologica</li></ul><ul id="b6faec6d-cbf2-441d-b509-984f7e965819" class="bulleted-list"><li style="list-style-type:circle">Maniera romantica: persj exceptional in situatii excep.</li></ul><ul id="9c05329a-0b0d-4d74-a412-30d98be0974c" class="bulleted-list"><li style="list-style-type:circle">Tipologia tiranului</li></ul><ul id="45cbbd44-6674-4753-98f6-c5fc713fa433" class="bulleted-list"><li style="list-style-type:circle">Critica il compara cu persj celebre (macbeth, richard 3)</li></ul></li></ul><p id="97196dd3-ee13-4c2a-a000-47d188492d14" class=""><strong>A1:</strong></p><ul id="e1002a7d-737b-455c-9be7-48f0f5f7016c" class="bulleted-list"><li style="list-style-type:disc">Preia selectiv date istorice (din G. Ureche, Letopisetul TM)<ul id="c6775a3c-be76-450d-a482-4ec8c0609545" class="bulleted-list"><li style="list-style-type:circle">Care ii servers intentiei -&gt; crearea ins de exceptie</li></ul><ul id="cdcb7b49-775a-4f05-8453-970a3359d28d" class="bulleted-list"><li style="list-style-type:circle">Aspecte al personalitatii</li></ul><ul id="7cc5218a-635b-44a3-bc91-704b9d75cd9d" class="bulleted-list"><li style="list-style-type:circle">Replici memorabile (“Dacă voi nu mă vreţi, eu vă vreau…” şi “De mă voi scula pre mulţi am să popesc şi eu”)</li></ul></li></ul><ul id="cd39c316-c29c-40f8-91e9-d77376513825" class="bulleted-list"><li style="list-style-type:disc">Situatie reala: doreste sa intareasca puterea domniei (eliminarea adversarilor, marilor boieri) -&gt; conjunctura istorica, sociala -&gt; de aici porneste Negruzzi construirea persj romantic, exagerand:<ul id="080b7273-74ca-4bf1-b947-632ab358f8a9" class="bulleted-list"><li style="list-style-type:circle">Dorinta de razbunare</li></ul><ul id="b6b3bf91-555a-4bc4-82fb-ef22fa2cfcc9" class="bulleted-list"><li style="list-style-type:circle">Orbit de dorinta de putere</li></ul></li></ul><p id="a55bcd49-34d8-4aa8-816f-9fb1c9774675" class=""><strong>A2:</strong></p><ul id="33f0b2b7-b62e-409f-a7b8-3209a84434d2" class="bulleted-list"><li style="list-style-type:disc">Tehnici traditionale de carac.: <strong>Directa:</strong><ul id="cb0eeaf3-e262-471e-9f71-2ad6b04b724d" class="bulleted-list"><li style="list-style-type:circle">De narator:<ul id="1e6890ad-b26f-495b-b4c6-97592ef052ba" class="bulleted-list"><li style="list-style-type:square">Descrie in detaliu vestimentatia (biserica)</li></ul><ul id="8462e8b1-3e0f-4e8c-b751-384551075ee1" class="bulleted-list"><li style="list-style-type:square">Anticipeaza “uratul caracter”</li></ul></li></ul><ul id="dc474b33-f9b9-4875-a761-bd81f5e20115" class="bulleted-list"><li style="list-style-type:circle">De alte personaje: mitropolit</li></ul><ul id="844477d9-d4e6-4956-ba87-b1d0e5c8410f" class="bulleted-list"><li style="list-style-type:circle">Auto.:”M-am aratat cumplit, rau, varsand sangele multora”</li></ul></li></ul><p id="c988fa0f-a562-4f00-a236-56aced634f84" class=""><strong>A3:</strong></p><ul id="a19d6372-010d-4a66-a3a3-6e4ac1912360" class="bulleted-list"><li style="list-style-type:disc">Dominanta: <strong>indirecta</strong><ul id="f4028d07-3ba9-44d6-99bb-0cd09ac69d43" class="bulleted-list"><li style="list-style-type:circle">Faptele curde, razbunarea =&gt; tipologia psihopatologica a sadicului: scena relevanta: 47 de boieri:<ul id="f7f19249-e080-41bb-b77e-7f39e7a1bdb5" class="bulleted-list"><li style="list-style-type:square">Efect scenic, dramatic prin regizarea meticuloasa</li></ul><ul id="d5bb46c9-308c-4b77-a3a5-123977170e93" class="bulleted-list"><li style="list-style-type:square">Capetele asezate in piramida in functie de rang</li></ul></li></ul></li></ul><p id="516a8ff3-2b89-4088-9b25-55526557aadb" class=""><strong>A4:</strong></p><ul id="b1b6f021-127f-40d1-9fc7-931c85a17c5d" class="bulleted-list"><li style="list-style-type:disc">Raport cu alte persj =&gt; inteligenta, cinism, cunoastere a psihologiei umane</li></ul><ul id="64f09fa1-810d-4c78-8cab-9a4c9eec07a8" class="bulleted-list"><li style="list-style-type:disc">Secvente memorabile:<ul id="0bdbb8fd-4d97-451e-920b-4db77fff2c20" class="bulleted-list"><li style="list-style-type:circle">Intrarea in tara:<ul id="bf474078-11ca-49b9-b3ad-d3dad435aa5a" class="bulleted-list"><li style="list-style-type:square">Isi declara cu brutalitate intentiile (&quot;voi mulgeti laptele tarii, dar au venit vremea sa va mulg si eu pre voi&quot;)</li></ul><ul id="2f45be31-6185-46b8-b8dd-0353b367231b" class="bulleted-list"><li style="list-style-type:square">Catalogarea psihologiei si caracterului opozantilor (“Spancioc - inca tanar, dominat de sumetie”, Stroici - “un copil”)</li></ul><ul id="8594648c-cfa8-4ae3-96ad-db82d2c04464" class="bulleted-list"><li style="list-style-type:square">Detaliaza portretul moral al lui Motoc</li></ul><ul id="9479ac2d-7571-45fc-807c-d64a4e64bac9" class="bulleted-list"><li style="list-style-type:square">Intelege inteligenta lui, il foloseste ca un instrument</li></ul></li></ul><ul id="30007153-1a5d-4a4d-be5e-a8c1f33ed522" class="bulleted-list"><li style="list-style-type:circle">Ajunge sa il sacrifice, dandu-l multimii, tinandu-si promisiunea (“iti fagaduiesc ca sabia mea nu se va manji de sangele tau”):<ul id="d493d0bd-5427-43e8-8793-2058bfc4c6ec" class="bulleted-list"><li style="list-style-type:square">Transforma psihologia rudiemntara a multimii intr-un atu: vrea sa le castige simpatia (la fel ca casatoria cu ruxanda)</li></ul><ul id="b19959e8-74b7-4365-bcb7-5e266d217ead" class="bulleted-list"><li style="list-style-type:square">Constientizeaaza forta lor (“Prosti, dar multi”) -&gt; stie sa o directioneze in propriile scopuri</li></ul></li></ul></li></ul><p id="5a0e7b43-85cd-40fa-8299-3c6791447a66" class=""><strong>A5:</strong></p><ul id="aca6f130-94c0-4cd5-8c3c-5e8e2afb5ebc" class="bulleted-list"><li style="list-style-type:disc">Mod romantic: brutalitate si diabolica prin <strong>antiteza romantica</strong></li></ul><ul id="bcf9087c-93f4-4c82-ad92-5f705b187afa" class="bulleted-list"><li style="list-style-type:disc">Contrastul romantic angelic-demonic (lapusneanu<strong>l</strong>, ruxanda)</li></ul><ul id="a8a4dacb-7f4f-493b-a1e0-e92b59aafa78" class="bulleted-list"><li style="list-style-type:disc">Blandete, sensibilitate =&gt; subliniaza cruzimea</li></ul><ul id="1a464745-07cd-4a38-89cc-662a86ed6058" class="bulleted-list"><li style="list-style-type:disc">In momente de furie, i se adreseaza cu duritate (“muiere nesocotita”, “catea”); ea -&gt; “bunul meu domn”</li></ul><p id="3620f22e-52b4-4bcc-a273-b30f699dba28" class=""><strong>Cz:</strong></p><ul id="f277d320-8248-421b-9bd5-c1ae5db481d5" class="bulleted-list"><li style="list-style-type:disc">Desi specia nuvela e la inceput =&gt; valoare incontestabila, “AL” devine punctul de reper al unei epoci si a unei specii, aparand in prima editie a “Daciei literare”, fiind data ca un model de creatie literara originala, ca un exemplu de urmat</li></ul><p id="60e2d6df-596d-4a51-867b-85f83cf8ed23" class="">
+</p><p id="2101d89b-a201-41f0-b64e-b5dae5372abd" class="">
+</p><p id="d58a9589-7d9f-4419-834d-e8df0ef9e6bd" class="">
+</p><p id="ee70c93e-ce25-46ff-a9dc-89040705d952" class="">
+</p><p id="0b3546e9-264f-441e-abdb-10bc8d72eb22" class="">
+</p><h1 id="5598b9e8-ac1e-486a-8639-17cfb1ee176b" class="">Apartenenta, tema, viziune</h1><p id="093f2e39-dd35-45a7-a76f-14bb7776672f" class=""><strong>R:</strong></p><ol type="1" id="0b52732c-396d-4744-854d-efcdf5ef11a0" class="numbered-list" start="1"><li>Sursa de inspiratie (adevar istoric (preia scene, replici), sacrifica adevarul)</li></ol><ol type="1" id="aadff41f-e74c-4003-a052-b7d2a07ebc83" class="numbered-list" start="2"><li>Structura riguroasa, cu motto anticipator; fir narativ cronologic, intrerupt de … =&gt; culoare locala, de epoca (tras romantica) + limbaj arhaic</li></ol><ol type="1" id="a77ba913-76b5-4cd2-b740-0bc3f1a848e4" class="numbered-list" start="3"><li>Conflict social, exterior (boeri vs AL) - scena intrarii in tara (declara intentii, catalogheaza, detaliaza motoc, il foloseste), toate categoriile sociale</li></ol><ol type="1" id="85bc2405-b0cc-4adb-bc39-0776f5e88ddc" class="numbered-list" start="4"><li>Persj excep in excep; aspecte monstruoase, personaje celebre, 2 dimensiuni, tipologia tiranului; angelic/demonic (“muiere nesocotita”, “catea”/”bunul meu domn”)</li></ol><p id="29fc2f85-82e1-4715-a7fd-a8c51347385a" class=""><strong>Introducere:</strong></p><ul id="fcd42143-b4b6-4c98-92e9-cc6743463859" class="bulleted-list"><li style="list-style-type:disc">Def romantism: curent literar (sec XIX) ca reactie impotriva rigiditatii clasicismului, acordand o importanta majora fortei de imaginatie si a subiectivismului</li></ul><ul id="aea86741-3e10-4e74-8157-91edcff85234" class="bulleted-list"><li style="list-style-type:disc">AL apartine rom prin multiple...</li></ul><p id="2c0b0850-de6d-4b1c-abb9-1b881fa7c983" class=""><strong>A1: Sursa de inspiratie: istoria nationala</strong></p><ul id="27bee22b-fc6f-4207-93fc-bfc36db4b9cd" class="bulleted-list"><li style="list-style-type:disc">Urmareste adevarul istoric in linii mari (preia scene cheie (pedepsirea 47), (boala si calugarirea pe patul de moarte) si adapteaza replici memorabile (“De voi nu ma vreti, eu va vreau”, “De ma voi scula, pre multi am sa popesc si eu”)</li></ul><ul id="c457207c-c395-4de8-b277-cf1a2690683a" class="bulleted-list"><li style="list-style-type:disc">Sacrifica adevarul<ul id="f0353d46-d236-45d7-af3d-a517e42980e5" class="bulleted-list"><li style="list-style-type:circle">efect artistic</li></ul><ul id="41d25da7-b8f5-4c03-a962-88c182f8806b" class="bulleted-list"><li style="list-style-type:circle">contureaza mai sugestiv conflictul (boier/AL)</li></ul><ul id="5d6648f8-03c9-451f-b5c5-856e1f9b2ac5" class="bulleted-list"><li style="list-style-type:circle">introduce personaje (Motoc, Stroici, Spancioc, fusesera executati in Polonia) -&gt; repr boierimea feudala, experimentata, avida de putere + boierimea tanara</li></ul></li></ul><p id="a2ce217b-ed04-405c-929e-504bcbcaacbb" class=""><strong>A2: Strucutra, culoare locala, de epoca</strong></p><ul id="4442b4ac-4528-4a09-adf8-bb4f0f9dafdd" class="bulleted-list"><li style="list-style-type:disc">Structura riguroasa (element clasic); fiecare precedata de un motto (3 replici AL, una de multime) cu rol anticipator</li></ul><ul id="1bddcd7f-23a7-4689-8072-88091c6b0ca8" class="bulleted-list"><li style="list-style-type:disc">Fir narativ cronologic, intrerupt de:<ul id="c4df4f07-a81b-41d3-9414-2414a84bff2b" class="bulleted-list"><li style="list-style-type:circle">Pauze descriptive (portretul ruxanda, vestimentatia biserica, a decorului, interioarelor medievale)</li></ul><ul id="8824b1d4-e86e-4556-afd7-e17a1601290b" class="bulleted-list"><li style="list-style-type:circle">Secvente retrospective (destinele urmasilor lui petru rares, stefan, ruxanda)</li></ul><ul id="2a7b7340-6b28-4700-922b-21a0fab560fa" class="bulleted-list"><li style="list-style-type:circle">^ creaza culoarea locala si de epoca -&gt; trasatura romantica<ul id="1316b2f8-2df0-4584-bc58-085b42b6c9e3" class="bulleted-list"><li style="list-style-type:square">Cel mai important: foloseste limbaj arhaic</li></ul></li></ul></li></ul><p id="5d6812e1-c601-47dc-8d4b-2313c21d3d74" class=""><strong>A3: Conflict</strong></p><ul id="23adb8ef-eb96-4947-95dc-89232ff77973" class="bulleted-list"><li style="list-style-type:disc">Conflict social, exterior: imaginea societatii dominate de (boieri vs domnitor)</li></ul><ul id="35756f2e-dabd-404d-b938-eb107f0dbccb" class="bulleted-list"><li style="list-style-type:disc">Scena care fixeaza conflictul:<ul id="27fd1545-0dd0-4fb9-8a66-664a8e6b427b" class="bulleted-list"><li style="list-style-type:circle">Intrarea in tara:<ul id="116d0c7c-a03e-4d48-b1d2-2fe7cd26c126" class="bulleted-list"><li style="list-style-type:square">Isi declara cu brutalitate intentiile (&quot;voi mulgeti laptele tarii, dar au venit vremea sa va mulg si eu pre voi&quot;)</li></ul><ul id="db1d9e79-b919-4616-9db1-bc645943ecc7" class="bulleted-list"><li style="list-style-type:square">Catalogarea psihologiei si caracterului opozantilor (“Spancioc - inca tanar, dominat de sumetie”, Stroici - “un copil”)</li></ul><ul id="34f33d9b-543a-416d-a34a-8e3949e2584d" class="bulleted-list"><li style="list-style-type:square">Detaliaza portretul moral al lui Motoc</li></ul><ul id="410b1ac3-8595-4446-b434-25bd98179a10" class="bulleted-list"><li style="list-style-type:square">Intelege inteligenta lui, il foloseste ca un instrument</li></ul></li></ul></li></ul><ul id="a4a1987f-266c-4461-889f-b87e681287ed" class="bulleted-list"><li style="list-style-type:disc">Sunt prezente toate categoriile sociale: marea boierime, boierimea tanara, biserica, personaj colectiv -&gt; unele cu profiluri memorabile</li></ul><p id="33707871-bfc3-4ad0-89e6-9cfee11656cd" class=""><strong>A4: Personaj romantic</strong></p><ul id="76effa32-e7cb-4b90-8957-cb83609b4466" class="bulleted-list"><li style="list-style-type:disc">Persj principal, eponim -&gt; erou memorabil:<ul id="a0a35a12-aaa3-4041-b945-bf141bfea3d9" class="bulleted-list"><li style="list-style-type:circle">Prin aspectele monstruoase</li></ul><ul id="7692dcc3-951f-4a36-809b-7bce26036410" class="bulleted-list"><li style="list-style-type:circle">2 dimensiuni: sociala(exterioara) + psihologica</li></ul><ul id="6d8e15ae-546b-4d19-b116-8a6c8c27ff0d" class="bulleted-list"><li style="list-style-type:circle">Maniera romantica: persj exceptional in situatii excep.</li></ul><ul id="80c07802-2a2d-4bdc-b760-9f6ea214014f" class="bulleted-list"><li style="list-style-type:circle">Tipologia tiranului</li></ul><ul id="14dbaefc-a258-4957-8cc6-92f1e779a97c" class="bulleted-list"><li style="list-style-type:circle">Critica il compara cu persj celebre (macbeth, richard 3)</li></ul></li></ul><ul id="11c60876-9c1d-4ccb-be26-c2cd9a36c180" class="bulleted-list"><li style="list-style-type:disc">Mod romantic: brutalitate si diabolica prin <strong>antiteza romantica</strong><ul id="c0bea88d-211c-4b88-be58-aa19172d176a" class="bulleted-list"><li style="list-style-type:circle">Contrastul romantic angelic-demonic (lapusneanu<strong>l</strong>, ruxanda)</li></ul><ul id="0bf773e4-a147-490a-adcf-f6cee21df574" class="bulleted-list"><li style="list-style-type:circle">Blandete, sensibilitate =&gt; subliniaza cruzimea</li></ul><ul id="0176257b-66d5-4e32-8574-e720ff2a2c33" class="bulleted-list"><li style="list-style-type:circle">In momente de furie, i se adreseaza cu duritate (“muiere nesocotita”, “catea”); ea -&gt; “bunul meu domn”</li></ul></li></ul><p id="0fc7bc22-c968-4318-9790-f77fbfa92e97" class=""><strong>Cz:</strong></p><ul id="ad40bc56-c173-4d39-bafb-cbd1cd635d1c" class="bulleted-list"><li style="list-style-type:disc">Desi specia nuvela e la inceput =&gt; valoare incontestabila, “AL” devine punctul de reper al unei epoci si a unei specii, aparand in prima editie a “Daciei literare”, fiind data ca un model de creatie literara originala, ca un exemplu de urmat</li></ul></div></article></body></html>

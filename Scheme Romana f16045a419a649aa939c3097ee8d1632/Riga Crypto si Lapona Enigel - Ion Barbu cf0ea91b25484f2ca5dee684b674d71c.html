@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Riga Crypto si Lapona Enigel - Ion Barbu</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="cf0ea91b-2548-4f2c-a5de-e684b674d71c" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🍄</span></div><h1 class="page-title">Riga Crypto si Lapona Enigel - Ion Barbu</h1><p class="page-description"></p></header><div class="page-body"><p id="61f6c0da-3f55-4599-8ac9-34b25ca81cfe" class="">
+</p><nav id="9b11b176-f2f9-4f0b-884c-9ec30a72b31d" class="block-color-yellow table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3a2d754c-0b29-4646-bdcc-cba9cb5e3b87"><strong><strong><strong><strong><strong><strong>1a semnificatii multiple</strong></strong></strong></strong></strong></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d8415edc-2ab3-404f-b583-aeef2c5139db"><strong><strong>1b Metaforizare (cond umana, fantana = suflet)</strong></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#434c3932-988d-47ce-8b08-5d520827ab9e"><strong><strong><strong><strong><strong><strong><strong><strong><strong>3a Titlu</strong></strong></strong></strong></strong></strong></strong></strong></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#01ed3e82-4b90-4f63-a3ba-cae4bcaca952"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>3b Simetrie - Opozitie (nunti realizate)</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4f25752f-2d8c-4a54-ba42-0f4b72fd5e06"><strong>2a Incipit (2 lumi masc - fem + spatii)</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#eb570b9c-7ef0-49fa-b997-d3395da23cf7"><strong><strong><strong>2b Dialog (chemari)</strong></strong></strong></a></div></nav><p id="27a990d6-7265-4779-8fa6-e4e02b702aba" class="">
+</p><p id="f1c2ed04-b608-47d1-a14f-25f4a088691a" class="">I - Modernism <div class="indented"><ul id="e352bd73-8d59-48eb-bab3-2ffd034704ad" class="bulleted-list"><li style="list-style-type:disc">ruperea leg cu trad</li></ul><ul id="47007a05-c4c5-40c0-a219-858cee61a998" class="bulleted-list"><li style="list-style-type:disc">negarea struct clasice, academice</li></ul><ul id="35b5bcf3-1e39-4288-99a8-3eb851b65551" class="bulleted-list"><li style="list-style-type:disc">revalorizarea frumos</li></ul></div></p><p id="56aaa1e3-7f5d-4b65-b617-34bc14e8cd60" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><strong><strong><strong><strong><strong><strong>1a semnificatii multiple</strong></strong></strong></strong></strong></strong></summary><div class="indented"><ul id="d791589c-6b5b-4147-9695-cd82f4c06da6" class="toggle"><li><details open=""><summary><mark class="highlight-yellow">Rezumat:</mark></summary><ul id="9604618c-45b9-4ee9-9eb6-716e4edea85f" class="bulleted-list"><li style="list-style-type:disc">poem alegoric pe tema cunoasterii</li></ul><ul id="e4504cd8-c888-4d04-beea-f0c9d24147b6" class="bulleted-list"><li style="list-style-type:disc">intepretari:<ul id="84da5669-3792-47fb-8259-ce2e40c8e2f5" class="bulleted-list"><li style="list-style-type:circle">romantism gnomic</li></ul><ul id="fbeb286a-b1de-41d7-b42b-1ea8f4e7e25d" class="bulleted-list"><li style="list-style-type:circle">balada neoromantica, luceafar cu roluri inversate</li></ul><ul id="315d4269-f9cb-42fd-99e3-3b36974784b5" class="bulleted-list"><li style="list-style-type:circle">legenda ciupercii</li></ul><ul id="954954af-0e0b-458e-82af-082980ff82d7" class="bulleted-list"><li style="list-style-type:circle">3 mituri (soare, nunta, oglida) cercurile:<ol type="1" id="7752ef7f-b9a1-4a75-a4f5-05a734d0bc06" class="numbered-list" start="1"><li>Venerei (nunta cu riga)</li></ol><ol type="1" id="eb38ce93-fb43-4997-8908-92f9f20997e9" class="numbered-list" start="2"><li>Mercur (frig, ratiune)</li></ol><ol type="1" id="4d94ca44-55d7-4203-8ed1-9f60e5f20b1b" class="numbered-list" start="3"><li>Soare (ideal)</li></ol></li></ul></li></ul></details></li></ul><ul id="c321c07a-35e8-4af5-90b1-95ddfaded75c" class="bulleted-list"><li style="list-style-type:disc">poem alegoric (fond epic, carac dramatic, “personaje”⇒simbolistica complexa), depaseste subtitlul balada</li></ul><ul id="46913897-7a35-4399-9e29-cacb8ca32693" class="bulleted-list"><li style="list-style-type:disc">iubire imposibila: vegetal + uman</li></ul><ul id="d13e8cb4-3564-404e-9f4a-6f844e133c4d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>interpretari</strong></mark><ul id="ef9b481a-2863-4979-a6a2-6dec90bb36aa" class="bulleted-list"><li style="list-style-type:circle">romantism gnomic</li></ul><ul id="4c987a15-8117-4a0a-99ff-4173efc49d71" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-teal">“balada neoromantica”</mark>,<mark class="highlight-teal"> “Luceafar cu rolurile inversate”</mark></li></ul><ul id="4aae499b-d7f5-485b-87a4-9e063adfae8d" class="bulleted-list"><li style="list-style-type:circle">legenda a ciupercilror otravitoare (din dorinta de a-si intrece conditia)</li></ul><ul id="18bb79e1-4471-4d2e-8ab0-0fb390058bf2" class="bulleted-list"><li style="list-style-type:circle"><strong>T Vianu</strong>: 3 mituri/simb (<mark class="highlight-teal">”Ritmuri pt nuntile necesare”</mark>) : soarele, nunta, oglinda<ul id="f71e877b-7409-4537-b998-8764ecf0b96d" class="bulleted-list"><li style="list-style-type:square">inaintarea sufletului in 3 trepte:<ol type="1" id="08d13910-fac1-467c-93a8-c3bed7d3e15f" class="numbered-list" start="1"><li>cercul Venerei: instinct (Crypto)</li></ol><ol type="1" id="e271fabc-c59d-40f7-bee6-af095a6d150d" class="numbered-list" start="2"><li>al lui Mercur: intelect (Enigel - raceala = intelect)</li></ol><ol type="1" id="93874508-7411-45fa-8058-ad3dcdd73c4e" class="numbered-list" start="3"><li>Soarelui: initiere completa, nuntire posibila, cunoastere absoluta (aspiratia)</li></ol></li></ul><ul id="4edd6d29-88a4-4abd-94c3-8b4be0c099c6" class="bulleted-list"><li style="list-style-type:square">drum spre sud → initiatic</li></ul><ul id="3ed4f306-4764-4910-9396-7470fe526fd9" class="bulleted-list"><li style="list-style-type:square">proba = respingerea nuntii pe o treapta inferioara</li></ul><ul id="b9d84ef3-20d5-460b-9480-c2296ab9f87a" class="bulleted-list"><li style="list-style-type:square">aspiratie solara</li></ul></li></ul></li></ul><p id="fe82d75f-4378-4e77-8950-9214b97e56a6" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><strong><strong>1b Metaforizare (cond umana, fantana = suflet)</strong></strong></summary><div class="indented"><ul id="0a48aad0-c476-4d44-8d83-db33701e1753" class="bulleted-list"><li style="list-style-type:disc">monologul laponei (isi defineste cond umana &gt; vegetal prin metaf sufletului fantana (<mark class="highlight-teal">”Ma-nchin la Soarele-ntelept/ Ca sufletu-i fantana-n piept… la umbra, numai carnea creste”</mark>)</li></ul><ul id="4ecf8fe2-5db1-4ec1-8852-34a9a0dd42a4" class="bulleted-list"><li style="list-style-type:disc">capacitatea umana de a aspira spre un ideal (lucru distrugator pt Crypto)</li></ul><ul id="6e7c054e-1fa3-4bab-9d27-50ea69273d9f" class="bulleted-list"><li style="list-style-type:disc"><strong>fantana = suflet = </strong><ul id="63ab8b0f-9b8a-489e-acdc-9d1db2b92556" class="bulleted-list"><li style="list-style-type:circle">profunzime</li></ul><ul id="5f1c7b88-3291-4c09-a3dd-266edf9f3dd7" class="bulleted-list"><li style="list-style-type:circle">spatiu-oglinda, capacitatea de a reflecta</li></ul><ul id="8229fc47-e44b-4723-9f66-9f507a05e06f" class="bulleted-list"><li style="list-style-type:circle">potenta idealului (imposibil pt Crypto - se plange din cauza neputintei de a-si depasi cond<mark class="highlight-teal"> “De soare…/Visuri sute, de macel/ Ma despart”</mark></li></ul></li></ul><ul id="7c37ba07-2c22-4bcc-a243-ddf4f67cf1ff" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>lapona = gandul eliberat prin aspiratia spre lumina si cunoastere de ispitele instinctuale sugerate de somn si umbra</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><p id="e56de329-f55a-4bf2-84c4-4682dff0c7eb" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><strong><strong><strong><strong><strong><strong><strong><strong><strong>3a Titlu</strong></strong></strong></strong></strong></strong></strong></strong></strong></summary><div class="indented"><ul id="4d2b8496-b2c1-4a30-b81e-4361ec284a3a" class="bulleted-list"><li style="list-style-type:disc">evoca mari povesti de iubire (Tristan si Isolda, Romeo si J), deosebire: regnuri dif</li></ul><ul id="87c92c9e-ce7f-4024-9337-7e9ab41fadf4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>sonoritate </strong></mark>stranie:  <ul id="cb3a0a2f-a113-4aea-8f38-e89242742c25" class="bulleted-list"><li style="list-style-type:circle">Crypto: incifrat, ascuns</li></ul><ul id="a4ece73d-8cab-4b17-a6cb-e285527d5ac5" class="bulleted-list"><li style="list-style-type:circle">Enigel: nume tataresc al raului Ingul - nord</li></ul></li></ul><ul id="105e8f61-9e6e-45ec-a3ff-cfdefb56456c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>lexical</strong></mark>: <ul id="8a073774-f369-4dc0-813d-6a5db4bd2b17" class="bulleted-list"><li style="list-style-type:circle">invechit, arhaic “riga” - statut</li></ul><ul id="18e7b05c-1760-4fa6-b1e6-35f5d8673252" class="bulleted-list"><li style="list-style-type:circle">neologism: lapona </li></ul><ul id="4e0362fe-4414-440f-873c-2990ff5cf892" class="bulleted-list"><li style="list-style-type:circle">⇒ incomplatibilitate</li></ul></li></ul><ul id="7203b3ef-aaa5-4016-aa61-6aa7bd1de46d" class="bulleted-list"><li style="list-style-type:disc">lumea umbrei si a umezelii vs a frigului si luminii</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>3b Simetrie - Opozitie (nunti realizate)</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></summary><div class="indented"><ul id="b7d32a8c-273e-471e-9595-fcaccbddc3d3" class="bulleted-list"><li style="list-style-type:disc">povesitre in pov <ul id="eb66f633-eadd-4d48-bee5-a2b82d00056d" class="bulleted-list"><li style="list-style-type:circle">nunta omeneasca, consumata (posibila) →</li></ul><ul id="53ec31e6-ee53-4fbc-9cff-0da0b5816877" class="bulleted-list"><li style="list-style-type:circle">nunta imposibila</li></ul></li></ul><ul id="c9e20e2d-d939-43e4-bd56-e5a3b87a1216" class="bulleted-list"><li style="list-style-type:disc">rama: cadru lumesc, univers medieval (menestrel), atmosfera de nunta in detalii (pungi, panglici, beteli cu funda) → regresiune, <mark class="highlight-teal">“cantec larg”</mark> → timp arhetipal</li></ul><ul id="0bd064b4-7be0-4559-b922-0635d4e72956" class="bulleted-list"><li style="list-style-type:disc">stare bahica, simbolica (<mark class="highlight-teal">”menestrel trist, mai aburit/ ca vinul vechi ciocnit la nunta”</mark>)</li></ul><ul id="5669a3ea-d4b8-4c01-92f2-dbce2eee8763" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong><strong><strong><strong><strong><strong><strong><strong>simetrie:</strong></strong></strong></strong></strong></strong></strong></strong></mark><mark class="highlight-purple"><strong><strong><strong><strong><strong><strong><strong><strong> </strong></strong></strong></strong></strong></strong></strong></strong></mark>nunta om - vegetala (crypto + masalarita) - comun: simb nuntii, implinirii</li></ul><ul id="1e114e70-545d-4a2d-b179-22e6116f5c28" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow"><strong>opozitie</strong></mark><ul id="aca2dee7-4706-4e13-9c3c-59cf07b03e32" class="bulleted-list"><li style="list-style-type:circle">in rama: nunta = stare de echilibru</li></ul><ul id="b8292255-cd6c-41b0-ae4d-70734747aca2" class="bulleted-list"><li style="list-style-type:circle">in lumea vegetala: nunta = conotatii negative, tragice, implinirea unui blestem; condamnarea rigai la existenta in propriul regn, a propriilor limite <ul id="e762e95f-9648-4381-97c4-67b66558fbfe" class="bulleted-list"><li style="list-style-type:square">asociere cu planta otravitare <mark class="highlight-teal">“Ca-i greu mult soare sa-ndure…Pahar e gandul, cu otrava”</mark> - idea aspiratiei nebunesti cu efecte distrugatoare</li></ul></li></ul></li></ul><p id="6f0d1d25-660c-4e5a-a4b7-d06331210a1c" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><strong>2a Incipit (2 lumi masc - fem + spatii)</strong></summary><div class="indented"><p id="51fe3984-f342-41c2-85dc-79e34be4f034" class=""><strong>Inceputul: </strong>2 lumi, regnuri:<div class="indented"><ul id="06f0c5b1-2ecd-46ae-9f1b-4194eccf9597" class="bulleted-list"><li style="list-style-type:disc">lumea masculinului, abulie existentiala, a vegetarii, a carnii si instinctului</li></ul><ul id="85ce7980-042a-4e1f-bb5f-edfb87b2e22a" class="bulleted-list"><li style="list-style-type:disc">feminina: aspiratia solara si spirituala</li></ul></div></p><ul id="939e6300-af13-4307-be52-31060b86bea3" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Masculinul</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><ul id="b9558cdf-d674-4677-8a37-a8274f7ec1d6" class="bulleted-list"><li style="list-style-type:circle">sub semnul demonicului, al stagnarii</li></ul><ul id="3a2e2677-675c-4934-a1a4-32e5f9c79ce9" class="bulleted-list"><li style="list-style-type:circle">subuman (ciuperca → sterilitate): <mark class="highlight-teal">“sterp, naravas, nu voia sa infloreasca”</mark></li></ul><ul id="e6ece98b-7c7f-40a5-bce7-adab818eca3d" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><span style="border-bottom:0.05em solid"><span style="border-bottom:0.05em solid"><span style="border-bottom:0.05em solid"><span style="border-bottom:0.05em solid"><span style="border-bottom:0.05em solid">spatiu</span></span></span></span></span></span>: padure umeda, intunecata; al elem primordiale, apa si pamant (<mark class="highlight-teal">”in pat de rau si-n huma unsa”</mark>)</li></ul><ul id="5cf6f8cd-d74d-4507-b4b6-d0a69d4db87f" class="bulleted-list"><li style="list-style-type:circle">refuz de a inflori → refuzul evolutiei</li></ul><ul id="55457a01-7dd0-4ff7-84a7-4728e1286e69" class="bulleted-list"><li style="list-style-type:circle">numit in mod ironic <mark class="highlight-teal">“mirele poiemii”</mark>, este damnat in propriul univers, intr-o lume latenta</li></ul></li></ul><ul id="35aba882-d5fa-4e71-a5cc-6b4775c694b7" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong>Femininul</strong></strong></strong></strong></strong></strong></strong></strong></strong><ul id="8f7b5c46-9a9b-4606-9d21-c4877aad7d8e" class="bulleted-list"><li style="list-style-type:circle">sub semnul solarului, al aspiratiei spre puritate si spirit</li></ul><ul id="b44c7b29-8de0-4c9a-a9aa-f7db3f0aafa8" class="bulleted-list"><li style="list-style-type:circle"><span style="border-bottom:0.05em solid"><span style="border-bottom:0.05em solid"><span style="border-bottom:0.05em solid"><span style="border-bottom:0.05em solid"><span style="border-bottom:0.05em solid"><span style="border-bottom:0.05em solid"><span style="border-bottom:0.05em solid"><span style="border-bottom:0.05em solid">spatiu: </span></span></span></span></span></span></span></span>lume a frigului, a echilibrului → simb pt ratiune</li></ul><ul id="662f2bbf-75ce-4473-b5a0-838410dde438" class="bulleted-list"><li style="list-style-type:circle">drum simbolic catre soare → traseu initiatic prin depasirea obstacolelor (tentatiei)</li></ul></li></ul><p id="d6b9c43e-0066-4452-902c-a87b018de379" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3"><strong><strong><strong>2b Dialog (chemari)</strong></strong></strong></summary><div class="indented"><ul id="56cfc74a-0f2e-41d5-ae9e-5570f93bc43d" class="bulleted-list"><li style="list-style-type:disc">Enigel patrunde in universul rigai, acesta ademenind-o, constient de dureroasa conditie (<mark class="highlight-teal">”sa ma coc, mult as vrea”</mark>)</li></ul><ul id="f068583e-a4a2-4c08-9f71-3e23d24e7767" class="bulleted-list"><li style="list-style-type:disc">invocatii folclorice, cu sonoritati incantatorii, rostite in spatiul oniric - descantec ce realizeaza comunicarea intre cele 2 lumi<ul id="1b688364-4412-4fee-8221-5dd269ea3b75" class="bulleted-list"><li style="list-style-type:circle">1 chemare: invitatie directa in lumea veg: oferta dulcetii lumii (<mark class="highlight-teal">”fragii fragezi”</mark>)</li></ul><ul id="5d4d3da7-542e-4666-a065-f3a502c21e46" class="bulleted-list"><li style="list-style-type:circle">2 chemare: dorinta lui Crypto de a fi cules, de a se implini, idealul lumii veg</li></ul><ul id="f5bc9ee8-39b3-4f99-a8e7-75477b758c39" class="bulleted-list"><li style="list-style-type:circle">⇒ ambele refuzate, optand pt Soare, spaima de umbra si racoare fixeaza incompatibilitate: <mark class="highlight-teal">“eu de umbra mult ma tem”</mark></li></ul></li></ul><ul id="7d205f9d-d0ec-4626-b77d-2dc324cbcb87" class="bulleted-list"><li style="list-style-type:disc">il numeste pe Crypto <mark class="highlight-teal">“riga bland, tanar plapand” </mark>- necopt, nepregatit pt nuntire</li></ul><ul id="a28a7a45-3a01-4103-85d8-c5bed0c3eb65" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong>Ratiunea</strong></strong></strong></strong></strong></strong></strong></strong> (lumina, caldura solara) <strong><strong><strong><strong><strong><strong><strong><strong>OPUSA Instinctului </strong></strong></strong></strong></strong></strong></strong></strong>(umbra, somn)</li></ul><ul id="6e062258-bbf7-497c-a849-12c8107d0143" class="bulleted-list"><li style="list-style-type:disc">descantecul rigai se intoarce impotriva sa, actiune nefasta a lumii solare, care nu se poate reflecta, oglindi<mark class="highlight-teal"> “in pielea-i cheala” </mark>(el apartine regnului inferior) ⇒ damnarea regelui la intoarcerea sa definitiva in lumea careia ii apartine</li></ul><p id="56609ea7-681b-40b4-98ab-fdf902655c27" class="">
+</p><p id="6a6dee85-b77a-4686-bca8-83c4f4e7a3a5" class="">
+</p><p id="8a8f8a41-a107-4b43-930d-fb59edddaf15" class="">
+</p><p id="30b574da-31e1-472a-a43b-f9a4dc1736b1" class="">
+</p><ul id="dbb2f069-02fd-4910-8d61-2e1137829b49" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">&quot;Ma-nchin la Soarele-ntelept/ Ca sufletu-i fantana-n piept… la umbra, numai carnea creste&quot;</mark></li></ul><ul id="4db3f42a-58b1-4d90-bddc-9c3dfab44e0f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">&quot;De soare…/Visuri sute, de macel/ Ma despart&quot;</mark></li></ul><ul id="ab973eb8-fc01-4322-b581-f356878a6852" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">&quot;menestrel trist, mai aburit/ ca vinul vechi ciocnit la nunta&quot;</mark></li></ul><ul id="9fb5975d-ebd0-4057-a229-021c1aba1748" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">&quot;Ca-i greu mult soare sa-ndure…Pahar e gandul, cu otrava&quot;</mark></li></ul><ul id="503ee933-ae90-407c-9e83-bdfd1ebba39b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">&quot;sterp, naravas, nu voia sa infloreasca&quot;</mark></li></ul><ul id="193cb459-2947-485a-a4a6-c289d33196cb" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">&quot;eu de umbra mult ma tem&quot;</mark></li></ul><ul id="7f7b3e39-064f-432b-839f-4f95ebb8a929" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">&quot;riga bland, tanar plapand&quot;</mark></li></ul><ul id="8a78de12-4a5e-435a-95b9-fe0e871c9338" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">&quot;in pielea-i cheala&quot;</mark></li></ul><p id="639dded1-702c-48cf-83ff-f811540ae6b2" class="">
+</p></div></details></div></article></body></html>

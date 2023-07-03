@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Enigma Otiliei (caracterizare) - George Calinescu</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="83cb7b0e-0f3e-4dee-b922-ae2614ad7b73" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">❓</span></div><h1 class="page-title">Enigma Otiliei (caracterizare) - George Calinescu</h1><p class="page-description"></p></header><div class="page-body"><p id="970b7186-37ce-45a0-8d60-487e47db0297" class="">
+</p><nav id="a13187e9-f8a3-4813-a684-726ebc0596de" class="block-color-pink table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4f5ce937-5c67-4d2f-9289-1233853939c4">1a social (biografie)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#751488ae-77fa-4033-aeab-2a951a631792">1b Portret fizic → moral</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#02618747-aa52-422d-ae38-8f167da3eb43">3a comportamentism</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c8b2bb23-8249-4775-bce3-db73568f0567">3b pluriperspectivism (rel cu alte persj)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#71ba24e6-9b38-49d5-8bcf-3ff2f6ce4cc0">2a Felix invitat sa doarma in cam Otilia</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c18b9ad6-138b-4470-b739-d1a03533a3cd">2b Intalnirea in tren = sfarsitul conflictului emotional, oscilarea intre cei 2</a></div></nav><p id="3e6a1306-861d-4a68-b169-6e62e5fdf72a" class="">
+</p><p id="ee165d71-7700-45cd-af9a-0326457bdd21" class="">I: 1938 (interbelic): roman obiectiv realist, model balzacian</p><ul id="8f142901-3550-411d-9c5a-184c67201a1f" class="bulleted-list"><li style="list-style-type:disc">fresca sociala + “ochiul estetului” → intentie polemica, demonstrativa; tentatia analizei in defavoarea creatiei, fresca sociala perceputa nu dintr-un unghi moral (Balzac) ci unul estetic</li></ul><ul id="5d1680bd-63dc-463b-a7ff-fdf07baf1aab" class="bulleted-list"><li style="list-style-type:disc">Otilia<ul id="c6594596-5298-4c5c-a4f8-b271acf76911" class="bulleted-list"><li style="list-style-type:circle">unifica cele 2 planuri ale actiunii</li></ul><ul id="53656bf7-b2f2-4131-9d01-27825681827c" class="bulleted-list"><li style="list-style-type:circle">geneza: prezenta feminina in copilarie (ruda) → <strong><strong>proiecte ideala</strong></strong>, img fem</li></ul></li></ul><p id="dbdea11e-9efd-43b5-9978-f25666ab8988" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1a social (biografie)</summary><div class="indented"><ul id="b8d00d20-f951-44f3-81ff-6974a956a132" class="bulleted-list"><li style="list-style-type:disc">biografie reconstituita sumar; <strong>explica statutul de orfana care o apropie de Felix</strong></li></ul><ul id="b69d34e7-579f-40da-b861-683e49dd1455" class="bulleted-list"><li style="list-style-type:disc">fiica vitrega a lui mos Costache, e crescuta cu dragoste de acesta (in ciuda aciditatii lui Aglae)</li></ul><ul id="d55f4bbe-fb64-44ce-a45b-3f1cb09b79d4" class="bulleted-list"><li style="list-style-type:disc"><strong>posibila mostenitoare </strong>→ atrage interes + ura</li></ul><ul id="865d1a6c-64d8-4d4e-a517-9ae18cf12033" class="bulleted-list"><li style="list-style-type:disc">18-19 ani, <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>procesul de maturizare</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1b Portret fizic → moral</summary><div class="indented"><ul id="d45a5af3-49ac-45b8-9085-347a57793cca" class="bulleted-list"><li style="list-style-type:disc">creat prin tipizare <strong>(realist), </strong><mark class="highlight-pink"><strong>nu poate fi redusa</strong></mark><strong> la o schema morala (spre deosebire de celelalte persj fem sintetice</strong> (Aglae - baba absoluta, fara cusur in rau; Aurica - fata batrana obsedata de maritis; Georgeta - fem frivola)</li></ul><ul id="498ccfa2-d2f1-4789-9ff4-c573c4d8d768" class="bulleted-list"><li style="list-style-type:disc">introducerea in scena:<mark class="highlight-pink"> </mark><mark class="highlight-pink"><strong>portret fizic </strong></mark><mark class="highlight-pink">in </mark><mark class="highlight-pink"><strong>detaliu </strong></mark><mark class="highlight-pink">(</mark><mark class="highlight-pink"><strong>balzacian</strong></mark><mark class="highlight-pink">)</mark><ul id="16b15085-bb91-49e1-9369-d651652d9f67" class="bulleted-list"><li style="list-style-type:circle">trasaturi fizice prisma subiectiva a persj martor (Flx)</li></ul><ul id="80db7e84-8ffc-4e63-a06f-90c0ede2879a" class="bulleted-list"><li style="list-style-type:circle">sugestie sonora <mark class="highlight-teal">“o voce cristalina” </mark>→ feminin de tip <strong>angelic</strong>: <mark class="highlight-teal">“capul prelung incarcat cu bucle, fata maslinie, nasul mic si ochi foarte albastri”</mark></li></ul><ul id="3dc40702-105c-469b-935f-3e69d74e1379" class="bulleted-list"><li style="list-style-type:circle"><strong>insistenta detaliului vestimentar </strong>(guler alb cu dantela) → prezenta diafana</li></ul></li></ul><ul id="1ef10f4a-f185-4fde-b31a-391b2e1c9b0a" class="bulleted-list"><li style="list-style-type:disc"><strong><mark class="highlight-pink">tras fizionomica → conotatie moarla:</mark></strong><ul id="c382116e-7958-4f4c-be86-af5090a75d9e" class="bulleted-list"><li style="list-style-type:circle">amestec nedefinit de (<strong>fragilitate si delicatete aproape copilaroasa) +</strong><mark class="highlight-teal"><strong> “stapanire desavarsita, de femeie” </strong></mark><strong>+ tandrete/gesturi impulsive</strong></li></ul></li></ul></div></details><p id="d2584a30-2282-4f72-910c-1bf5516b0f7f" class="">
+</p><p id="d6e71705-3caf-4c53-a345-bc4e658f79d3" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Procedee moderne de caracterizare:</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3a comportamentism</summary><div class="indented"><ul id="f7b08ec6-c9b8-48a1-a078-6467f0f9c6c3" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>aura de mister</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="5ce349a7-7d40-44e0-85d7-cda483353f1f" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>privita doar din afara de narator care </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><mark class="highlight-pink"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>ii consemneaza actiunile, gesturile, replicile fara sa le interpreteze</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark>, avand acces doar la acele ganduri pe care aceasta le marturiseste</li></ul><ul id="f796ed90-562e-414a-8e3b-74f25a1542d1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink"><strong>isi constientizeaza perfect destinul </strong></mark><strong>(lume in care viata fem = implinire matrimoniala; statutul de sotie = unica victorie permisa in sec XIX)</strong><ul id="92c7afa5-d8e9-4aa4-afd0-7c9ea2e60ec6" class="bulleted-list"><li style="list-style-type:circle">i se confeseaza lui Felix: <mark class="highlight-teal">“Cat crezi ca mai am de trait in adevaratul sens al cuvantului? Cinci, sase ani! Pe urma am sa capat cearcane la ochi, sbarcituri pe obraz… Cand voi avea treizeci de ani pentru mine a inceput declinul”</mark></li></ul><ul id="242bd111-d67b-44a5-b694-d98dd14f61c3" class="bulleted-list"><li style="list-style-type:circle">Se autocaracterizeaza: <strong><mark class="highlight-teal">“Sunt foarte capricioasa, vreau sa fiu libera!” Eu am un temperament nefericit: ma plictisesc repede, sufar cand sunt contrariata”</mark></strong></li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3b pluriperspectivism (rel cu alte persj)</summary><div class="indented"><ul id="1e619849-0354-488d-abb9-385751ef7d56" class="bulleted-list"><li style="list-style-type:disc"><strong>personalitatea in formare se rasfrancep poliedric in constiinta tuturor personajelor, </strong><mark class="highlight-pink"><strong>imaginea ei se compune din mai multe fatete</strong></mark></li></ul><ul id="a7ef0351-6a04-46a9-83f5-d91998bfdc95" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink"><strong><strong><strong><strong><strong>Mos Costache:</strong></strong></strong></strong></strong></mark><ul id="d81f0c93-7149-4d93-a158-4f811891d15e" class="bulleted-list"><li style="list-style-type:circle"><strong>afectiune sincera </strong>(<mark class="highlight-teal">“fetita”</mark> ocrotita in casa lui)</li></ul><ul id="2af9d586-e9fb-4951-abb6-c79b5cd6998c" class="bulleted-list"><li style="list-style-type:circle">batranul <strong>avar </strong>se arata neputincios,<strong> nu ii asigura un statut material sigur prin adoptie</strong> (se teme de Aglae) ⇒<strong> va influenta fundamental decizia fetei in plan sentimental</strong></li></ul></li></ul><ul id="54483bc0-3db2-4e88-aa83-5da827f2b232" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink"><strong><strong><strong><strong><strong><strong><strong><strong>Pascalopol</strong></strong></strong></strong></strong></strong></strong></strong></mark><ul id="2cf86a74-a40a-4b15-a126-5001d2b7752a" class="bulleted-list"><li style="list-style-type:circle">ii ofera intr-adevar <strong>protectie</strong></li></ul><ul id="37857e89-8da5-4a7f-b48f-4682255f89fe" class="bulleted-list"><li style="list-style-type:circle">ii <strong>intuieste structura suflecteasca</strong></li></ul><ul id="2f2f69a9-d87a-4748-8835-3fe2f4847f08" class="bulleted-list"><li style="list-style-type:circle">suplineste lipsa de afectiune a celor din clanul Tulea,<strong> se bucura de simpatia evidenta a fetei</strong></li></ul><ul id="68fbc953-663c-4cdb-919b-092c9552c532" class="bulleted-list"><li style="list-style-type:circle">desi <strong>nu poate distinge</strong><strong><mark class="highlight-teal"> </mark></strong><mark class="highlight-teal">“ce e patern si ce e viril”</mark> in dragostea lui, <strong>ii ofera cu generozitate ce o face fericita</strong></li></ul><ul id="4273ca1a-5b29-473d-bfdd-2a753c858749" class="bulleted-list"><li style="list-style-type:circle">pt el Otl = <strong>ideal feminin</strong>: “<mark class="highlight-teal">Daca Dumnezeu mi-ar fi dat libertatea sa-mi fac femeia cum vreau eu, as fi facut-o ca pe domnisoara Otilia”</mark></li></ul></li></ul><ul id="0eb4355d-2f46-432b-8b46-ae0f07345a2f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink"><strong><strong><strong><strong><strong><strong><strong><strong>Felix</strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong>: </strong></strong></strong></strong></strong></strong></strong></strong>martor si erou<ul id="d04ea31b-48e2-4070-bcc8-01b2d4336a3c" class="bulleted-list"><li style="list-style-type:circle">resimte confuz concurenta cu pasc</li></ul><ul id="ca7d492f-91b0-4584-8cad-ae9ee0f6757c" class="bulleted-list"><li style="list-style-type:circle">Otl =<mark class="highlight-teal"> “fata admirabila, superioara”</mark> (iubire sincera)</li></ul><ul id="21c1f568-cc66-4a70-8f60-f569587fac70" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-teal">“o fiinta tragica… o floare respirand in intuneric umiditatea”</mark></li></ul><ul id="17ef6fb5-f573-492f-bc90-c62f4894a8e7" class="bulleted-list"><li style="list-style-type:circle"><strong>imaturitate </strong>→<strong> nu ii intelege oscilatiile de comportament</strong></li></ul></li></ul><ul id="ffacf4b6-7125-4224-93bf-9d65d34ffe36" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink"><strong>fam Tulea:</strong></mark><ul id="267798f7-a6ec-4efa-8e3a-fb5b646e393d" class="bulleted-list"><li style="list-style-type:circle">Otl refuza clisee impuse unei tinere in epoca → <strong>img deformata</strong></li></ul><ul id="f4f64aa3-e707-4409-b415-8cf2a7f1dccc" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-pink"><strong>Aurica si Aglae</strong></mark><mark class="highlight-pink">: </mark><ul id="c8e1b793-8694-4fd4-8ad3-a07b916a9eb4" class="bulleted-list"><li style="list-style-type:square">vad in Otilia <strong>destrabalare</strong>, dar o <strong>invidiaza </strong>pt frumusete si influenta asupra barbatilor</li></ul><ul id="02f9365a-534a-4287-a7c0-18c2654e13d2" class="bulleted-list"><li style="list-style-type:square">rigide,<strong> incapabile sa priveasca dincolo de aparente, </strong>dominate de egoism si rautate ⇒ <strong>fatete ale feminitatii malefice, element de contrast cu Otilia</strong> (<mark class="highlight-teal">”o dezmatata care-i fura partidele Auricai”</mark>)</li></ul></li></ul><ul id="6f840c9d-a0b9-44b4-92ae-f7488f208500" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-pink"><strong>Otilia ≠ universul fam Tulea</strong></mark><ul id="4f2576df-8ff7-4f80-a1a2-a6360184919e" class="bulleted-list"><li style="list-style-type:square"><strong>interesul material = strain</strong> (<mark class="highlight-teal">”La banii lui papa nici nu ma gandesc, nici nu-mi trece prin cap ca are sa moara vreodata!”</mark>)</li></ul><ul id="d9130661-4f6c-4d3b-8bcc-4a77f8f9bdb4" class="bulleted-list"><li style="list-style-type:square">refuza ideea de a ramane dupa moartea lui Costache in acest mediu → <strong>anticipeaza decizia in plan sentimental</strong></li></ul></li></ul><p id="53f60f7e-884f-44bb-ad10-5ac969cf6300" class="">
+</p></li></ul></div></details><p id="fc3157ba-e85f-4890-bfaf-0aa72f11e75e" class="">
+</p><p id="8f13c00c-f49c-428d-aa36-efedfbe64c9d" class=""><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Pt a evidentia perosj, autorul ofera decor aflat in contrast: o casa mare, intunecoasa, cu mobila greoaie si atmosfera batranicioasa</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></p><div><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2a Felix invitat sa doarma in cam Otilia</summary><div class="indented"><ul id="dcecf210-2ef4-44b7-bd5d-f29e0842a75e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink"><strong><strong><strong><strong><strong><strong><strong>ilustreaza ideea feminitatii tulburatoare, momentul declansator al iubirii</strong></strong></strong></strong></strong></strong></strong></mark></li></ul><ul id="f21d0fa4-38b5-4858-b063-5960ddffb2b1" class="bulleted-list"><li style="list-style-type:disc">invitat in cam Otilia deoarece aparitia lui = surpriza</li></ul><ul id="b1187d23-6809-4711-a2c1-56c651e2794e" class="bulleted-list"><li style="list-style-type:disc">gestul fetei il <strong>emotioneaza si dezorienteaza</strong> prin naturaletea lui, neconforma lumii rigide → <mark class="highlight-pink"><strong>amestec de camaraderie, spirit matern, cochetarie feminina</strong></mark></li></ul><ul id="9ceaaf60-658d-4893-891b-fe7dbdac130e" class="bulleted-list"><li style="list-style-type:disc">mod realist: <strong>odaia -</strong> descrisa in detaliu<strong> - indiciu al personalitatii contradictorii</strong>; prezentata prin persj reflector; <ul id="cfb6597c-ecb1-4695-be37-99b446ff3eed" class="bulleted-list"><li style="list-style-type:circle">= <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>o oaza de femininate in casa mohorata</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="9f9f6a64-2db7-42fc-9afa-b55e4e6539cc" class="bulleted-list"><li style="list-style-type:circle">obiecte aruncate in dezordine = <strong>fire exuberanta, dinamica</strong></li></ul><ul id="c935400a-9368-4897-b620-48490f77645b" class="bulleted-list"><li style="list-style-type:circle">obiecte de vestimentatie, reviste, carti, partituri → <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>preocupari specifice varstei, sensibilitate evidenta la poezie si muzica, </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>temperament de artista</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></li></ul><ul id="ea6599b7-313e-4363-92fd-b9ead9062582" class="bulleted-list"><li style="list-style-type:circle">oglinda cu mai multe fete = <mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong>personalitate mobila, greu de descifrat, permanenta schimbare</strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></strong></mark></li></ul></li></ul></div></details></div><p id="b8815496-ae11-4510-9dde-c12e8cd03606" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2b Intalnirea in tren = sfarsitul conflictului emotional, oscilarea intre cei 2</summary><div class="indented"><ul id="3db7f20a-fe1a-474c-ad0e-4b4e5e0d345f" class="bulleted-list"><li style="list-style-type:disc">pana la moartea lui Costache, <mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong><mark class="highlight-pink"><strong>oscileaza intre cei 2 barbati</strong></mark></strong></mark></strong></mark></strong></mark></strong></mark><strong><strong><strong><strong><strong> </strong></strong></strong></strong></strong>care o iubesc (= caracter contradictoriu, mobil)<ul id="1f53f44a-344a-4a7f-b560-93c59926239c" class="bulleted-list"><li style="list-style-type:circle"><strong>Felix </strong><ul id="162adac2-5767-4c90-866d-0346509a7488" class="bulleted-list"><li style="list-style-type:square">derutat de atitudinea ei, momente de certitudine alterneaza cu cele de nesiguranta</li></ul><ul id="0aa528f3-fc60-4ac8-b892-cee7c557c95a" class="bulleted-list"><li style="list-style-type:square">fata nu ii spune lui Felix ca nu il iubeste, ci doar <mark class="highlight-teal">“se apara de invinuirea ca nu-l iubeste”</mark></li></ul><ul id="ac9ecca5-8b1f-4d12-a698-0de2eb5dc8b4" class="bulleted-list"><li style="list-style-type:square">marturii evidente ale iubirii (confidentele, episodul in care i se daruieste)</li></ul></li></ul><ul id="07e27b7e-490a-4dc8-bf77-ca3142f438bf" class="bulleted-list"><li style="list-style-type:circle"><strong>Pascalopol</strong><ul id="10b03ae6-9906-4843-9e13-8e6d66c404c3" class="bulleted-list"><li style="list-style-type:square">Otl: gesturi de afectiune evidente, in permanenta in prezenta lui; lungi plimbari cu trasura, pleaca pe neasteptate la Paris, ii accepta micile atentie → <mark class="highlight-pink"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>cu o naturalete care il nelinistete</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong> pe Felix</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul></li></ul><ul id="d05e20ac-6ffc-4f70-89a6-5f5c13917496" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-pink"><strong>moartea = capatul oscilatiei</strong></mark><ul id="06e3c214-42d8-46ab-93a1-5ec87c22200d" class="bulleted-list"><li style="list-style-type:square"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>dorinta de a fi protejata, iubita + presiunea varstei + cariera viitoare a lui Felix (pt care ar putea sa fie o piedica) → </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><mark class="highlight-pink"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>il alege pe Pascalopol</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark></li></ul></li></ul></li></ul><ul id="2b92d747-9d21-4e74-ba22-36946a41d68d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink"><strong><strong><strong><strong>Secventa intalnirii in tren Pascalopol + Felix</strong></strong></strong></strong></mark><ul id="31ebe49b-de06-4e53-bed9-46b5d59a3006" class="bulleted-list"><li style="list-style-type:circle"><strong>destinul eroinei = enigmatic </strong>(ultima ipostaza = sotie unui conte exotic)</li></ul><ul id="435ee4bb-2214-4684-9365-3bcb608e25d7" class="bulleted-list"><li style="list-style-type:circle"><strong>fotografia pe care o vede Felix ≠ Otilia initiala</strong> (este o femeie frumoasa, o <mark class="highlight-teal">“doamna foarte picanta”</mark>, dar <mark class="highlight-teal">“un aer de platitudine feminina stingea totul”</mark>)</li></ul><ul id="a7bf15b8-3eb1-4046-8364-10ef9c036a68" class="bulleted-list"><li style="list-style-type:circle">Pascalopol: <strong><mark class="highlight-teal">“A fost o fata delicioasa, dar ciudata. Pentru mine e o enigma”</mark></strong></li></ul></li></ul></div></details><p id="b4d67cbf-af8a-4fca-b5a4-3a9b56d79b1c" class="">
+</p><p id="26f33858-6edb-4d5f-9d52-d4bee9497745" class="">
+</p><p id="96be24fa-5b06-4cde-873a-de05763014c1" class="">PERSONAJ UNIC, PREZENTA FASCINANTA</p></div></article></body></html>

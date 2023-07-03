@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Ultima noapte - Camil Petrescu</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="325d9d30-7daf-4518-9f89-08c11d64e10c" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🤓</span></div><h1 class="page-title">Ultima noapte - Camil Petrescu</h1><p class="page-description"></p></header><div class="page-body"><p id="2c90dad0-bed3-4444-8d11-2722958c2742" class="">
+</p><nav id="4f2a89e5-e1c7-4b4f-9235-37fbdca0f3f7" class="block-color-orange table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#94de6467-2611-4694-93eb-d1a69e603eee">1a Autenticitate (din experienta de viata)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0cef1058-f90b-45c4-bbfd-a4fb20db03de">1b perspectiva narativa subiectiva</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6c6ac70c-3f09-4fca-89a0-edd0e3ec7d49">3a Memoria afectiva +incipit-final</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#958bcf2f-3462-4ce2-82b7-86639a501338">3b Conflict</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f52421c8-a68d-42ab-ad60-36952a89bd37">2a Cina de la unchiul Tache (dezinteres fata de lume materiala</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d769114f-a31d-4376-bf1c-4b4cf69e97b0">2b Popota ofiterilor (stefan teoretizeaza iubirea ideala)</a></div></nav><p id="4f7bec87-4d1e-48b1-bdf4-c4772efa0490" class="">
+</p><p id="59057fed-53ed-41a8-b633-ffea0d8813d6" class="">I</p><ul id="a096d169-5b32-40f5-9b7c-462bf1202c28" class="bulleted-list"><li style="list-style-type:disc">per interbelica = per inflorirea romanului <ul id="799deaa1-25be-45fa-be40-576bfde6dc3a" class="bulleted-list"><li style="list-style-type:circle">roman obiectiv (Ion, Padurea Spanzuratilor, Enigma Otiliei) vs</li></ul><ul id="6a2b1264-92c3-4232-9de6-f9385613b5a8" class="bulleted-list"><li style="list-style-type:circle"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>subiectiv modern, de analiza psihologica = Ultima noapte (1930) </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>(+Patul lui Procust 1933) = model universal Proust</li></ul><ul id="9c67036d-c517-4703-9186-462a7068e52b" class="bulleted-list"><li style="list-style-type:circle"><strong>Ultima … = modernism romanesc (tema citadina + a intelectualului) + atribute roman subiectiv</strong></li></ul><ul id="6717ea61-1ec0-4f74-a4b9-504b9c87c46a" class="bulleted-list"><li style="list-style-type:circle"><strong>specific lui C Petrescu:</strong><ul id="8a9d2c67-8e5c-44ec-a8ac-d9b4ab168d1c" class="bulleted-list"><li style="list-style-type:square"><strong>anticalofilie</strong></li></ul><ul id="8b41c863-233c-4181-9599-88718ed1fea5" class="bulleted-list"><li style="list-style-type:square">omniscienta naratorului = lipsa de autenticitate</li></ul><ul id="dd46f600-ccb6-451e-bf0a-372a9b2eca60" class="bulleted-list"><li style="list-style-type:square"><strong>arta = mijloc de cunoastere, literatura presupune probleme de constiinta</strong></li></ul></li></ul></li></ul><p id="e7b35979-8ab3-4f6f-b346-129e76727fd7" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1a Autenticitate (din experienta de viata)</summary><div class="indented"><ul id="ffbd8d63-a955-4477-83a3-c36278580b4c" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>geneza romanului </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>= exp directa a frontului (WW1) <strong><strong><strong><strong>⇒ </strong></strong></strong></strong><mark class="highlight-orange"><strong><strong><strong><strong>sinceritatea marturisirii care genereaza autenticitate</strong></strong></strong></strong></mark><strong><strong><strong><strong> (</strong></strong></strong></strong>tras a rom sub)</li></ul><ul id="68fc72b0-103a-48ba-906b-90b4da5ddd4e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>raportul realitate-fictiune</strong></mark>: autorul:<mark class="highlight-purple"> “Partea intai a acestui roman e o fabulatie… eroul Stefan Gheorhidiu si sotia sa sunt pura fictiune, in schimb partea a doua este construita dupa memorialul de campanie al autorului, imprumutat cu amanunte cu tot, eroului”</mark></li></ul><ul id="6d698768-9577-4717-a679-d3cd3f5d348b" class="bulleted-list"><li style="list-style-type:disc"><strong>Formula estetica: romanul ≠ fictiune pura, ci = </strong><mark class="highlight-orange"><strong>consecinta a unei confesiuni</strong></mark></li></ul><ul id="913801ed-d877-4231-8b73-189249985134" class="bulleted-list"><li style="list-style-type:disc">pt autenticitate: introduse <strong>note de subsol cu comunicate militare reale</strong></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1b perspectiva narativa subiectiva</summary><div class="indented"><ul id="d9b00190-f028-4f21-9f82-a891b940cdc7" class="bulleted-list"><li style="list-style-type:disc">Scriitorul isi propune<mark class="highlight-purple"> </mark><strong><mark class="highlight-purple">“sa nu descriu decat ceea ce inregistreaza simturile mele” </mark></strong><strong>+ </strong><strong><mark class="highlight-purple">“Eu nu pot vorbi onest decat la pers I. Din mine insumi nu pot iesi” </mark></strong><strong>⇒ scriitorul = om care exprima in scris tot ceea ce simte, </strong><mark class="highlight-orange"><strong>romanul = ampla confesiune (in care se imbina retrospectia si introspectia)</strong></mark></li></ul><ul id="37d0747d-6cb2-45c4-b4ba-e04759666abe" class="bulleted-list"><li style="list-style-type:disc">pt prima oara in ist romanului roman: <mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Pespectiva unica si omogena </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>=</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><ul id="307059ba-704f-4894-9558-846f773d0d34" class="bulleted-list"><li style="list-style-type:circle">inlaturarea viziunii omnisciente</li></ul><ul id="d9480165-ade0-4f21-a79d-d23ad9c82098" class="bulleted-list"><li style="list-style-type:circle">impresia unui roman <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>sarac in intamplari, evenimente exterioare, dar extrem de bogat in intamplari interioare, sufletesti</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="f5c21c68-74eb-4ad6-b1a6-4916ed2f6adc" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>modificarea ierarhiei evenimentelor</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><ul id="29eac997-0a40-4000-8748-02ffc222cf7f" class="bulleted-list"><li style="list-style-type:square">faptele din prima parte = nesemnificative (sotia ii sugereaza lui Stefan cumpararea catorva camasi, ea sta in masina alaturi de domnul G, primeste crengute de mar) → Insa, au rol <strong>important pt narator: </strong><mark class="highlight-purple"><strong>“Intamplarile acestea mici, amanuntite pana la fractii de impresie erau cele mai importante din viata mea. Astazi, cand le astern pe hartie, imi dau seama ca tot ce povestesc nu are importanta decat pentru mine”</strong></mark></li></ul></li></ul><ul id="ccfcbedd-ab5d-4afb-8cbe-619abb22febe" class="bulleted-list"><li style="list-style-type:circle"><strong>img relativizata a unor persj</strong> (ex Ela, cititorul afla doar ceea ce gandeste Stefan)</li></ul><p id="fb6ed26c-6259-4ed4-811c-35691ea58b30" class="">
+</p></li></ul></div></details><p id="3b71d7d9-ebea-4639-a904-2fcdbe54e0e8" class="">
+</p><p id="31bf1902-362f-4c6e-b8d6-36014a95bb42" class="">Tematic: <mark class="highlight-orange"><strong>conditia intelectualului in raport cu societatea, dragostea si moartea</strong></mark></p><p id="1510ad6c-d8ed-4cb5-be93-96edd97f133e" class="">context: viata Buc inceput de sec XX</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3a Memoria afectiva +incipit-final</summary><div class="indented"><ul id="1426ab14-85e8-4ed6-ae73-32e2c63d1f9e" class="bulleted-list"><li style="list-style-type:disc">aspectul temporal =<mark class="highlight-orange"> </mark><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>memoria afectiva </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>≠ cronologie fireasca ⇒ naratiune discontinua si nelineara </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>cu ramificatii subtextuale</li></ul><ul id="4a184632-b041-4333-ab2e-b09f41c7a53d" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>incipitul:</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><ul id="28120104-30a4-4ce6-a002-14ef60dfd44b" class="bulleted-list"><li style="list-style-type:circle">in timpul razboiului, img a frontului,<strong> protagonistul = participant la lupte</strong></li></ul><ul id="4933e8a8-d302-4ef9-a129-44e06c492ad7" class="bulleted-list"><li style="list-style-type:circle"><strong>plasare spatio-temp precisa</strong> in titlul cap <strong>(</strong><strong><mark class="highlight-purple">”La Piatra Craiului, in munte”, “In primavara anului 1916 … intre Busteni si Predeal”</mark></strong><strong>)</strong> </li></ul><ul id="c8058709-0605-40f4-b904-431cdd14081a" class="bulleted-list"><li style="list-style-type:circle">in romanul razb se <strong><strong><strong><strong><strong><strong><strong><strong><strong>insereaza</strong></strong></strong></strong></strong></strong></strong></strong></strong> romanul de iubire, reconstituit in cap 2 (”Diagonalele unui testament”) prin<mark class="highlight-orange"> </mark><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>memoria afectiva si fluxul constiintei </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>(= procedee moderne)</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul></li></ul><ul id="16b6ea0a-e7af-440b-b05f-61cddc868c59" class="bulleted-list"><li style="list-style-type:disc">spre deosebire de modelul sau (Proust), <mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>eroul nu retraieste trecut, ci il analizeaza ⇒ 2 timpuri</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><ul id="eab0f846-0a4f-45a5-bd9e-70e63df0bb9b" class="bulleted-list"><li style="list-style-type:circle"><strong>timpul nararii</strong>, cronologic, al frontului (cap 1 + 7-12)</li></ul><ul id="2cd74ce7-9fa4-43d0-8228-64dd4a408439" class="bulleted-list"><li style="list-style-type:circle"><strong>timpul narat, cel psihologic</strong>, trecutul povestii de iubire (~= 2 ani) (cap 2-6)</li></ul></li></ul><ul id="28cbff0c-999e-476c-9232-4ba617279484" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong>finalul</strong></strong></strong></strong></strong></strong></strong><ul id="da81605f-4ecf-413e-b0ef-622cfdb7959a" class="bulleted-list"><li style="list-style-type:circle">tipic modernismului: <mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>final deschis</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>, lasand loc interpretarilor</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="7ca57177-d9b3-4db8-99f1-a3facd85708d" class="bulleted-list"><li style="list-style-type:circle">cap final revine la pov de iubire: <strong><strong><strong><strong>eroul modificat radical de exp razb, vindecat de iubirea pt Ela e pregatit sa </strong></strong></strong></strong><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><strong><strong><strong><strong>se desparta de tot trecutul</strong></strong></strong></strong></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></li></ul><ul id="5470b6df-18f5-4125-b1b7-626db75f728f" class="bulleted-list"><li style="list-style-type:circle">nu e clar cititorului destinul ulterior al eroului si nici daca <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Ela l-a inselat cu adevarat</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3b Conflict</summary><div class="indented"><ul id="96ea3612-ad65-4917-adfd-23df551b8e15" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>de natura int, sufleteasca, de constiinta (drama rupturii ideal/realitate)</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="b17d3e90-0474-4d3d-993c-6c0643478422" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong>carte a inadaptarii</strong></mark> = intelectualul superior <strong>refuza integrarea in soc superficiala</strong> cu cod valoric care nu il reprezinta</li></ul><ul id="806ff0c5-7048-41f9-b9fc-60684b060f03" class="bulleted-list"><li style="list-style-type:disc"><strong>raportat la lume, se evidentiaza </strong><mark class="highlight-orange"><strong>antiteza intelectualului cu fig secundare </strong></mark><strong>(= tipuri umane)</strong><ul id="c11e64bc-8a70-4416-bcc0-24a9d212b261" class="bulleted-list"><li style="list-style-type:circle"><strong>unchiul Tache</strong> = avar</li></ul><ul id="8c9eb37b-52e9-4d80-80bf-9ad474994b00" class="bulleted-list"><li style="list-style-type:circle"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Nae Gheorghidiu</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> = politicianul demagog si imoral</li></ul><ul id="a95e70a2-d3f9-4fd9-9d12-3dce72ec8d91" class="bulleted-list"><li style="list-style-type:circle"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Tanase Vasilescu Lumanararu</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> = milionar analfabet, parvenit</li></ul></li></ul><ul id="215afdf9-0eb4-431d-a575-90ba6df21bbb" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>conflictul interior</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><ul id="1995f12e-3df1-4802-bffb-6d9b5d351005" class="bulleted-list"><li style="list-style-type:circle">porneste de la banuiala de<strong> infidelitate a sotiei</strong></li></ul><ul id="5ce16882-2142-46e5-a9e4-15083980e7e5" class="bulleted-list"><li style="list-style-type:circle"><strong>treptat, Ela se adapteaza la soc pe care el o dispretuieste</strong></li></ul><ul id="05da054e-8ebf-46c7-bedb-0bf300f1174d" class="bulleted-list"><li style="list-style-type:circle">conflictul = framantarile eroului <strong><strong><strong>nu </strong></strong></strong>legate de fidelitate, ci de <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>capacitatea sa </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>de a distinge val de non val</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark></mark><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong> </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="60514fc6-e01a-461e-b1ec-12e998c9b260" class="bulleted-list"><li style="list-style-type:circle"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>+ </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>suferinta cauzata de faptul ca a luat drept <strong><mark class="highlight-purple">“o madona autentica”</mark></strong> o simpla <strong><mark class="highlight-purple">“copila vulgara”</mark></strong><strong>, fara val</strong></li></ul><p id="2bbfe729-4371-4c87-8492-8c6204c2ad15" class="">
+</p><p id="fa8764d8-4784-4475-baf8-eaaee41e5c8d" class="">
+</p></li></ul></div></details><p id="1f984d33-3b47-4854-9b3a-218818e8b2dd" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2a Cina de la unchiul Tache (dezinteres fata de lume materiala</summary><div class="indented"><ul id="64882623-1631-4bb2-b3b3-1340a6e03a25" class="bulleted-list"><li style="list-style-type:disc">Tache si Nae Gheorghidiu<strong> il considera naiv, lipsit de spirit intreprinzator pe tatal lui Stefan</strong>; el e singurul din fam care il apara (un ziarist integru, un idealist, ca Stefan (se cas din dragoste))</li></ul><ul id="bd2e2e49-bbe3-4bbc-891d-1c5d33e36bc4" class="bulleted-list"><li style="list-style-type:disc">replica acida in privinta mostenirii = <mark class="highlight-orange"><strong>compromis in plan moral</strong></mark> (risca deszmostenire de catre Tache)</li></ul><ul id="ad9ae249-625d-4197-a0b2-8d64346ad899" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange"><strong><strong><strong>revelatie dureroasa asupra sotiei</strong></strong></strong></mark><ul id="bff3e427-0a45-4e28-ada3-08be91eef42b" class="bulleted-list"><li style="list-style-type:circle"><strong>crede ca ii impartaseste intru totul convingerile</strong> privitoare la bani</li></ul><ul id="f65cb432-e914-4acb-91bc-3af84ad94ec1" class="bulleted-list"><li style="list-style-type:circle">desi il <strong>sustine in fata ironiilor</strong> lui Tache (acesta il considera pe Stefan <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>un idealist)</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="f37c8838-41e3-40a3-a7ae-ad0149eb6563" class="bulleted-list"><li style="list-style-type:circle">Ela se dovedeste a fi<strong> interesata de soarta mostenirii</strong>, fapt care il dezamageste (ar fi vrut-o <strong><mark class="highlight-purple">“mereu feminina, deasupra discutiilor acestora vulgare, plapanda si avand nevoie sa fie protejata”</mark></strong></li></ul><ul id="172ed6e7-c9ac-4feb-8243-6cdc86615951" class="bulleted-list"><li style="list-style-type:circle">primul semnal ca cei doi ar avea <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>val dif ⇒ elem generator al rupturi</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><p id="3376b099-78c3-43cf-99c5-477de77b892e" class="">
+</p></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2b Popota ofiterilor (stefan teoretizeaza iubirea ideala)</summary><div class="indented"><ul id="2b7a345b-0274-4a97-88f5-5f845a110ea2" class="bulleted-list"><li style="list-style-type:disc">teoretizeaza despre <mark class="highlight-orange"><strong>iubirea ideala</strong></mark><ul id="1edc9a77-fbf4-49f6-8564-06cf4991d8e1" class="bulleted-list"><li style="list-style-type:circle">isi expune convingerile despre fidelitate <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>cu un aer de superioritate, ironie si aroganta ⇒ semn al unor profunde traume sufletesti</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></li></ul><ul id="fbfab5ea-9e46-482e-bb34-7e67a87a48a4" class="bulleted-list"><li style="list-style-type:circle">iubirea - proces de autosugetie, obisnuinta treptata cu femeia (<mark class="highlight-purple">”fara de care mai tarziu nu poti trai”</mark>)</li></ul><ul id="0f3daa18-d2c7-491b-a471-9adcc589384d" class="bulleted-list"><li style="list-style-type:circle">afirmatii transante (<mark class="highlight-purple"><strong>”Cei care se iubesc au drept de viata si de moarte unul asupra celuilalt”</strong></mark>) → fire <strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>intransigenta, idealista, obsesia absolutului</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong> = intelectual autentic (asta determina si drama eroului)</li></ul></li></ul><ul id="7f2c874e-9f04-479f-89b9-5b78dc015860" class="bulleted-list"><li style="list-style-type:disc"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>opera = roman de razboi (WW1)</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong><ul id="f83451bd-50ec-4648-9dfd-52477c9bef39" class="bulleted-list"><li style="list-style-type:circle">perspectiva noua:<strong> intelectualul-combatant</strong> (razboi ≠ eroic, <strong>razboi = realitate monstruoasa</strong>)</li></ul><ul id="aaef1ef0-4214-4638-b298-c545f9deef20" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange">d</mark><mark class="highlight-orange"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>emitizare</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><mark class="highlight-orange"> </mark>dublata deplasarea accentului (infruntari exterioare si acte de curaj → trairile autentice (suferinte de frig, foame, dureri fizice, frica animalica in prim plan) = <mark class="highlight-orange"><strong>img autentica a razb</strong></mark></li></ul><ul id="962f6947-34f2-4f2f-83d4-748657c6fe53" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-orange"><strong>experienta razb = eliberatoare</strong></mark> (stefan gaseste puterea sa se despinda de Ela; <strong>recunoaste egoismul dramei personale in fata traumei colective)</strong></li></ul><p id="fe2d7679-35f9-40d3-85ea-b93ff5a34ae2" class="">
+</p></li></ul></div></details><p id="7a9d4719-b545-4d6b-9217-0cf9a2aca97b" class="">
+</p><p id="540f5789-9e29-4786-aca0-67953de566a5" class="">
+</p><p id="761170f3-cdf4-460f-8420-f134c3ebad60" class="">Cz: </p><ul id="342c6d39-d52a-49c9-9520-eff34ac96e4b" class="bulleted-list"><li style="list-style-type:disc">corespunde intentiei perioadei de <strong>modernizare</strong> a lit rom,<strong> atat ca problematica cat si ca tehnici narative</strong></li></ul><ul id="660b379e-d2d3-47bd-837d-9256f9110ce1" class="bulleted-list"><li style="list-style-type:disc"><strong>= reper al per interbelice</strong></li></ul></div></article></body></html>

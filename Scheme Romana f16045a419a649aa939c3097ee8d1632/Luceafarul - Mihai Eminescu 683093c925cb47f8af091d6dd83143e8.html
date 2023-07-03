@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Luceafarul - Mihai Eminescu</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="683093c9-25cb-47f8-af09-1d6dd83143e8" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🌟</span></div><h1 class="page-title">Luceafarul - Mihai Eminescu</h1><p class="page-description"></p></header><div class="page-body"><nav id="2bd0c6d5-c75b-47a5-a3e4-196810e8659c" class="block-color-pink table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e5277fc1-c1db-4c6e-85e6-1ae4dbb0ea49">1a Teme, motive specifice</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3df29c34-7d66-4d02-80f9-72527dff8c7a">1b Inspiratie</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#cfd3315b-d402-4991-b972-9c13f0b78752">3a Titlu (stea norocoasa, bland, Venus, Hyperion)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#66d40bda-503f-4778-b82e-4567a78ca3d0">3b Antiteza romantica (tablouri, persj, cadru nat, lmbj, metamorfoze, pron)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8d744e4e-9953-4084-8eaf-822f6bd649eb">2 tbl 1</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9acdcf0d-2e2b-4490-a7d4-d7e6aa1cd550">2 tbl 3</a></div></nav><p id="3def75e5-3d10-4680-a74b-223b9f5aa09d" class="">
+</p><p id="e4e81812-83a9-4e7e-9364-b786ca7261ab" class="">I: </p><ul id="b0beff37-eebc-4c00-b1cd-e73afe039395" class="bulleted-list"><li style="list-style-type:disc">incheie romantismul european (s XIX)</li></ul><ul id="21dcc6be-b9ac-4112-8b09-cfbbd729ab89" class="bulleted-list"><li style="list-style-type:disc">reactie la rigiditatea clasic</li></ul><ul id="e4d1ae21-a8d2-41c1-980a-5f79a1c58d6c" class="bulleted-list"><li style="list-style-type:disc">1883</li></ul><p id="6179f491-67d4-4b9a-811d-db8a3855fcb9" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1a Teme, motive specifice</summary><div class="indented"><ul id="16fe99ae-2217-46e0-9b54-3a0c02ccc3a5" class="bulleted-list"><li style="list-style-type:disc">suma de teme si motive rom - <mark class="highlight-pink"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>principal: cond geniului (in rap cu iubirea)</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><ul id="2ef9256b-d049-4537-ab25-8fe225b3e795" class="bulleted-list"><li style="list-style-type:circle"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>iubirea: </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>idila CC, forma de cunoastere in luc-fata de imp</li></ul><ul id="35980ad8-89b5-442d-ab78-09cb85795ad2" class="bulleted-list"><li style="list-style-type:circle"><strong><strong><strong><strong><strong><strong>natura</strong></strong></strong></strong></strong></strong>: terest + cosmic</li></ul></li></ul><ul id="2a06fec7-8c2c-4d54-a198-357a39a67015" class="bulleted-list"><li style="list-style-type:disc"><strong>poem alegoric si filosofic, </strong>se incadreaza<mark class="highlight-blue"> </mark><mark class="highlight-pink"><strong>liricii mastilor</strong></mark><strong>:</strong><ul id="860665f9-7e7b-41ef-ae89-79da9e7fa35a" class="bulleted-list"><li style="list-style-type:circle">catalin + catalina (cc) = tinereatea</li></ul><ul id="daa1ab70-4ace-4bb9-8af1-71509feb07ae" class="bulleted-list"><li style="list-style-type:circle">luceafarul + demiurg = maturitate</li></ul></li></ul><ul id="1a600260-986a-49cf-b6ff-a33ce544ef9c" class="bulleted-list"><li style="list-style-type:disc"><strong>rom:</strong> iubirea se naste lent din <strong>stare de contempl si visare, </strong>cadru nocturn</li></ul><ul id="ed60e5a8-cf95-4e0b-b860-c2ae91471168" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink"><strong><strong><strong><strong><strong><strong><strong><strong>motive lit spec:</strong></strong></strong></strong></strong></strong></strong></strong></mark><mark class="highlight-blue"><strong><strong><strong><strong><strong><strong><strong><strong> </strong></strong></strong></strong></strong></strong></strong></strong></mark>fata de imparat, steaua, visul, inger si demon, zbor interstelar, noapte, codru, tei</li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">1b Inspiratie</summary><div class="indented"><ol type="1" id="e57f0bd0-bee8-4007-8e0e-425ac44f6d6e" class="numbered-list" start="1"><li><mark class="highlight-pink"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>basm </strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></mark><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><em><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>“Fata din gradina de aur”</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em></em> - culegere de basme german (+mitul zburatorului)</li></ol><ol type="1" id="f3d0dde9-0837-4d8d-80d3-070d6937897e" class="numbered-list" start="2"><li><mark class="highlight-pink">Schopenhauer</mark> - idealist german, problema raport geniu / om comun</li></ol><ul id="e20ad139-390b-4b39-b762-74b04b980e57" class="bulleted-list"><li style="list-style-type:disc"><strong>geniu</strong> (ins superior, obiectiv, rational, capacitate de cunoastere nelimitata, contemplativ) vs <strong>om comun </strong>(subiectiv, instinctual…)</li></ul><ul id="0ea22543-d6cf-4947-acc8-0d7e2b0bd011" class="bulleted-list"><li style="list-style-type:disc">basm → “inteles alegoric” → <mark class="highlight-teal">“geniul n-are moarte, dar n-are nici noroc”, “aici pe pamant el nu e capabil a fi fericit si nici capabil de a ferici pe cineva”</mark></li></ul><p id="e6133c62-8302-41ab-979b-4e46ba290b8d" class="">
+</p></div></details><p id="cf5946f8-689a-4968-b3c8-8a242e89c578" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3a Titlu (stea norocoasa, bland, Venus, Hyperion)</summary><div class="indented"><ul id="16c697fd-0677-492a-8de1-ab0e9d2c4809" class="bulleted-list"><li style="list-style-type:disc">sintetic</li></ul><ul id="1ced1d30-33c4-4c53-869f-4b0781106cb7" class="bulleted-list"><li style="list-style-type:disc"><strong>Luceafar</strong> = <mark class="highlight-pink"><strong>stea purtatoare de noroc</strong></mark><ul id="d645d374-5052-4838-82c5-ac053de8f42f" class="bulleted-list"><li style="list-style-type:circle">de fata (<mark class="highlight-teal"><em>”Norocu-mi lumineaza”</em></mark>)</li></ul><ul id="e6f70be5-56f7-4d54-a47c-c69972bc4c62" class="bulleted-list"><li style="list-style-type:circle">de Demiurg (<em><mark class="highlight-teal">”Ei doar au stele cu noroc”</mark></em>) <strong><mark class="highlight-pink">(+comentariu) </mark></strong></li></ul></li></ul><ul id="0ed0dde9-c63a-4cfa-b3c0-4425dd4f133c" class="bulleted-list"><li style="list-style-type:disc">apelativ <em><mark class="highlight-teal">“Luceafar bland”</mark></em> - sentimentul fetei…()</li></ul><ul id="f0f89bf4-c833-43d3-87ac-96d80b45e5db" class="bulleted-list"><li style="list-style-type:disc">pop <strong><mark class="highlight-pink">Venus</mark></strong> = <mark class="highlight-pink"><strong>(comentariu)</strong></mark> (viziune rom, fascinat de <strong>inf</strong>)</li></ul><ul id="81f8ed78-6dcc-48ca-835b-51abae403190" class="bulleted-list"><li style="list-style-type:disc">tablou 3: <strong>Luceafar = </strong><mark class="highlight-pink"><strong>Hyperion</strong></mark><strong> = pe deasupra mergatorul,</strong> divinitate subolimpica, fiul Cerului, tatal Soarelui si al Lunii in viziunea lui Hesiod = <strong>natura eterna, superioara, inaccesibila</strong></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">3b Antiteza romantica (tablouri, persj, cadru nat, lmbj, metamorfoze, pron)</summary><div class="indented"><ul id="924f93d3-f0dc-4af6-ab69-a8263863266e" class="bulleted-list"><li style="list-style-type:disc">antiteza rom (→ simetrie)</li></ul><ul id="e8c6cb45-9749-4031-8c00-8deb2d9a79f9" class="bulleted-list"><li style="list-style-type:disc"><strong>opozitie </strong><mark class="highlight-pink"><strong>uman-terestru/geniu-cosmic:</strong></mark><ul id="70c891b3-b7c3-4faa-862d-852e4d18788a" class="bulleted-list"><li style="list-style-type:circle"><strong>tbl 2, 3: bine delimitate </strong>(2 = cc, 3 = Luc-demiurg)</li></ul><ul id="b1b8ee16-ed9a-4d2c-b894-08f6a5097e67" class="bulleted-list"><li style="list-style-type:circle"><strong>tbl 1, 4: interfereaza = </strong>dialog fata de imp - Luc</li></ul></li></ul><ul id="bec97f77-0bca-458d-bfe0-3d16a91372b4" class="bulleted-list"><li style="list-style-type:disc"><strong>opozitie</strong> si prin:<ul id="879d1483-e81e-4062-8075-942e6d3260ce" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-pink"><strong>persj simbol </strong></mark>(Luc-fata de imp)</li></ul><ul id="f1334e87-3b9c-4e35-8cd1-7d8563cb6735" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-pink"><strong>cadrul nat </strong></mark>evocat (<strong>aproape-lumea pamantenilor / departe-infinitul cerului</strong>)</li></ul><ul id="51d1173f-e39c-40eb-b237-ece35ada79b4" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-pink"><strong>limbaj </strong></mark>(popular, accente ludice (tbl 2) / metaforic, solemn (tbl 3))</li></ul><ul id="75cdb0bd-10b4-45c6-aff4-2a66c21ea40b" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-pink"><strong>2 metamorfoze </strong></mark>(tbl 1): inger - demon</li></ul><ul id="16638f9c-0690-4e0e-85e0-8f6c5a65b46f" class="bulleted-list"><li style="list-style-type:circle"><strong><mark class="highlight-pink">pron pers</mark></strong>: tu, voi (pamantenii) - eu (astrul): <mark class="highlight-teal">“Traind in cercul vostru stramt/ Norocul va petrece/ Ci eu in lumea mea ma simt/ Nemuritor si rece”</mark></li></ul></li></ul><p id="9bbacfb6-83fa-4106-81f3-650ea2043128" class="">
+</p><p id="8e67915c-3c26-4097-a04a-4bffcb6bf621" class="">
+</p></div></details><p id="9151c9e5-3c95-4f7a-b6f0-6ed67f2b075f" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2 tbl 1</summary><div class="indented"><ul id="676e12f9-2654-4bed-9700-8d043cdd2df1" class="bulleted-list"><li style="list-style-type:disc">intalnire a doua lumi prin intragostirea Luc</li></ul><ul id="0294e003-1195-43cc-964e-48005bdd2f94" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink"><strong>sursa de inspo</strong></mark> (<mark class="highlight-teal">”A fost odata…/ A fost ca niciodata”</mark>) - anticipeaza, <mark class="highlight-pink">depaseste </mark>(<mark class="highlight-teal">”ca-n povesti”</mark>)</li></ul><ul id="acc729be-c7fc-4f00-9eba-49243493ba56" class="bulleted-list"><li style="list-style-type:disc">img castel malul marii =<mark class="highlight-pink"><strong> ( comentariu )</strong></mark>, fereastra = prag</li></ul><ul id="a444e97d-7daa-42f7-96e2-333026728d84" class="bulleted-list"><li style="list-style-type:disc">fata de imp:<ul id="42cd3089-809c-4897-8c01-7b4bf4d7d959" class="bulleted-list"><li style="list-style-type:circle">stare rom, <mark class="highlight-pink">dor</mark> (<mark class="highlight-teal">”De dorul lui si inima. Si sufletu-i se imple”</mark>)</li></ul><ul id="27f2d67b-5489-4d40-ba30-6edf4aaca0a7" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-pink">unicitate</mark>: dubla comp cu luna + <mark class="highlight-teal">“fecioara intre sfinti”</mark> → permite aventura onirica</li></ul><ul id="1a0cbd54-a1c4-474e-b753-98d1974ce968" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-pink">invocatia</mark> <mark class="highlight-teal">“Cobori in jos, Luceafar bland/ Alunecand pe-o raza/ Patrunde-n casa si in gand/ Viata-mi lumineaza” </mark>→ <mark class="highlight-pink">metamorfoze</mark>:<ol type="1" id="11c743ea-7907-4f49-aabd-130ffc3a6b08" class="numbered-list" start="1"><li><mark class="highlight-teal">“tanar voievod” </mark>- angelic, atributele mortii (<mark class="highlight-teal">”un vanat giulgi”, “umbra fetei… ca de ceara”</mark>) <mark class="highlight-pink"><strong>( comentariu )</strong></mark></li></ol><ol type="1" id="ee660450-7e28-4161-ae71-cfa73b61f287" class="numbered-list" start="2"><li>frum demonica: <mark class="highlight-teal">“negru giulgi”, “marmoreele brate”, “palid la fata”</mark></li></ol><ul id="4aa4e361-0044-4416-84fb-388297335e2b" class="bulleted-list"><li style="list-style-type:square">ambele: ochi = <mark class="highlight-teal">“patimi fara saţ”</mark> - intensitatea &lt;3</li></ul></li></ul><ul id="1315a3e5-e560-4042-a793-497070e4331a" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-pink">invitatia infinitului </mark>(cer, ocean) - refuz, constiinta limitarii conditiei umane (<mark class="highlight-teal">”privirea ta ma arde”, “ochiul tau ma-ngheata”</mark>)</li></ul><ul id="ef2d7433-738a-4829-8205-5c0ff20ff29c" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-teal">“desi vorbesti pe inteles, eu nu te pot pricepe” </mark>- <strong>fata</strong>: <mark class="highlight-teal">“caci eu sunt vie,/ tu esti mort”</mark> <strong>Luc</strong>: <mark class="highlight-teal">“eu sunt nemuritor/ Si tu esti muritoare”</mark></li></ul></li></ul></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">2 tbl 3</summary><div class="indented"><ul id="a166af9b-a40f-4300-b171-0e5b6896d93a" class="bulleted-list"><li style="list-style-type:disc">zborul Luceafarului (filozofic) → <mark class="highlight-teal"><em>Imnul creatiunii</em></mark> (din <mark class="highlight-teal"><em>Rig Veda</em></mark>) = cosmogonie</li></ul><ul id="a7774f90-b34f-4449-820b-955770e41320" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink"><strong>Increat </strong></mark>= categorii negative, negatii (<mark class="highlight-teal">”Unde-ajunge nu-i hotar”, “Nu e nimic si totusi e/ O sete care-l soarbe/ E un adanc asemene/ Uitarii celei oarbe”</mark>) → zbor prin spatiu si timp (<mark class="highlight-teal">”Cai de mii de ani treceau/ In tot atatea clipe”</mark>)</li></ul><ul id="88d6afa7-139c-4649-8c57-3eb484a0b71c" class="bulleted-list"><li style="list-style-type:disc">Demiurg ii dezvaluie numele (Hyperion), ii refuza dorinta → discurs solemn, ton grav, sententios: <mark class="highlight-teal">“Ei doar au stele cu noroc/ Si prigoniri de soarte/ Noi nu avem nici timp, nici loc/ Si nu cunoastem moarte”</mark> → intelegerea conditiei cand ii vede pe pamant pe cc (<mark class="highlight-teal">”Cand valuri afla un mormant, rasar in urma valuri”</mark>)</li></ul><ul id="1e68a19f-bcb4-4c01-ba68-526e2fb46d5d" class="bulleted-list"><li style="list-style-type:disc">Luc = geniu (…) + razvratit, revoltat, schimba ordinea lumii pt idealul sau</li></ul></div></details><p id="59636fee-6b8a-4f28-91c8-94d571bceef4" class="">
+</p><p id="4cf4a49f-b658-4a74-8b2b-3f17101f9479" class="">
+</p><p id="c673a606-e1fc-4b0f-81d8-af0c379f9fa2" class="">
+</p><p id="02a1a495-bbaf-4f9b-b1de-32edd2236246" class="">
+</p><p id="02d666c4-700b-4b81-b503-1cafa004ec55" class="">nefolosite:</p><ul id="e550b96e-2041-4963-b786-3ee1cf9daf5b" class="toggle"><li><details open=""><summary>2 tbl 2</summary><ul id="d91bc1a5-40ae-437f-9638-cc36d2c819d9" class="bulleted-list"><li style="list-style-type:disc">simetric: idila pamanteana</li></ul><ul id="5befd865-e10b-4b2c-ac7a-15d306509050" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink"><strong>spatiu</strong></mark><strong>: simbolic</strong>, opus infinitului (<mark class="highlight-teal">”o cuprinse… intr-un ungher, degraba”</mark>)</li></ul><ul id="51bad521-2e85-4956-b236-13bd6c33d4be" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink">catalin</mark>: <mark class="highlight-teal">“un paj”, “copil din flori si de pripas”, “viclean copil de casa”, “cu obrajei ca doi bujori”</mark> - <strong>fiinta umana comuna</strong></li></ul><ul id="b2cb05eb-f577-410d-91c6-cfaad9685578" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink">fata de imp → Catalina </mark>(<mark class="highlight-teal">”Si guraliv si de nimic/ Te-ai potrivi cu mine…”</mark>)</li></ul><ul id="f94b8370-bb81-475f-ac96-fc73c3dc62c8" class="bulleted-list"><li style="list-style-type:disc">nostalgie (<mark class="highlight-teal">”In veci il voi iubi si-nveci/ Va ramanea departe”</mark>)</li></ul><ul id="4e956d99-ef07-444e-92f4-3c5609da27ce" class="bulleted-list"><li style="list-style-type:disc">plecarea = <mark class="highlight-pink">acceptarea</mark> cond de om, acceptarea iubirii instinctuale (<mark class="highlight-teal">”te-oi invata din bob in bob amorul”</mark>)</li></ul></details></li></ul><ul id="3429d8c2-9681-40a1-922e-28cf13593159" class="toggle"><li><details open=""><summary>2 tbl 4</summary><ul id="666ce6e0-427e-455b-ade3-2721d6cb2695" class="bulleted-list"><li style="list-style-type:disc">pt fiinta sup, <mark class="highlight-pink"><strong>iubirea = forma de cunoastere</strong></mark>, constientizeaza mecanismul neschimbat al universului</li></ul><ul id="a80032d5-2782-42b1-92b9-2434fa612759" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal">“sub sirul lung de mandri tei”</mark> → <mark class="highlight-pink">univers in date firesti</mark></li></ul><ul id="33efdd7f-81e0-4079-a74c-396be681d390" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-pink">ultima invocare</mark>: <mark class="highlight-teal">o stea “cu noroc”</mark> (asa cum afirmase Demiurgul)</li></ul><ul id="8fee53a7-53dc-48ef-aa1f-ec5d5724b38e" class="bulleted-list"><li style="list-style-type:disc"><strong>Luceafar</strong>: <mark class="highlight-teal">“chip de lut”, “cercul vostru stramt”</mark> -<strong> </strong><mark class="highlight-pink"><strong>efemeritate, limitata, perisabila → conditia superioara a luc, din care afectul e exclus</strong></mark></li></ul><p id="583f2814-739c-4b69-9f30-ba1cab739d4e" class="">
+</p></details></li></ul></div></article></body></html>
